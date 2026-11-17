@@ -1,0 +1,27 @@
+---
+baslik: "Pomodoro ile timeboxing farkı"
+bolum: timeboxing
+kaynak: "FRANCESCO CIRILLO"
+sure: "YOUTUBE"
+video: "https://www.youtube.com/results?search_query=Francesco%20Cirillo%20Pomodoro%20Technique"
+video_dogrulandi: false
+kaynak_reel: "Timeboxing"
+dogrulama: "Transkriptten doğrulanmadı."
+---
+
+# Pomodoro ile timeboxing farkı
+
+## 1. Kısa özet
+Pomodoro tekniğini Francesco Cirillo 1980'lerin sonunda, domates şeklindeki bir mutfak zamanlayıcısıyla geliştirdi: 25 dakika çalış, 5 dakika ara; dört turdan sonra uzun bir ara. Pomodoro sabit uzunlukta odak aralıklarıdır; timeboxing ise belirli bir işe takvimde istediğin uzunlukta yer ayırmaktır. İkisi birlikte kullanılabilir.
+
+## 2. Ana kavramlar
+- **Pomodoro:** 25 dakikalık odak + 5 dakikalık ara.
+- **Uzun ara:** Dört pomodorodan sonra 15-30 dakika dinlenmek.
+- **Sabit aralık:** Pomodoro süreye, timeboxing işe göre ayarlanır.
+- **Birlikte kullanım:** 2 saatlik bir kutuyu 4 pomodoroya bölmek.
+
+## 3. Nasıl uygulanır
+1. Bugün bir işi 4 pomodoro ile yap.
+2. Aralarda ekrandan uzaklaş.
+3. Bir başka işi 90 dakikalık tek kutu olarak yap.
+4. Hangisinin sana uyduğunu karşılaştır.

@@ -1,0 +1,28 @@
+---
+baslik: "CIA bilgi sızdırma teknikleri"
+bolum: psikoloji
+kaynak: "ESKİ CIA SUBAYLARI"
+sure: "YOUTUBE"
+video: "https://www.youtube.com/results?search_query=Elicitation%20CIA's%20technique%20to%20make%20people%20talk"
+video_dogrulandi: false
+kaynak_reel: "CIA sorgu ve etki teknikleri"
+dogrulama: "Transkriptten doğrulanmadı."
+---
+
+# CIA bilgi sızdırma teknikleri
+
+## 1. Kısa özet
+İstihbaratçılar bilgiyi çoğu zaman doğrudan sormaz. “Elicitation” denen yöntemle, karşıdakinin kendiliğinden anlatmasını sağlarlar: yanlış bir şey söyleyip düzeltilmeyi beklemek, yaklaşık bir sayı verip karşının onu düzeltmesini sağlamak, ya da iltifatla konuşturmak. İnsanların düzeltme, yardım etme ve takdir edilme isteğine dayanır.
+
+## 2. Ana kavramlar
+- **Elicitation:** Soru sormadan, cümlelerle bilgi aldırmak.
+- **Bilerek yanlış söylemek:** Karşının düzeltme isteğini tetiklemek.
+- **Aralık verme:** “Sanırım 10 ile 20 arası” deyip net sayıyı aldırmak.
+- **Karşılıklılık:** Önce küçük bir sır verip karşılığında bilgi beklemek.
+- **Şaşırmış gibi yapmak:** “Yok artık, olamaz” diyerek ayrıntı anlattırmak.
+
+## 3. Nasıl uygulanır
+1. Biri yanlış bir şey söylediğinde her zaman düzeltmek zorunda olmadığını hatırla.
+2. Yeni tanıştığın biri iş ya da para ayrıntısına çok ilgi gösteriyorsa yavaşla.
+3. Bir sohbetten sonra kendine sor: ne anlattım, ne öğrendim?
+4. Bu teknikleri etik sınırlar içinde, iyi dinleyici olmak için kullan.

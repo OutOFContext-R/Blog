@@ -1,0 +1,27 @@
+---
+baslik: "Claude'a oyun yaptırmak"
+bolum: ai
+kaynak: "CLAUDE ARTIFACTS"
+sure: "YOUTUBE"
+video: "https://www.youtube.com/results?search_query=build%20a%20game%20with%20Claude%20artifacts%20tutorial"
+video_dogrulandi: false
+kaynak_reel: "Build full games inside Claude"
+dogrulama: "Transkriptten doğrulanmadı."
+---
+
+# Claude'a oyun yaptırmak
+
+## 1. Kısa özet
+Kod bilmeden Claude'a çalışan bir oyun yaptırabilirsin. Claude oyunu tek bir sayfa olarak yazar ve sohbetin içinde hemen çalıştırır. İşin sırrı, oyunu tek seferde istemek değil, küçük adımlarla büyütmek: önce oynanabilir en basit hali, sonra tek tek özellik.
+
+## 2. Ana kavramlar
+- **Artifact:** Claude'un sohbette çalıştırdığı sayfa, oyun ya da uygulama.
+- **En basit oynanabilir hal:** Önce sadece hareket ve tek kural; süs sonra.
+- **Küçük adımlar:** Her mesajda tek bir değişiklik istemek.
+- **Hata bildirimi:** Ne beklediğini ve ne olduğunu açıkça yazmak.
+
+## 3. Nasıl uygulanır
+1. “Ok tuşlarıyla hareket eden bir kare ve toplanan altınlar” gibi basit bir oyun iste.
+2. Çalışınca tek bir özellik ekle: skor, zamanlayıcı ya da düşman.
+3. Bir şey bozulursa ne beklediğini ve ne olduğunu yaz.
+4. Claude'dan kodun bir bölümünü sana açıklamasını iste.

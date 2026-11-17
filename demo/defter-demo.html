@@ -5,15 +5,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: Euiro iskeleti (üst bar · solda blok menü · ortada panel), koyu yeşil zemin üstünde mat bölüm renkleri.
-   Tek bilinçli görünüm: koyu yeşil; bütün renkler açıkça tanımlı. Tek yazı tipi: Pixelify Sans.
+   Tek bilinçli görünüm: koyu yeşil; bütün renkler açıkça tanımlı. Tek yazı tipi: Pixelify Sans (logodaki matematik U hariç).
    Telefonda menü yatay şerit olur, sayfa normal kayar. */
 :root{
   --bg:#13241C; --bg-dot:#1C3329; --paper:#1A2F25; --paper-2:#21392D; --ink:#E9EEDF; --on-c:#10201A; --edge:#08110C;
   --muted:#A7B8A3; --line:#2F4A3C; --soft:#7D937D;
   --c-ai:#86ABC2; --c-zihin:#97BA8F; --c-founder:#D6B267; --c-psiko:#CC937F; --c-meta:#A595C4; --c-time:#83BCAD;
+  --logo:#A8D8F0; --logo-deep:#0E2A3A;
   --ok:#A9CF8F; --mid:#E3CB7A; --warn:#DE9C88;
   --screen:#0C1812;
   --f:"Pixelify Sans","Trebuchet MS",system-ui,sans-serif;
+  --f-math:Georgia,"Times New Roman",serif;
   --bw:3px; --sh:0 4px 0 var(--edge);
   color-scheme:dark;
 }
@@ -22,19 +24,20 @@ html{background:var(--bg)}
 body{background-color:var(--bg);background-image:radial-gradient(var(--bg-dot) 1.3px,transparent 1.4px);background-size:22px 22px;
   color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.5;-webkit-text-size-adjust:100%}
 button{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--c-founder);outline-offset:3px}
+:focus-visible{outline:3px solid var(--logo);outline-offset:3px}
 .app{max-width:1240px;margin:0 auto;display:grid;gap:16px;
   padding-block:16px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .blk{border:var(--bw) solid var(--edge);box-shadow:var(--sh);border-radius:0}
-button.blk{cursor:pointer;transition:transform .06s}
-button.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+button.blk,a.blk{cursor:pointer;transition:transform .06s}
+button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
 .lab{font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 
 /* ÜST BAR */
 .top{display:flex;align-items:stretch;gap:12px;min-width:0}
-.logo{background:var(--c-founder);color:var(--on-c);display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none}
-.logo .m{width:32px;height:32px;background:var(--on-c);color:var(--c-founder);display:grid;place-items:center;font-weight:700;font-size:20px}
-.logo h1{margin:0;font-weight:700;font-size:clamp(20px,2.6vw,26px);line-height:1.2;letter-spacing:.08em}
+.logo{background:var(--logo);color:var(--logo-deep);display:flex;align-items:center;gap:12px;padding:8px 16px 8px 10px;flex:none}
+.logo .m{width:38px;height:38px;background:var(--logo-deep);color:var(--logo);display:grid;place-items:center;
+  font-family:var(--f-math);font-style:italic;font-size:30px;line-height:1;padding-right:3px}
+.logo h1{margin:0;font-weight:700;font-size:clamp(20px,2.6vw,26px);line-height:1.2;letter-spacing:.1em;text-shadow:2px 2px 0 rgba(255,255,255,.45)}
 .quote{flex:1;min-width:0;position:relative;background:var(--paper);overflow:hidden;display:flex;align-items:center;text-align:left;padding:0;cursor:pointer}
 .quote .fill{position:absolute;inset:0 auto 0 0;background:var(--paper-2);border-right:3px solid var(--c-zihin);transition:width .4s}
 .quote .qt{position:relative;display:flex;align-items:center;gap:12px;width:100%;padding:8px 14px}
@@ -73,28 +76,21 @@ button.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
 .card .cth canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
 .card .cth .dur,.card .cth .who{position:absolute;bottom:8px;font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 6px;border:2px solid var(--edge)}
 .card .cth .dur{right:8px;background:var(--edge);color:var(--ink)}
-.card .cth .who{left:8px;background:var(--ink);color:var(--on-c)}
+.card .cth .who{left:8px;background:var(--ink);color:var(--on-c);max-width:calc(100% - 110px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .ci{padding:12px 14px 14px;display:grid;gap:8px;align-content:start}
 .card .ct{font-weight:600;font-size:20px;line-height:1.2}
 .card .cs{font-size:15px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card .cf{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:2px}
-.st{font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 7px;border:2px solid var(--edge);background:var(--paper);color:var(--ink)}
-.st[data-s="izlendi"]{background:var(--mid);color:var(--on-c)}.st[data-s="uygulaniyor"]{background:var(--ok);color:var(--on-c)}
+.card .cf{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding-top:2px}
 .go{font-weight:600;font-size:14px;color:var(--c)}
-.soon{display:grid;gap:10px}
-.soon h3{margin:0;color:var(--muted)}
-.soonl{display:flex;gap:10px;flex-wrap:wrap}
-.soonl span{border:2px dashed var(--soft);padding:4px 10px;font-size:15px;color:var(--muted)}
-.empty{border:var(--bw) dashed var(--line);padding:12px 14px;color:var(--muted);max-width:560px;font-size:16px}
 
 /* NOT SAYFASI */
 .back{justify-self:start;padding:4px 12px;background:var(--paper-2)}
 .nhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:20px;align-items:start}
 .nhead > *{min-width:0}
-.screen{background:var(--screen);border:var(--bw) solid var(--edge);box-shadow:var(--sh);aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;display:grid;place-items:center}
+.screen{background:var(--screen);border:var(--bw) solid var(--edge);box-shadow:var(--sh);aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;display:grid;place-items:center;align-content:center;gap:10px;padding:12px;text-align:center}
 .screen canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.6}
-.screen .play{position:relative;background:var(--c);color:var(--on-c);border:var(--bw) solid var(--edge);box-shadow:var(--sh);padding:8px 14px;font-weight:600;font-size:15px;letter-spacing:.05em}
-.screen .demo{position:absolute;left:10px;top:10px;color:var(--muted);background:rgba(0,0,0,.4);padding:0 6px}
+.screen .play{position:relative;display:inline-block;background:var(--c);color:var(--on-c);padding:8px 14px;font-weight:600;font-size:15px;letter-spacing:.05em;text-decoration:none}
+.screen small{position:relative;color:var(--muted);font-size:14px;max-width:34ch}
 .meta{display:grid;gap:10px;align-content:start}
 .mrow{display:grid;gap:4px;padding:10px 12px;border:2px solid var(--edge);background:var(--paper-2)}
 .mrow .k{color:var(--soft)}
@@ -182,68 +178,140 @@ const QUOTES = [
 
 const S = [
  {id:"ai",ico:"AI",name:"AI · LLM",c:"--c-ai",title:"AI'ı tam potansiyelle kullanmak",
-  desc:"LLM'lerin nasıl çalıştığını kodsuz anla, prompt yazmayı öğren, istediğini yaptır.",
-  soon:["Deep Dive into LLMs","Prompting 101","Claude'a oyun yaptırmak"]},
+  desc:"LLM'lerin nasıl çalıştığını kodsuz anla, prompt yazmayı öğren, istediğini yaptır."},
  {id:"zihin",ico:"Zi",name:"Zihin & Beyin",c:"--c-zihin",title:"Beynini şekillendirmek",
-  desc:"Nöroplastisite, odak, hafıza, dopamin ve zihinsel imgeleme.",
-  soon:["Pattern recognition"]},
+  desc:"Nöroplastisite, odak, hafıza, dopamin ve zihinsel imgeleme."},
  {id:"founder",ico:"Fo",name:"Founder",c:"--c-founder",title:"Kurucu gibi düşünmek",
-  desc:"Founder hikayeleri, alınacak dersler, strateji ve motivasyon.",
-  soon:["Obsession","Non-linear careers","Founder hikayeleri","Motivasyon sözleri"]},
+  desc:"Founder hikayeleri, alınacak dersler, strateji ve motivasyon."},
  {id:"psiko",ico:"Ps",name:"Psikoloji",c:"--c-psiko",title:"Tanı ve korun",
-  desc:"Manipülasyonu fark etmek, ikna psikolojisi ve konuşma becerileri.",
-  soon:["Manipülasyon taktikleri","CIA sorgu teknikleri","MK-Ultra"]},
+  desc:"Manipülasyonu fark etmek, ikna psikolojisi ve konuşma becerileri."},
  {id:"meta",ico:"Me",name:"Metafizik & CIA",c:"--c-meta",title:"Gizliliği kaldırılmış belgeler",
-  desc:"Gateway, Stargate ve bilinç üzerine kavramlar; her notta kanıt durumu.",
-  soon:["Stargate / uzaktan görme","Holografik evren"]},
+  desc:"Gateway, Stargate ve bilinç üzerine kavramlar; her notta kanıt durumu."},
  {id:"time",ico:"Tb",name:"Timeboxing",c:"--c-time",title:"Zamanı kutulara bölmek",
-  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek.",
-  soon:["Timeboxing nedir?","Günü takvimde planlamak","Parkinson yasası","Pomodoro ile farkı"]}
+  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek."}
 ];
 
+/* v: doğrulanmış YouTube video kimliği · q: doğrulanamadı, tam başlıkla YouTube araması · url: video olmayan kaynak */
 const N = [
- {id:"llm",s:"ai",t:"LLM'leri nasıl kullanıyorum?",who:"KARPATHY",dur:"2 SA 11 DK",reel:"AI bölümünün temel videosu",
+ /* ---------- AI ---------- */
+ {id:"llm",s:"ai",t:"LLM'leri nasıl kullanıyorum?",who:"ANDREJ KARPATHY",dur:"2 SA 11 DK",v:"EWvNQjAaOHw",reel:"AI bölümünün temel videosu",
   sum:"Andrej Karpathy, LLM'leri günlük hayatta nasıl kullandığını teknik olmayan bir dille gösteriyor. Model aslında interneti sıkıştıran bir “zip dosyası”; belli bir tarihe kadar olanı biliyor. Düşünen modeller, arama, derin araştırma, dosya ve kod araçlarını hangi işte kullanacağını bilirsen çok daha fazla verim alırsın.",
   terms:[["Token","Modelin metni okuduğu küçük parçalar; kelime değil."],["Bağlam penceresi","Modelin çalışma belleği. Doldukça eski kısımlara daha az odaklanır."],["Bilgi kesim tarihi","Eğitimden sonrasını bilmez; güncel bilgi için arama gerekir."],["Düşünen modeller","Cevaptan önce düşünür; kod, matematik ve zor problemlerde daha iyi."],["LLM Konseyi","Önemli kararda aynı soruyu birkaç modele sorup karşılaştırmak."]],
   steps:["Konu değişince yeni sohbet aç.","Zor işlere düşünen model, hızlı sorulara normal model seç.","Güncel bir şey soruyorsan aramayı aç.","Sayıları kafadan değil “Python ile hesapla” diyerek yaptır.","Kendin için bir özel talimat yaz."]},
- {id:"noro",s:"zihin",t:"Beynini değiştirmek için odaklan",who:"HUBERMAN",dur:"1 SA 28 DK",reel:"Dear men… study Neuroplasticity",
+ {id:"deepdive",s:"ai",t:"LLM'lerin içi: derin dalış",who:"ANDREJ KARPATHY",dur:"3 SA 31 DK",v:"7xTGNNLPyMI",reel:"AI bölümü, LLM mekanikleri",
+  sum:"Karpathy, ChatGPT gibi bir modelin sıfırdan nasıl yapıldığını kodsuz anlatıyor. Önce internetten toplanan devasa metinle bir “temel model” eğitilir; bu model sadece bir sonraki token'ı tahmin eder. Sonra örnek sohbetlerle asistan gibi davranması öğretilir. En sonda pekiştirmeli öğrenme ile düşünmeyi öğrenir. Bu adımları bilmek, modelin neden hata yaptığını ve nasıl daha iyi kullanılacağını anlamanı sağlar.",
+  terms:[["Ön eğitim","İnternet metinleriyle bir sonraki token'ı tahmin etmeyi öğrenmek."],["Temel model","Henüz asistan olmayan, internet belgesi taklit eden model."],["Son eğitim (SFT)","Örnek sohbetlerle modele asistan gibi konuşmayı öğretmek."],["Halüsinasyon","Bilmediği yerde emin görünen ama uydurma cevap vermesi."],["Düşünmek için token","Model hesabı token token yapar; zor işi adımlara bölmek ona yardım eder."],["Pekiştirmeli öğrenme","Modelin deneme yanılmayla kendi çözüm yolunu bulması."]],
+  steps:["Zor bir soruda “adım adım düşün” de ve farkı gör.","Modelin emin olduğu bir bilgiyi kaynağıyla doğrulat.","Saymak, harf işlemek gibi işleri koda yaptır.","Bir cevabı beğenmezsen aynı soruyu yeni sohbette tekrar sor."]},
+ {id:"prompt101",s:"ai",t:"Prompting 101",who:"ANTHROPIC",dur:"~24 DK",v:"ysPbXH0LpIE",reel:"Prompt yazmayı öğrenmek",
+  sum:"Anthropic'in uygulamalı yapay zeka ekibi, gerçek bir örnek üzerinden iyi bir prompt'u adım adım kuruyor: bir sigorta hasar formunu ve kaza çizimini Claude'a analiz ettirmek. İlk prompt kötü sonuç veriyor; görev bağlamı, arka plan bilgisi, net talimatlar, örnekler ve çıktı biçimi eklendikçe sonuç düzeliyor. Ana mesaj: prompt yazmak deneyerek ilerleyen bir iştir.",
+  terms:[["Görev bağlamı","Modelin kim olduğunu ve ne yaptığını en başta söylemek."],["Arka plan bilgisi","Her seferinde değişmeyen bilgileri (form yapısı gibi) önceden vermek."],["Örnekler","İstediğin cevabın bir iki örneğini göstermek."],["Etiketler","Bilgiyi <belge> gibi etiketlerle ayırmak; model karıştırmaz."],["Çıktı biçimi","Cevabın nasıl görüneceğini açıkça tarif etmek."]],
+  steps:["Sık kullandığın bir prompt'u al ve başına görev bağlamı ekle.","Bir örnek cevap ekle ve sonucu karşılaştır.","Uzun belgeleri etiketlerle ayır.","“Emin değilsen söyle” cümlesini ekle.","Her denemeden sonra prompt'u bir adım düzelt."]},
+ {id:"oyunyap",s:"ai",t:"Claude'a oyun yaptırmak",who:"CLAUDE ARTIFACTS",dur:"YOUTUBE",q:"build a game with Claude artifacts tutorial",reel:"Build full games inside Claude",
+  sum:"Kod bilmeden Claude'a çalışan bir oyun yaptırabilirsin. Claude oyunu tek bir sayfa olarak yazar ve sohbetin içinde hemen çalıştırır. İşin sırrı, oyunu tek seferde istemek değil, küçük adımlarla büyütmek: önce oynanabilir en basit hali, sonra tek tek özellik.",
+  terms:[["Artifact","Claude'un sohbette çalıştırdığı sayfa, oyun ya da uygulama."],["En basit oynanabilir hal","Önce sadece hareket ve tek kural; süs sonra."],["Küçük adımlar","Her mesajda tek bir değişiklik istemek."],["Hata bildirimi","Ne beklediğini ve ne olduğunu açıkça yazmak."]],
+  steps:["“Ok tuşlarıyla hareket eden bir kare ve toplanan altınlar” gibi basit bir oyun iste.","Çalışınca tek bir özellik ekle: skor, zamanlayıcı ya da düşman.","Bir şey bozulursa ne beklediğini ve ne olduğunu yaz.","Claude'dan kodun bir bölümünü sana açıklamasını iste."]},
+ /* ---------- ZİHİN ---------- */
+ {id:"noro",s:"zihin",t:"Beynini değiştirmek için odaklan",who:"ANDREW HUBERMAN",dur:"1 SA 28 DK",v:"LG53Vxum0as",reel:"Dear men… study Neuroplasticity",
   sum:"Yetişkin beyni sadece maruz kalarak değişmez; değişimi yoğun odak ve uyanıklık başlatır, uyku ve derin dinlenme kalıcı hale getirir. Zorlanmak ve hata yapmak, beynin değişmeye başladığının işaretidir.",
   terms:[["Nöroplastisite","Bağlantıların deneyime göre güçlenmesi ya da zayıflaması."],["Epinefrin","Uyanıklık; öğrenme sinyalinin açık düğmesi."],["Asetilkolin","Odağın kimyasalı; neyin değişeceğini işaretler."],["Görsel odak","Gözü bir noktaya sabitlemek zihni de odaklar."],["NSDR","Uykusuz derin dinlenme; öğrenileni sağlamlaştırır."]],
   steps:["Başlamadan 30-60 sn bir noktaya bak.","En fazla 90 dakikalık bloklar halinde çalış.","Zorlanınca bırakma; bu iyi işaret.","Oturumdan sonra 10-20 dk NSDR yap.","O gece iyi uyu."]},
- {id:"hafiza",s:"zihin",t:"Hafıza sarayı",who:"J. FOER · TED",dur:"20 DK",reel:"3 Ways To Develop a Photographic Memory",
+ {id:"hafiza",s:"zihin",t:"Hafıza sarayı",who:"JOSHUA FOER · TED",dur:"20 DK",v:"U6PoUg7jXsA",reel:"3 Ways To Develop a Photographic Memory",
   sum:"Hafıza şampiyonları dahi değil; 2.500 yıllık bir teknik kullanıyorlar. Beynimiz soyut bilgiyi değil, mekânları ve canlı görüntüleri çok iyi hatırlar. Joshua Foer bir yıl çalışıp ABD Hafıza Şampiyonası'nı kazandı.",
   terms:[["Hafıza sarayı","Bilgiyi iyi bildiğin bir mekâna zihninde yerleştirmek."],["Canlı görüntü","Ne kadar tuhaf ve hareketliyse o kadar akılda kalır."],["OK platosu","“Yeterince iyi” olunca gelişmenin durması."],["Fotoğrafik hafıza","Yetişkinde kanıtlanmış örnek yok; geliştirilmiş hafıza gerçek."]],
   steps:["Evinde 10 duraklı bir rota belirle.","Her bilgiyi abartılı bir görüntüye çevir.","Görüntüyü durağa yerleştir.","Ertesi gün ve bir hafta sonra rotayı tekrar yürü."]},
- {id:"lockin",s:"zihin",t:"Odak kilidi: derin çalışma",who:"CAL NEWPORT",dur:"2 SA 53 DK",reel:"How to systematically lock in",
-  sum:"Cal Newport, Huberman Lab'de odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.",
+ {id:"lockin",s:"zihin",t:"Odak kilidi: derin çalışma",who:"CAL NEWPORT · HUBERMAN",dur:"2 SA 53 DK",v:"p4ZfkezDTXQ",reel:"How to systematically lock in",
+  sum:"Cal Newport, odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.",
   terms:[["Derin çalışma","Dikkat dağıtıcısız, zihni sınırına kadar zorlayan odaklı iş."],["Sığ çalışma","E-posta, mesaj gibi kolay ama az değer üreten işler."],["Dikkat kalıntısı","Bir işten ötekine geçince aklın bir kısmının eskide kalması."],["Zaman bloklama","Günün her saatine önceden bir iş atamak."],["Kapanış ritüeli","Günün sonunda işi bilinçli olarak kapatıp zihni boşaltmak."]],
   steps:["Yarının planını bugünden saat saat blokla.","Derin çalışma bloğunda telefonu başka odaya koy.","Mesajlara günde 2-3 sabit saatte bak.","İlk hafta 60 dk ile başla, her hafta biraz uzat.","Gün sonunda yarın için 3 maddelik not yaz ve bilgisayarı kapat."]},
- {id:"dopamin",s:"zihin",t:"Dopamin, haz ve acı dengesi",who:"HUBERMAN · LEMBKE",dur:"~2 SA",reel:"Boring my brain for 10 min so studying feels fun",
+ {id:"dopamin",s:"zihin",t:"Dopamin, haz ve acı dengesi",who:"ANNA LEMBKE · HUBERMAN",dur:"~2 SA",v:"p3JLaF_4Tz8",reel:"Boring my brain for 10 min so studying feels fun",
   sum:"Psikiyatrist Anna Lembke'ye göre beyindeki haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
   terms:[["Haz-acı terazisi","Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar."],["Tolerans","Aynı hazzı almak için gittikçe daha fazlasına ihtiyaç duymak."],["Dopamin orucu","Bir süre yoğun haz kaynağından uzak durup dengenin dönmesini beklemek."],["Kendini bağlama","Kendine engeller koymak: uygulamayı silmek, telefonu kilitlemek."],["Sıkılma","Kaçılacak bir şey değil; beynin sıfırlandığı an."]],
   steps:["Çalışmadan önce 10 dakika uyaransız otur: telefon yok, müzik yok.","Seni en çok çeken bir hızlı hazzı seç ve bir hafta ondan uzak dur.","Telefonu çalışırken başka odaya koy ya da uygulamaları kilitle.","Ödülü işin sonuna koy, başına değil.","Bir hafta sonra ders çalışmanın nasıl geldiğini not et."]},
- {id:"theater",s:"zihin",t:"Zihnin tiyatrosu: imgeleme",who:"MAXWELL MALTZ",dur:"KİTAP",reel:"Theater of Mind",noVideo:true,
+ {id:"theater",s:"zihin",t:"Zihnin tiyatrosu: imgeleme",who:"MAXWELL MALTZ",dur:"YOUTUBE",q:"Psycho-Cybernetics theater of the mind Maxwell Maltz",reel:"Theater of Mind",
   sum:"Plastik cerrah Maxwell Maltz, 1960 tarihli Psycho-Cybernetics kitabında “zihnin tiyatrosu” tekniğini anlatıyor: olmak istediğin kişiyi ve yapmak istediğin şeyi her gün zihninde bir film gibi, bütün ayrıntılarıyla oynatmak. Ona göre davranışlarımızı “kendilik imajımız” belirler ve bu imaj tekrarlanan zihinsel provalarla değişebilir.",
   terms:[["Kendilik imajı","Kendin hakkında inandığın resim; davranışlarının sınırını çizer."],["Zihinsel film","Bir sahneyi gözlerin kapalı, sesleriyle ve hisleriyle ayrıntılı canlandırmak."],["Zihinsel prova","Gerçekte yapmadan önce bir hareketi ya da konuşmayı zihinde tekrar etmek."],["Başarı mekanizması","Maltz'a göre zihin, hedef verilince ona doğru kendiliğinden yön bulur."]],
   steps:["Her gün 10-15 dakika sessiz bir yerde gözlerini kapat.","Yarın yapacağın zor bir şeyi (sunum, antrenman) baştan sona canlandır.","Sesleri, ortamı ve hissi de ekle; sadece sonucu değil süreci izle.","Bir hata yapıp toparlandığın sahneyi de prova et.","Gerçek denemeden sonra filmi gerçeğe göre güncelle."],
   ev:[["y","DESTEKLİ","Zihinsel prova, beden hareketlerinde performansı bir miktar artırabiliyor."],["n","İDDİA","“Beyin hayal ile gerçeği ayırt edemez” sözü abartılı."]]},
- {id:"disiplin",s:"zihin",t:"Öz disiplin",who:"VİDEO SEÇİLMEDİ",dur:"—",reel:"6 Practices to become Dangerously Powerful",noVideo:true,
-  sum:"Öz disiplin, o an istediğin şey yerine uzun vadede istediğin şeyi seçebilmektir. Araştırmalara göre disiplinli görünen insanlar daha çok irade kullanmıyor; ortamlarını, alışkanlıklarını ve kimliklerini buna göre kuruyorlar. Disiplin bir karakter özelliğinden çok tasarlanan bir sistemdir.",
+ {id:"disiplin",s:"zihin",t:"Öz disiplin",who:"HEALTHYGAMERGG",dur:"YOUTUBE",q:"HealthyGamerGG Why You're Struggling With Discipline",reel:"6 Practices to become Dangerously Powerful",
+  sum:"Öz disiplin, o an istediğin şey yerine uzun vadede istediğin şeyi seçebilmektir. Disiplinli görünen insanlar daha çok irade kullanmıyor; ortamlarını, alışkanlıklarını ve kimliklerini buna göre kuruyorlar. Beyin anlık ödülü sever; disiplin bu hesabı değiştiren bir sistemdir.",
   terms:[["Öz kontrol","Anlık dürtüye rağmen hedefe uygun davranmak."],["Ortam tasarımı","Doğru davranışı kolay, yanlışı zor hale getirmek."],["Kimlik temelli alışkanlık","“Spor yapmalıyım” yerine “ben spor yapan biriyim” demek."],["Uygulama niyeti","“Saat 7'de, masada, 30 dk okuyacağım” gibi net plan."],["Kendine verilen söz","Küçük sözleri tutmak kendine güveni büyütür."]],
   steps:["Her gün tutabileceğin çok küçük bir söz ver ve tut.","Dikkat dağıtan şeyleri gözün görmediği yere kaldır.","Yeni bir alışkanlığı saat ve yerle birlikte yaz.","Kaçırdığın bir günden sonra iki gün üst üste kaçırma.","Her akşam “bugün kim olduğumu kanıtladım mı?” diye sor."]},
- {id:"oyun",s:"founder",t:"Oyun teorisi: Mahkum İkilemi",who:"VERITASIUM",dur:"27 DK",reel:"Dear men… study Game theory",
+ {id:"pattern",s:"zihin",t:"Örüntü tanıma ve uzmanlık",who:"VERITASIUM",dur:"YOUTUBE",v:"5eW6Eagr9XA",reel:"Dear men… study Pattern recognition",
+  sum:"Veritasium'un “The Expert Myth” videosu, uzmanlığın doğuştan zekâdan değil, binlerce tekrarla kurulan örüntü tanımadan geldiğini anlatıyor. Satranç ustaları genel olarak daha iyi hafızaya sahip değil; ama gerçek oyun pozisyonlarını parçalar halinde bir bakışta tanıyorlar. Bu ancak dört koşul varsa olur: düzenli bir ortam, çok tekrar, hızlı geri bildirim ve konfor alanının dışında pratik.",
+  terms:[["Örüntü tanıma","Daha önce gördüğün yapıları yeni durumda hızla fark etmek."],["Parçalama (chunking)","Çok bilgiyi tek anlamlı parça olarak hatırlamak."],["Geçerli ortam","Kuralları ve düzenleri olan alan; satranç gibi."],["Hızlı geri bildirim","Hatanı hemen görmek; örüntü ancak böyle oturur."],["Bilinçli pratik","Kolay olanı değil, zorlandığın kısmı çalışmak."]],
+  steps:["Öğrendiğin alanda hızlı geri bildirim alabileceğin bir alıştırma bul.","Aynı tür problemi kısa sürede çok sayıda çöz.","Yanlışlarını bir deftere yaz ve tekrar et.","Rastgeleliği yüksek alanlarda (borsa gibi) “uzman” sözlerine temkinli yaklaş."]},
+ /* ---------- FOUNDER ---------- */
+ {id:"jobs",s:"founder",t:"Founder hikayesi: Steve Jobs, Stanford",who:"STEVE JOBS",dur:"15 DK",v:"UF8uR6Z6KLc",reel:"Founder hikayeleri",
+  sum:"Steve Jobs, 2005'teki Stanford mezuniyet konuşmasında hayatından üç hikaye anlatıyor. Birincisi noktaları birleştirmek: okulu bıraktıktan sonra merakla girdiği kaligrafi dersi, yıllar sonra Mac'in güzel yazı tiplerine dönüştü. İkincisi sevgi ve kayıp: 30 yaşında kendi kurduğu Apple'dan kovuldu, bu da NeXT ve Pixar'ı doğurdu. Üçüncüsü ölüm: her günü son günün gibi yaşamak. Kapanış: “Stay hungry, stay foolish.”",
+  terms:[["Noktaları birleştirmek","Bugünkü merakın yararı ancak geriye bakınca görülür."],["Kovulmak","Jobs'a göre başına gelen en iyi şeydi; yeniden başlangıçtı."],["Sevdiğin işi bulmak","Bulmadıysan aramaya devam et, yetinme."],["Stay hungry, stay foolish","Aç kal, toy kal: öğrenmeyi ve risk almayı bırakma."]],
+  steps:["Hayatındaki üç “nokta”yı yaz: bugün işine yarayan beklenmedik deneyimler.","Şu an sadece merak ettiğin için öğrendiğin bir şeyi seç ve devam et.","Bir başarısızlığını yaz ve sana ne kazandırdığını not et.","Kendine sor: bugün son günüm olsa bunu yapar mıydım?"]},
+ {id:"oyun",s:"founder",t:"Oyun teorisi: Mahkum İkilemi",who:"VERITASIUM",dur:"27 DK",v:"mScpHTIi-kM",reel:"Dear men… study Game theory",
   sum:"Tek seferlik oyunda ihanet cazip görünür ama ikisi de ihanet edince ikisi de kaybeder. Axelrod'un turnuvalarında en basit strateji kazandı: önce iyi ol, sonra karşının yaptığını yap. Tekrarlanan oyunda işbirliği kazanır.",
   terms:[["Mahkum İkilemi","Tek başına mantıklı olan, birlikte kötü sonuç verir."],["Tit for Tat","Önce işbirliği yap, sonra karşının önceki hamlesini tekrarla."],["4 özellik","İyi, affedici, misilleme yapan, açık."],["Sıfır toplamlı değil","Pastayı büyütmek mümkündür."]],
   steps:["İş ilişkilerini tekrarlanan oyun gibi gör.","İlk adımda iyi niyetli ol, sınırların net olsun.","Bir yanlış anlamada bir şans daha ver.","Bu hafta bir kararını oyun gibi analiz et."]},
- {id:"voss",s:"psiko",t:"Asla ortada buluşma",who:"CHRIS VOSS",dur:"50 DK",reel:"Konuşma becerileri",
+ {id:"obsession",s:"founder",t:"Takıntı: dahiliğin otobüs bileti teorisi",who:"PAUL GRAHAM",dur:"MAKALE",url:"http://paulgraham.com/genius.html",urlLabel:"MAKALEYİ OKU",reel:"Dear men… study Obsession",
+  sum:"Y Combinator'ın kurucusu Paul Graham'a göre büyük işler üç şeyden doğar: yetenek, sıkı çalışma ve bir konuya duyulan takıntılı ilgi. Çocukların otobüs bileti biriktirmesi gibi, bu ilgi çoğu zaman “işe yaramaz” görünür ve para ya da ün için değil, konunun kendisi için duyulur. En büyük keşifler bu çıkarsız merakla gelir.",
+  terms:[["Otobüs bileti teorisi","Değersiz görünen bir şeye duyulan derin, çıkarsız ilgi."],["Çıkarsız takıntı","Ödül için değil, konunun kendisi için kazmak."],["Sıkı çalışma","Takıntı, yorulmadan çok çalışmayı mümkün kılar."],["Erken işaret","Kimsenin önemsemediği bir şeye uzun süre ilgi duymak."]],
+  steps:["Kimse sormasa da üzerine saatlerce konuşabileceğin bir konu yaz.","Bu hafta o konuya ödülsüz 3 saat ayır.","İlginin seni nereye götürdüğünü not et.","Başkalarının “gereksiz” dediği bir merakı hemen bırakma."]},
+ {id:"range",s:"founder",t:"Doğrusal olmayan kariyer: Range",who:"DAVID EPSTEIN",dur:"YOUTUBE",q:"David Epstein Range why generalists triumph talk",reel:"Dear men… study Non-linear careers",
+  sum:"David Epstein, Range kitabında erken uzmanlaşmanın her alanda en iyi yol olmadığını gösteriyor. Tiger Woods küçük yaşta tek bir sporda başladı; Roger Federer ise çocukken birçok spor denedi ve tenise geç odaklandı. Kuralları net alanlarda erken uzmanlaşma işe yarar; ama belirsiz, değişken alanlarda farklı deneyimler toplayan genelciler daha başarılı olur.",
+  terms:[["Örnekleme dönemi","Odaklanmadan önce birçok alanı denemek."],["Uyum kalitesi","Kişinin yaptığı işle gerçekten uyuşması."],["Dost ortam","Kuralları ve geri bildirimi net alan; satranç, golf."],["Zorlu ortam","Kuralları belirsiz, değişken alan; iş dünyası, yenilik."],["Analojik düşünme","Bir alandan öğrendiğini başka bir alana taşımak."]],
+  steps:["Şu an ilgilendiğin farklı alanları yaz ve aralarındaki bağlantıları ara.","Bu ay tamamen yeni bir alanda küçük bir deneme yap.","Bir problemde başka bir alandan bir çözüm ödünç al.","“Geç kaldım” düşüncesini bırak; geç odaklanmak da bir yol."]},
+ {id:"quotes",s:"founder",t:"Founder'lardan motivasyon sözleri",who:"DERLEME",dur:"SÖZLER",reel:"Motivasyon sözleri",noVideo:true,
+  sum:"Kurucuların ve yatırımcıların, zor anlarda tekrar edilen sözleri. Her biri bir çalışma biçimini özetliyor: hızlı başlamak, insanların istediğini yapmak, fikirden çok uygulamaya odaklanmak.",
+  terms:[["Steve Jobs","“Stay hungry, stay foolish.” (Aç kal, toy kal.)"],["Paul Graham / Y Combinator","“Make something people want.” (İnsanların istediği bir şey yap.)"],["Reid Hoffman","“Ürününün ilk sürümünden utanmıyorsan, çok geç çıkarmışsın.”"],["Scott Belsky","“Mesele fikirler değil, fikirleri hayata geçirmek.”"],["Mark Zuckerberg","“Move fast and break things.” (Facebook'un ilk yıllarındaki iç ilkesi.)"]],
+  steps:["Bu hafta için bir söz seç ve telefonunun kilit ekranı yap.","Her sabah o sözü bugünkü bir işe bağla.","Hafta sonunda sözün sana ne yaptırdığını yaz.","Kendi sözünü yaz: senin çalışma ilken ne?"]},
+ /* ---------- PSİKOLOJİ ---------- */
+ {id:"voss",s:"psiko",t:"Asla ortada buluşma",who:"CHRIS VOSS",dur:"50 DK",v:"guZa7mQV1l0",reel:"Konuşma becerileri",
   sum:"Eski FBI rehine müzakerecisi Chris Voss'a göre insanlar duyguyla karar verir. İyi bir konuşma, karşıya anlaşıldığını hissettirmekle başlar. Bu teknikler hem iyi konuşmak hem de sana karşı kullanıldığında fark etmek için.",
   terms:[["Taktiksel empati","Karşının duygusunu anlayıp dile getirmek."],["Aynalama","Son 1-3 kelimeyi soru tonuyla tekrar etmek."],["Etiketleme","“Görünüşe göre endişelisin…” diyerek duyguya isim vermek."],["Kalibre sorular","“Ne” ve “nasıl” ile başlayan açık sorular."]],
   steps:["Bir konuşmada sadece aynalama dene.","Tartışmada önce etiketle, sonra sus.","“Neden” yerine “nasıl” sor.","Biri seni hızlı “evet”e itiyorsa yavaşla."]},
- {id:"gateway",s:"meta",t:"Gateway Process belgesi",who:"CIA · 1983",dur:"BELGE",reel:"CIA'nın mistik konseptleri",
+ {id:"manip",s:"psiko",t:"Manipülasyon taktiklerini tanımak",who:"DR. RAMANI",dur:"YOUTUBE",q:"Dr. Ramani what is gaslighting",reel:"Manipülasyon (tanıma ve korunma)",
+  sum:"Klinik psikolog Dr. Ramani Durvasula, manipülatif ilişkilerde en sık görülen taktikleri anlatıyor. Bunların ortak amacı, karşıdakinin kendi algısından şüphe etmesini ve kontrolün manipülatörde kalmasını sağlamak. Taktiğin adını bilmek, onu fark etmenin ve etkisinden çıkmanın ilk adımı.",
+  terms:[["Gaslighting","Yaşadığın şeyi inkâr ederek kendi aklından şüphe ettirmek."],["Love bombing","Başta aşırı ilgi ve övgüyle hızla bağ kurdurmak."],["Suçu çevirme","Kendi hatasını sana yüklemek: “Sen beni buna zorladın.”"],["Üçgenleme","Araya üçüncü birini sokup kıskançlık ve rekabet yaratmak."],["Sessiz ceza","Konuşmamayı cezalandırma aracı olarak kullanmak."]],
+  steps:["Olayları olduğu gün kısa notlarla yaz; hafızanı kayda dayandır.","“Bunu gerçekten ben mi yanlış hatırlıyorum?” sorusu sık geliyorsa dur ve fark et.","Güvendiğin birine durumu anlat; dışarıdan bakış iste.","Tartışmayı uzatmak yerine kısa, sakin ve sıkıcı cevaplar ver."]},
+ {id:"elicit",s:"psiko",t:"CIA bilgi sızdırma teknikleri",who:"ESKİ CIA SUBAYLARI",dur:"YOUTUBE",q:"Elicitation CIA's technique to make people talk",reel:"CIA sorgu ve etki teknikleri",
+  sum:"İstihbaratçılar bilgiyi çoğu zaman doğrudan sormaz. “Elicitation” denen yöntemle, karşıdakinin kendiliğinden anlatmasını sağlarlar: yanlış bir şey söyleyip düzeltilmeyi beklemek, yaklaşık bir sayı verip karşının onu düzeltmesini sağlamak, ya da iltifatla konuşturmak. İnsanların düzeltme, yardım etme ve takdir edilme isteğine dayanır.",
+  terms:[["Elicitation","Soru sormadan, cümlelerle bilgi aldırmak."],["Bilerek yanlış söylemek","Karşının düzeltme isteğini tetiklemek."],["Aralık verme","“Sanırım 10 ile 20 arası” deyip net sayıyı aldırmak."],["Karşılıklılık","Önce küçük bir sır verip karşılığında bilgi beklemek."],["Şaşırmış gibi yapmak","“Yok artık, olamaz” diyerek ayrıntı anlattırmak."]],
+  steps:["Biri yanlış bir şey söylediğinde her zaman düzeltmek zorunda olmadığını hatırla.","Yeni tanıştığın biri iş ya da para ayrıntısına çok ilgi gösteriyorsa yavaşla.","Bir sohbetten sonra kendine sor: ne anlattım, ne öğrendim?","Bu teknikleri etik sınırlar içinde, iyi dinleyici olmak için kullan."]},
+ {id:"mkultra",s:"psiko",t:"MK-Ultra: CIA'nın zihin kontrolü denemesi",who:"JOHN LISLE · C. WILLIAMSON",dur:"~1 SA 16 DK",q:"Investigating The True History Of MKUltra John Lisle Chris Williamson",reel:"MK-Ultra",
+  sum:"MK-Ultra, CIA'nın 1953'te başlattığı gizli bir programdı. Soğuk Savaş korkusuyla sorgu ve zihin kontrolü yöntemleri aranıyordu: LSD gibi uyuşturucular, bazen deneklerin haberi olmadan denendi. 1973'te kayıtların çoğu imha edildi; program 1975'teki Senato soruşturmalarıyla ortaya çıktı. Tarihçilere göre program istediği zihin kontrolünü hiçbir zaman başaramadı.",
+  terms:[["Sidney Gottlieb","Programı yöneten CIA kimyageri."],["Bilgisiz denekler","İnsanlara haberleri olmadan madde verilmesi; büyük etik ihlal."],["Kayıt imhası","1973'te belgelerin çoğunun yok edilmesi."],["Church Komitesi","Programı 1975'te kamuya açan Senato soruşturması."]],
+  steps:["Bir “gizli program” iddiası duyduğunda belgeye dayalı mı diye sor.","Programın gerçek yanını (deneyler) efsanesinden (başarılı zihin kontrolü) ayır.","Etik sınırların neden önemli olduğunu bu örnek üzerinden not et."],
+  ev:[["y","GERÇEK","Program vardı; Senato belgeleriyle kanıtlı."],["n","İDDİA","Başarılı zihin kontrolü sağlandığı ve bugün sürdüğü."]]},
+ /* ---------- METAFİZİK & CIA ---------- */
+ {id:"gateway",s:"meta",t:"Gateway Process belgesi",who:"CIA · 1983",dur:"BELGE",v:"nLkd_XNl-_0",reel:"CIA'nın mistik konseptleri",
   sum:"ABD Ordusu'ndan Yarbay Wayne McDonnell'in 1983 tarihli raporu, Monroe Enstitüsü'nün Gateway eğitimini inceliyor: ses frekanslarıyla farklı bilinç durumlarına ulaşmak. Belge CIA arşivinde gerçekten var; içindeki iddiaların çoğu spekülatif.",
   terms:[["Hemi-Sync","İki kulağa farklı frekans; beyin farkı ritim olarak duyar."],["Focus 10","Zihin uyanık, beden uyuyor."],["Holografik evren","Evren ve beynin hologram gibi çalıştığı fikri."],["Eksik sayfa 25","CIA kopyasında yok; sonradan ortaya çıktı."]],
   steps:["Belgeyi birincil kaynaktan oku.","Binaural sesi sadece rahatlama için dene.","Deneyim günlüğü tut.","Her iddiaya sor: deney mi, değerlendirme mi?"],
-  ev:[["y","GERÇEK","Belge CIA'nın resmi arşivinde."],["m","KARIŞIK","Binaural seslerin rahatlama etkisi tutarsız."],["n","İDDİA","Beden dışı deneyim, zamanı aşmak."]]}
+  ev:[["y","GERÇEK","Belge CIA'nın resmi arşivinde."],["m","KARIŞIK","Binaural seslerin rahatlama etkisi tutarsız."],["n","İDDİA","Beden dışı deneyim, zamanı aşmak."]]},
+ {id:"stargate",s:"meta",t:"Stargate: uzaktan görme programı",who:"THIRD EYE SPIES",dur:"BELGESEL",q:"Third Eye Spies documentary remote viewing",reel:"CIA'nın mistik konseptleri",
+  sum:"Stargate, ABD hükümetinin “uzaktan görme” üzerine yaptığı gizli araştırmaların son adıydı. 1970'lerde Stanford Araştırma Enstitüsü'nde başlayan çalışmalarda, eğitilmiş kişilerin uzak bir yeri zihinleriyle tarif edebileceği iddia edildi. Program 1995'te bağımsız bir değerlendirmeden sonra, istihbarat açısından işe yarar sonuç vermediği gerekçesiyle kapatıldı.",
+  terms:[["Uzaktan görme","Görmeden, zihinle uzak bir hedefi tarif etme iddiası."],["SRI","Araştırmaların başladığı Stanford Araştırma Enstitüsü."],["Ingo Swann","Programın en bilinen uzaktan görücülerinden."],["1995 değerlendirmesi","Programın kapanmasına yol açan bağımsız inceleme."]],
+  steps:["Belgeseli izlerken iddiaları ve belgeleri ayrı not et.","CIA okuma odasındaki Stargate belgelerinden birini aç ve oku.","Bir “isabet” örneğinde tesadüf ihtimalini düşün."],
+  ev:[["y","GERÇEK","Program vardı; belgeleri yayımlandı."],["m","TARTIŞMALI","Bazı istatistiksel sonuçlar hâlâ tartışılıyor."],["n","İDDİA","Uzaktan görmenin güvenilir çalıştığı."]]},
+ {id:"holo",s:"meta",t:"Holografik evren",who:"PBS SPACE TIME",dur:"~14 DK",q:"PBS Space Time The Holographic Universe Explained",reel:"Metafizik kavramlar",
+  sum:"Holografik ilke, fizikteki gerçek bir fikirdir: bir bölgedeki bütün bilgi, o bölgenin hacmine değil yüzeyine sığabilir; tıpkı iki boyutlu bir hologramın üç boyutlu bir görüntü taşıması gibi. Bu fikir kara deliklerin incelenmesinden doğdu. Ama bu, “hayat bir yanılsama” ya da “zihnimiz gerçeği yaratır” demek değildir; o yorumlar fiziğin söylediği şeyin çok ötesine geçer.",
+  terms:[["Holografik ilke","Bir hacmin bilgisi onun sınır yüzeyinde kodlanabilir."],["Kara delik entropisi","Kara deliğin bilgisi alanıyla orantılı; fikrin çıkış noktası."],["AdS/CFT","1997'de Maldacena'nın modelinde ilkenin matematiksel örneği."],["Mistik yorum","“Evren hayal” gibi sonuçlar fizikten gelmez."]],
+  steps:["Videoyu izle ve ilkeyi tek cümleyle kendine anlat.","Gateway belgesindeki “holografik evren” kullanımıyla karşılaştır.","Bir iddianın bilimden mi yoruma mı ait olduğunu ayırmayı dene."],
+  ev:[["y","BİLİMSEL","Holografik ilke ciddi bir fizik fikri."],["m","AÇIK SORU","Bizim evrenimiz için geçerli olduğu kanıtlanmadı."],["n","İDDİA","Bilincin gerçekliği yarattığı gibi mistik yorumlar."]]},
+ /* ---------- TIMEBOXING ---------- */
+ {id:"tbox",s:"time",t:"Timeboxing nedir?",who:"MARC ZAO-SANDERS",dur:"YOUTUBE",q:"Marc Zao-Sanders timeboxing",reel:"Timeboxing",
+  sum:"Timeboxing, yapılacaklar listesindeki işleri takvime taşımaktır: her işe ne zaman başlayıp ne zaman bitireceğini önceden yazarsın. Marc Zao-Sanders bunu “bir seferde tek iş yapmanın gücü” olarak anlatıyor. Liste neyi yapacağını söyler; takvimdeki kutu ise ne zaman ve ne kadar süre yapacağını. Böylece kararsızlık ve erteleme azalır.",
+  terms:[["Zaman kutusu","Bir işe takvimde ayrılan, başı ve sonu belli süre."],["Listeden takvime","Yapılacak işi saate bağlamak."],["Tek iş","Kutunun içinde sadece o işle uğraşmak."],["Kutuyu kapatmak","Süre bitince işi bırakıp sonucu kabul etmek."]],
+  steps:["Yarın için yapılacaklar listenden 3 işi seç.","Her birine takvimde başlangıç ve bitiş saati ver.","Kutunun içinde başka işe geçme.","Gün sonunda hangi kutuların tuttuğunu işaretle."]},
+ {id:"tblock",s:"time",t:"Günü takvimde planlamak",who:"CAL NEWPORT",dur:"YOUTUBE",q:"Cal Newport time blocking",reel:"Timeboxing",
+  sum:"Cal Newport her iş gününün her dakikasına önceden bir görev verir. Plan bozulduğunda bunu başarısızlık saymaz; oturup günün geri kalanını yeniden bloklar. Amaç plana körü körüne uymak değil, her an ne yaptığına bilinçli karar vermektir.",
+  terms:[["Zaman bloklama","Günü 30-60 dakikalık iş bloklarına bölmek."],["Yeniden bloklama","Plan bozulunca kalan saatleri yeniden planlamak."],["Tampon blok","Beklenmedik işler için boş bırakılan süre."],["Toplu işler","Mesaj ve e-posta gibi küçük işleri tek bloğa toplamak."]],
+  steps:["Sabah 5 dakika ayır ve günü kâğıda blokla.","Küçük işleri tek bir bloğa topla.","Günde en az bir tampon blok bırak.","Plan bozulunca kızma; kalan günü yeniden blokla."]},
+ {id:"parkinson",s:"time",t:"Parkinson yasası",who:"C. N. PARKINSON",dur:"YOUTUBE",q:"Parkinson's law explained",reel:"Timeboxing",
+  sum:"Tarihçi Cyril Northcote Parkinson 1955'te The Economist'te şunu yazdı: “İş, tamamlanması için ayrılan süreyi dolduracak şekilde genişler.” Bir işe bir hafta verirsen bir hafta sürer; bir gün verirsen çoğu zaman bir günde biter. Timeboxing'in işe yaramasının bir nedeni de bu.",
+  terms:[["Parkinson yasası","İş, ona ayrılan süre kadar uzar."],["Yapay son tarih","Kendine gerçek son tarihten önce bir bitiş koymak."],["Mükemmeliyetçilik","Fazla süre, gereksiz düzeltmelere davet çıkarır."],["Sıkı kutu","Bir işe tahmininden biraz az süre vermek."]],
+  steps:["Bu hafta bir işe tahmin ettiğinin yarısı kadar süre ver.","Süre bitince işi “yeterince iyi” haliyle teslim et.","Sonucu not et: kalite gerçekten düştü mü?","Büyük işlere ara son tarihler koy."]},
+ {id:"pomodoro",s:"time",t:"Pomodoro ile timeboxing farkı",who:"FRANCESCO CIRILLO",dur:"YOUTUBE",q:"Francesco Cirillo Pomodoro Technique",reel:"Timeboxing",
+  sum:"Pomodoro tekniğini Francesco Cirillo 1980'lerin sonunda, domates şeklindeki bir mutfak zamanlayıcısıyla geliştirdi: 25 dakika çalış, 5 dakika ara; dört turdan sonra uzun bir ara. Pomodoro sabit uzunlukta odak aralıklarıdır; timeboxing ise belirli bir işe takvimde istediğin uzunlukta yer ayırmaktır. İkisi birlikte kullanılabilir.",
+  terms:[["Pomodoro","25 dakikalık odak + 5 dakikalık ara."],["Uzun ara","Dört pomodorodan sonra 15-30 dakika dinlenmek."],["Sabit aralık","Pomodoro süreye, timeboxing işe göre ayarlanır."],["Birlikte kullanım","2 saatlik bir kutuyu 4 pomodoroya bölmek."]],
+  steps:["Bugün bir işi 4 pomodoro ile yap.","Aralarda ekrandan uzaklaş.","Bir başka işi 90 dakikalık tek kutu olarak yap.","Hangisinin sana uyduğunu karşılaştır."]}
 ];
 
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
@@ -254,6 +322,13 @@ const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const sec = id => S.find(x=>x.id===id);
 let cur = {sec:store.get("sec","ai"),note:null};
 if(!sec(cur.sec))cur.sec="ai";
+
+function link(n){
+  if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"► YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
+  if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"► YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
+  if(n.url) return {href:n.url,label:n.urlLabel||"► KAYNAĞI AÇ",hint:"Kaynak yeni sekmede açılır."};
+  return null;
+}
 
 function pix(cv,seed,color,dark){
   const w=48,h=21; cv.width=w; cv.height=h; const x=cv.getContext("2d");
@@ -290,18 +365,16 @@ function renderSection(){
   p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)}</span></div>
   <div class="body">
     <div class="hero"><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
-    ${notes.length?"":`<div class="empty">Bu bölümün ilk notu, aşağıdaki konulardan biri için video seçilince eklenecek.</div>`}
     <div class="grid">${notes.map((n,i)=>`<button class="card blk" type="button" data-note="${n.id}">
       <span class="cth"><canvas data-seed="${i+3+n.id.length}" aria-hidden="true"></canvas><span class="who">${esc(n.who)}</span><span class="dur">${esc(n.dur)}</span></span>
       <span class="ci"><span class="ct">${esc(n.t)}</span><span class="cs">${esc(n.sum)}</span>
-      <span class="cf"><span class="st" data-s="${status(n.id)}">${STATES.find(x=>x[0]===status(n.id))[1]}</span><span class="go">AÇ ►</span></span></span></button>`).join("")}</div>
-    ${s.soon&&s.soon.length?`<div class="soon"><h3 class="lab">Sıradaki konular</h3><div class="soonl">${s.soon.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div>`:""}
+      <span class="cf"><span class="go">AÇ ►</span></span></span></button>`).join("")}</div>
   </div>`;
   const col=cssv(s.c);
   p.querySelectorAll("canvas").forEach(c=>pix(c,+c.dataset.seed,col,false));
 }
 function renderNote(){
-  const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel");
+  const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel"), L=link(n);
   p.style.setProperty("--c",`var(${s.c})`);
   const done=store.get("c:"+n.id,[]);
   p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)} / Not</span></div>
@@ -309,16 +382,18 @@ function renderNote(){
     <button class="back blk lab" type="button" data-back>◄ Geri</button>
     <div class="hero"><span class="eyebrow lab">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
     <div class="nhead">
-      <div class="screen"><canvas id="scr" aria-hidden="true"></canvas><span class="demo lab">Demo</span><span class="play">${n.noVideo?"VİDEO HENÜZ SEÇİLMEDİ":"► VİDEO BURADA OYNAYACAK"}</span></div>
+      <div class="screen"><canvas id="scr" aria-hidden="true"></canvas>
+        ${L?`<a class="play blk" href="${esc(L.href)}" target="_blank" rel="noopener">${esc(L.label)}</a><small>${esc(L.hint)}</small>`:`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu not bir video değil; sözler aşağıda.</small>`}
+      </div>
       <div class="meta">
         <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
         <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
-        <p class="warnline">Not, transkriptten henüz doğrulanmadı.</p>
+        <p class="warnline">Not, videonun transkriptinden henüz doğrulanmadı.</p>
       </div>
     </div>
     <div class="secs">
       <section class="sec"><h3 class="lab"><i>1</i>Kısa özet</h3><div class="sb"><p>${esc(n.sum)}</p></div></section>
-      <section class="sec"><h3 class="lab"><i>2</i>Ana kavramlar</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
+      <section class="sec"><h3 class="lab"><i>2</i>${n.id==="quotes"?"Sözler":"Ana kavramlar"}</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
       <section class="sec"><h3 class="lab"><i>3</i>Nasıl uygulanır</h3><div class="sb"><ul class="steps">${n.steps.map((t,i)=>`<li><label class="step"><input type="checkbox" id="st-${n.id}-${i}" data-i="${i}" ${done.includes(i)?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul></div></section>
       ${n.ev?`<section class="sec"><h3 class="lab"><i>!</i>Kanıt durumu</h3><div class="sb"><div class="evid">${n.ev.map(e=>`<div class="ev"><span class="lv ${e[0]}">${e[1]}</span><span>${esc(e[2])}</span></div>`).join("")}</div></div></section>`:""}
     </div>
