@@ -1,4 +1,4 @@
-<title>Defter</title>
+<title>Udaio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 :root{
   --bg:#EEE5D0; --bg-dot:#DDD0B3; --paper:#FFFAEF; --paper-2:#F7EFDC; --ink:#2B251D; --edge:#2B251D;
   --muted:#6F6553; --line:#D8CBAE; --soft:#9A8E77;
-  --c-ai:#9DBBCF; --c-zihin:#B3C9A3; --c-founder:#E6C27A; --c-psiko:#DBA592; --c-meta:#B3A5CB; --c-reels:#E9DDBF;
+  --c-ai:#9DBBCF; --c-zihin:#B3C9A3; --c-founder:#E6C27A; --c-psiko:#DBA592; --c-meta:#B3A5CB; --c-time:#A9CBC2; --c-reels:#E9DDBF;
   --ok:#BFD8A9; --mid:#F0D98F; --todo:#FFFAEF; --warn:#EBB5A4;
   --screen:#2E2A24; --screen-ink:#EDE3CB;
   --f-pix:"DefterTR","Press Start 2P","Courier New",monospace;
@@ -181,7 +181,7 @@ button.blk:active,.press:active{transform:translateY(3px);box-shadow:0 1px 0 var
 
 <div class="app">
   <header class="top">
-    <div class="logo blk"><span class="m" aria-hidden="true">D</span><h1>DEFTER</h1></div>
+    <div class="logo blk"><span class="m" aria-hidden="true">U</span><h1>UDAIO</h1></div>
     <div class="week blk" aria-label="Haftalık ilerleme">
       <span class="fill" id="wfill"></span>
       <span class="wt"><span>BU HAFTA UYGULANAN</span><b id="wnum">0/6</b></span>
@@ -207,7 +207,11 @@ const S = [
  {id:"zihin",ico:"Zi",name:"Zihin & Beyin",c:"--c-zihin",
   title:"Beynini şekillendirmek",
   desc:"Nöroplastisite, odak, hafıza ve öğrenme protokolleri.",
-  soon:["Timeboxing","Odak kilidi protokolü","Dopamin ve sıkılma","Pattern recognition","Theater of Mind"]},
+  soon:["Odak kilidi protokolü","Dopamin ve sıkılma","Pattern recognition","Theater of Mind"]},
+ {id:"time",ico:"Tb",name:"Timeboxing",c:"--c-time",
+  title:"Zamanı kutulara bölmek",
+  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek.",
+  soon:["Timeboxing nedir?","Günü takvimde planlamak","Parkinson yasası","Pomodoro ile farkı"]},
  {id:"founder",ico:"Fo",name:"Founder",c:"--c-founder",
   title:"Kurucu gibi düşünmek",
   desc:"Founder hikayeleri, alınacak dersler, strateji ve motivasyon.",
@@ -266,8 +270,8 @@ const R = [
 ];
 
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
-const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("defter-demo")||"{}")}catch(e){}
-  return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("defter-demo",JSON.stringify(d))}catch(e){}}}})();
+const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("udaio-demo")||"{}")}catch(e){}
+  return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("udaio-demo",JSON.stringify(d))}catch(e){}}}})();
 const status = id => store.get("s:"+id,"izlenecek");
 const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sec = id => S.find(x=>x.id===id);
@@ -307,7 +311,7 @@ function renderSection(){
   const s=sec(cur.sec), p=document.getElementById("panel");
   p.style.setProperty("--c",`var(${s.c})`);
   if(s.id==="reels"){
-    p.innerHTML=`<div class="bar"><span class="tab">REELS</span><span class="crumb">DEFTER / REELS KUTUSU</span></div>
+    p.innerHTML=`<div class="bar"><span class="tab">REELS</span><span class="crumb">UDAIO / REELS KUTUSU</span></div>
     <div class="body"><div class="hero"><span class="eyebrow">INSTAGRAM KAYDEDİLENLER</span><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
     <div class="rlist">${R.map((r,i)=>{const rs=sec(r[1]);const lab={ok:"NOTA DÖNÜŞTÜ",wait:"BEKLİYOR",skip:"ATLANDI"}[r[2]];
       return `<div class="rr blk" style="--c:var(${rs.c})"><span class="rc" aria-hidden="true">${rs.ico}</span>
@@ -315,9 +319,10 @@ function renderSection(){
     return;
   }
   const notes=N.filter(n=>n.s===s.id);
-  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">DEFTER / ${esc(s.name.toUpperCase())}</span></div>
+  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">UDAIO / ${esc(s.name.toUpperCase())}</span></div>
   <div class="body">
     <div class="hero"><span class="eyebrow">${notes.length} NOT HAZIR</span><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
+    ${notes.length?"":`<div class="tip" style="display:block;max-width:560px"><b>HENÜZ NOT YOK</b>Bu bölümün ilk notu, aşağıdaki konulardan biri için video seçilince eklenecek.</div>`}
     <div class="grid">${notes.map((n,i)=>`<button class="card blk" type="button" data-note="${n.id}">
       <span class="cth"><canvas data-seed="${i+3+n.id.length}" aria-hidden="true"></canvas><span class="who">${esc(n.who)}</span><span class="dur">${esc(n.dur)}</span></span>
       <span class="ci"><span class="ct">${esc(n.t)}</span><span class="cs">${esc(n.sum)}</span>
@@ -332,7 +337,7 @@ function renderNote(){
   const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel");
   p.style.setProperty("--c",`var(${s.c})`);
   const done=store.get("c:"+n.id,[]);
-  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">DEFTER / ${esc(s.name.toUpperCase())} / NOT</span></div>
+  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">UDAIO / ${esc(s.name.toUpperCase())} / NOT</span></div>
   <div class="body">
     <button class="back blk" type="button" data-back>◄ GERİ</button>
     <div class="hero"><span class="eyebrow">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
