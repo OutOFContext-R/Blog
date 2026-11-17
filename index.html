@@ -11,7 +11,7 @@
 :root{
   --bg:#13241C; --bg-dot:#1C3329; --paper:#1A2F25; --paper-2:#21392D; --ink:#E9EEDF; --on-c:#10201A; --edge:#08110C;
   --muted:#A7B8A3; --line:#2F4A3C; --soft:#7D937D;
-  --c-ai:#86ABC2; --c-zihin:#97BA8F; --c-founder:#D6B267; --c-psiko:#CC937F; --c-meta:#A595C4; --c-time:#83BCAD;
+  --c-ai:#86ABC2; --c-zihin:#97BA8F; --c-founder:#D6B267; --c-psiko:#CC937F; --c-meta:#A595C4; --c-time:#83BCAD; --c-metacog:#D9A877;
   --logo:#A8D8F0; --logo-deep:#0E2A3A;
   --ok:#A9CF8F; --mid:#E3CB7A; --warn:#DE9C88;
   --screen:#0C1812;
@@ -191,7 +191,9 @@ const S = [
  {id:"meta",ico:"Me",name:"Metafizik & CIA",c:"--c-meta",title:"Gizliliği kaldırılmış belgeler",
   desc:"Gateway, Stargate ve bilinç üzerine kavramlar; her notta kanıt durumu."},
  {id:"time",ico:"Tb",name:"Timeboxing",c:"--c-time",title:"Zamanı kutulara bölmek",
-  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek."}
+  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek."},
+ {id:"meta2",ico:"Mc",name:"Metacognition",c:"--c-metacog",title:"Düşünmeni düşünmek",
+  desc:"Kendi öğrenmeni fark etmek, planlamak, izlemek ve değerlendirmek."}
 ];
 
 /* v: doğrulanmış YouTube video kimliği · q: doğrulanamadı, tam başlıkla YouTube araması · url: video olmayan kaynak */
@@ -314,7 +316,12 @@ const N = [
  {id:"pomodoro",s:"time",t:"Pomodoro ile timeboxing farkı",who:"FRANCESCO CIRILLO",dur:"YOUTUBE",q:"Francesco Cirillo Pomodoro Technique",reel:"Timeboxing",
   sum:"Pomodoro tekniğini Francesco Cirillo 1980'lerin sonunda, domates şeklindeki bir mutfak zamanlayıcısıyla geliştirdi: 25 dakika çalış, 5 dakika ara; dört turdan sonra uzun bir ara. Pomodoro sabit uzunlukta odak aralıklarıdır; timeboxing ise belirli bir işe takvimde istediğin uzunlukta yer ayırmaktır. İkisi birlikte kullanılabilir.",
   terms:[["Pomodoro","25 dakikalık odak + 5 dakikalık ara."],["Uzun ara","Dört pomodorodan sonra 15-30 dakika dinlenmek."],["Sabit aralık","Pomodoro süreye, timeboxing işe göre ayarlanır."],["Birlikte kullanım","2 saatlik bir kutuyu 4 pomodoroya bölmek."]],
-  steps:["Bugün bir işi 4 pomodoro ile yap.","Aralarda ekrandan uzaklaş.","Bir başka işi 90 dakikalık tek kutu olarak yap.","Hangisinin sana uyduğunu karşılaştır."]}
+  steps:["Bugün bir işi 4 pomodoro ile yap.","Aralarda ekrandan uzaklaş.","Bir başka işi 90 dakikalık tek kutu olarak yap.","Hangisinin sana uyduğunu karşılaştır."]},
+ /* ---------- METACOGNITION ---------- */
+ {id:"metacognition",s:"meta2",t:"Metacognition: öğrenmeni yönetmek",who:"VISUALIZE LEARNING",dur:"YOUTUBE",q:"What is metacognition Exploring the Metacognition Cycle",reel:"Kullanıcı isteği: Metacognition",
+  sum:"Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bildiğini, neyi bilmediğini ve nasıl daha iyi öğreneceğini fark etmek. Araştırmalar, iyi öğrenenlerin daha zeki olmaktan çok kendi öğrenmelerini daha iyi yönettiğini gösteriyor. Bunu üç adımlı bir döngüyle yaparlar: önce plan, sırasında izleme, sonunda değerlendirme. En büyük tuzak, notları tekrar okuyunca konuyu bildiğini sanmaktır.",
+  terms:[["Bilişüstü","Kendi düşünme ve öğrenme sürecini fark edip yönetmek."],["Planla · izle · değerlendir","Öğrenmeden önce hedef koy, sırasında takip et, sonunda ne işe yaradığını sor."],["Yeterlilik yanılsaması","Tekrar okuyunca tanıdık gelen bilgiyi bildiğini sanmak."],["Kalibrasyon","Ne kadar bildiğini doğru tahmin edebilmek."],["Geri çağırma pratiği","Bakmadan hatırlamaya çalışmak; tekrar okumaktan çok daha etkili."]],
+  steps:["Çalışmaya başlamadan önce “bu oturumun sonunda neyi bilmem lazım?” diye yaz.","Çalışırken her 20 dakikada bir kitabı kapat ve kendini test et.","Bitince konuyu bakmadan 3 cümleyle özetle.","Bir hata günlüğü tut: neyi yanlış yaptın, neden?","Konuyu bir çocuğa anlatıyormuş gibi sesli açıkla; takıldığın yer, bilmediğin yerdir."]}
 ];
 
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
