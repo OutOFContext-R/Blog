@@ -2,179 +2,153 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap">
 <style>
-/* Euiro/Aeris'in Türkçe piksel harfleri (Ç Ğ İ Ö Ş Ü ç ğ ı ö ş ü) */
-@font-face{font-family:"DefterTR";font-display:block;
-  src:url(data:font/woff2;base64,d09GMgABAAAAAAKsAAoAAAAACXgAAAJgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAdAqMSIoaATYCJAMcCxwABCAFYAeBHBt/BwAuB+zGeU8EZdHhXf+1TOCMRLGo9mq9wT80p+/nktIFhmQUkh17wiJqO1vjx8KgKkHebnyIRcyiFiHpBFkN8kPYtrVuGcUUPLNkkmCQMu5jNZdRsEB/2UFe05MJ0VQl8JmQ+Mv///+/d/pfa1B9j4uiNBwTOLF76v01jn+gFu8JEmgbOI0DijSwsUUh1bkMHokPbq7tQBNPLxGTvxQe1xEagzb8DbrCfJHGXIltjsMOMGAIQ77Ldf7KPgxXl8Xm8KlZBcVeZDwzUl3Xqbcca47u3dSQZgucNAG0QA9OAQB2+ze14gJWgieUYsVFbFh5SwFpWexA9eBTZH3TCjiXXXSmCCdH+VxLliAGDuQMaaylBdQxclp7csTDuFZ8asQpGK1LX3Fu8ZmC+6OtenJavw9//jQXYzth+NM1t+Pan99Y2joZsrTewNfbL/5AVJ/4ycaaG/avsZg2REsCCqDozfZl0s7TGZAYGcDK+HihUWlG1NKk4BBh6vNVCnxoo15yT0Hi/UuDGKOd0E4VuiTvZ360fMOiyKNauwMIZCvIf56aVeNDh6OKnJeOK/cfib6L+Z+U2lldwJylwelMGR9vBXPbGW2tbWeE01WGub3+5fCbep4AICD8P+9vMVr9Tsh8AT4T//lHesyTdwEYDljUdz4AdMwT0oO1epks4hVYJRLFobnmdfMSR2zFORJnKJJIKBQjp25qr5Ke+zx+tvcrZI8KDxTJccoxx9xwR4U0FxRx9HMEUJKRK08xxZVQUilZ+QrilWxSvQXfQDKABjmn9XDrzxtEhmWGAxjjDrcDAAAA) format("woff2");
-  unicode-range:U+00C7,U+00D6,U+00DC,U+00E7,U+00F6,U+00FC,U+011E,U+011F,U+0130,U+0131,U+015E,U+015F}
-/* Layout: Euiro iskeleti (üst bar · solda blok menü · ortada panel), krem kâğıt üstünde sakin, mat renkler.
-   Tek bilinçli görünüm: açık krem; bütün renkler açıkça tanımlı. Telefonda menü yatay şerit olur, sayfa normal kayar. */
+/* Layout: Euiro iskeleti (üst bar · solda blok menü · ortada panel), koyu yeşil zemin üstünde mat bölüm renkleri.
+   Tek bilinçli görünüm: koyu yeşil; bütün renkler açıkça tanımlı. Tek yazı tipi: Pixelify Sans.
+   Telefonda menü yatay şerit olur, sayfa normal kayar. */
 :root{
-  --bg:#EEE5D0; --bg-dot:#DDD0B3; --paper:#FFFAEF; --paper-2:#F7EFDC; --ink:#2B251D; --edge:#2B251D;
-  --muted:#6F6553; --line:#D8CBAE; --soft:#9A8E77;
-  --c-ai:#9DBBCF; --c-zihin:#B3C9A3; --c-founder:#E6C27A; --c-psiko:#DBA592; --c-meta:#B3A5CB; --c-time:#A9CBC2; --c-reels:#E9DDBF;
-  --ok:#BFD8A9; --mid:#F0D98F; --todo:#FFFAEF; --warn:#EBB5A4;
-  --screen:#2E2A24; --screen-ink:#EDE3CB;
-  --f-pix:"DefterTR","Press Start 2P","Courier New",monospace;
-  --f-head:"Pixelify Sans","Trebuchet MS",system-ui,sans-serif;
-  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#13241C; --bg-dot:#1C3329; --paper:#1A2F25; --paper-2:#21392D; --ink:#E9EEDF; --on-c:#10201A; --edge:#08110C;
+  --muted:#A7B8A3; --line:#2F4A3C; --soft:#7D937D;
+  --c-ai:#86ABC2; --c-zihin:#97BA8F; --c-founder:#D6B267; --c-psiko:#CC937F; --c-meta:#A595C4; --c-time:#83BCAD;
+  --ok:#A9CF8F; --mid:#E3CB7A; --warn:#DE9C88;
+  --screen:#0C1812;
+  --f:"Pixelify Sans","Trebuchet MS",system-ui,sans-serif;
   --bw:3px; --sh:0 4px 0 var(--edge);
-  color-scheme:light;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{background:var(--bg)}
-body{background-color:var(--bg);background-image:radial-gradient(var(--bg-dot) 1.2px,transparent 1.3px);background-size:22px 22px;
-  color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+body{background-color:var(--bg);background-image:radial-gradient(var(--bg-dot) 1.3px,transparent 1.4px);background-size:22px 22px;
+  color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.5;-webkit-text-size-adjust:100%}
 button{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:3px solid var(--c-founder);outline-offset:3px}
 .app{max-width:1240px;margin:0 auto;display:grid;gap:16px;
   padding-block:16px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .blk{border:var(--bw) solid var(--edge);box-shadow:var(--sh);border-radius:0}
-button.blk,.press{cursor:pointer;transition:transform .06s}
-button.blk:active,.press:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+button.blk{cursor:pointer;transition:transform .06s}
+button.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+.lab{font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 
 /* ÜST BAR */
 .top{display:flex;align-items:stretch;gap:12px;min-width:0}
-.logo{background:var(--c-founder);display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none}
-.logo .m{width:30px;height:30px;background:var(--ink);color:var(--c-founder);display:grid;place-items:center;font-family:var(--f-pix);font-size:13px}
-.logo h1{margin:0;font-family:var(--f-pix);font-weight:400;font-size:clamp(13px,2vw,18px);line-height:1.6;letter-spacing:.02em}
-.week{flex:1;min-width:0;position:relative;background:var(--paper);overflow:hidden;display:flex;align-items:center}
-.week .fill{position:absolute;inset:0 auto 0 0;background:var(--c-zihin);transition:width .4s}
-.week .wt{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:0 14px;font-family:var(--f-pix);font-size:9px;line-height:2}
-.week .wt span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.week b{font-weight:400;font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.streak{background:var(--paper);display:flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;flex:none}
-.streak .fl{width:30px;height:30px;background:var(--c-psiko);border:var(--bw) solid var(--edge);display:grid;place-items:center}
-.streak b{display:block;font-family:var(--f-pix);font-weight:400;font-size:12px;line-height:1.6;font-variant-numeric:tabular-nums}
-.streak small{display:block;font-family:var(--f-pix);font-size:7px;line-height:1.8;color:var(--muted)}
+.logo{background:var(--c-founder);color:var(--on-c);display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none}
+.logo .m{width:32px;height:32px;background:var(--on-c);color:var(--c-founder);display:grid;place-items:center;font-weight:700;font-size:20px}
+.logo h1{margin:0;font-weight:700;font-size:clamp(20px,2.6vw,26px);line-height:1.2;letter-spacing:.08em}
+.quote{flex:1;min-width:0;position:relative;background:var(--paper);overflow:hidden;display:flex;align-items:center;text-align:left;padding:0;cursor:pointer}
+.quote .fill{position:absolute;inset:0 auto 0 0;background:var(--paper-2);border-right:3px solid var(--c-zihin);transition:width .4s}
+.quote .qt{position:relative;display:flex;align-items:center;gap:12px;width:100%;padding:8px 14px}
+.quote .q{flex:1;min-width:0;font-size:16px;line-height:1.35;text-wrap:balance}
+.quote .q.in{animation:qin .4s ease-out}
+@keyframes qin{from{opacity:0;transform:translateY(6px)}}
+.quote b{flex:none;font-weight:600;font-size:15px;font-variant-numeric:tabular-nums;color:var(--c-zihin);white-space:nowrap}
 
 /* SAHNE */
-.stage{display:grid;grid-template-columns:232px minmax(0,1fr);gap:18px;align-items:start}
+.stage{display:grid;grid-template-columns:228px minmax(0,1fr);gap:18px;align-items:start}
 .stage > *{min-width:0}
 .side{position:sticky;top:calc(16px + env(safe-area-inset-top,0px));display:flex;flex-direction:column;gap:11px}
-.side .lbl{font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--muted);padding-left:2px}
+.side .lab{color:var(--muted);padding-left:2px}
 .nav{display:flex;align-items:center;gap:10px;padding:9px 11px;text-align:left;background:var(--paper);min-width:0;position:relative}
-.nav .ico{width:26px;height:26px;flex:none;display:grid;place-items:center;background:var(--edge);color:var(--paper);font-family:var(--f-pix);font-size:9px}
-.nav .nt{display:grid;min-width:0}
-.nav .nn{font-family:var(--f-head);font-weight:600;font-size:16px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.nav .nc{font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--muted)}
-.nav[aria-current="page"]{background:var(--c)}
-.nav[aria-current="page"] .nc{color:var(--ink)}
-.nav[aria-current="page"]::after{content:"";position:absolute;right:10px;top:50%;width:8px;height:8px;margin-top:-4px;background:var(--edge)}
-.tip{background:var(--paper-2);border:var(--bw) dashed var(--line);padding:10px 12px;font-size:13px;color:var(--muted)}
-.tip b{display:block;font-family:var(--f-pix);font-weight:400;font-size:7px;line-height:2;color:var(--ink)}
+.nav .ico{width:28px;height:28px;flex:none;display:grid;place-items:center;background:var(--edge);color:var(--c);font-weight:700;font-size:14px}
+.nav .nn{font-weight:600;font-size:17px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.nav[aria-current="page"]{background:var(--c);color:var(--on-c)}
+.nav[aria-current="page"]::after{content:"";position:absolute;right:10px;top:50%;width:8px;height:8px;margin-top:-4px;background:var(--on-c)}
 
 /* PANEL */
 .panel{background:var(--paper);border:var(--bw) solid var(--edge);box-shadow:0 6px 0 var(--edge);min-width:0}
 .bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;background:var(--paper-2);border-bottom:var(--bw) solid var(--edge)}
-.tab{font-family:var(--f-pix);font-size:9px;line-height:2;padding:2px 9px;border:var(--bw) solid var(--edge);background:var(--c,var(--c-reels))}
-.crumb{font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--muted);margin-left:auto}
+.tab{padding:1px 9px;border:var(--bw) solid var(--edge);background:var(--c);color:var(--on-c)}
+.crumb{color:var(--soft);margin-left:auto}
 .body{padding:22px 22px 28px;display:grid;gap:22px}
 .body > *{min-width:0}
 
 .hero{display:grid;gap:8px;max-width:64ch}
-.eyebrow{font-family:var(--f-pix);font-size:8px;line-height:2;color:var(--muted)}
-.hero h2{margin:0;font-family:var(--f-head);font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.1;text-wrap:balance}
-.hero p{margin:0;color:var(--muted);font-size:16.5px}
-.stats{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-family:var(--f-pix);font-size:7.5px;line-height:2;padding:0 7px;border:2px solid var(--edge);background:var(--paper);white-space:nowrap}
-.chip.k{background:var(--c)}
+.eyebrow{color:var(--muted)}
+.hero h2{margin:0;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.08;text-wrap:balance}
+.hero p{margin:0;color:var(--muted);font-size:17.5px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-.card{display:grid;grid-template-rows:auto 1fr;text-align:left;background:var(--paper);padding:0;min-width:0}
+.card{display:grid;grid-template-rows:auto 1fr;text-align:left;background:var(--paper-2);padding:0;min-width:0}
 .card .cth{position:relative;aspect-ratio:16/7;max-width:100%;background:var(--c);border-bottom:var(--bw) solid var(--edge);overflow:hidden}
 .card .cth canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
-.card .cth .dur{position:absolute;right:8px;bottom:8px;font-family:var(--f-pix);font-size:7px;line-height:2;background:var(--edge);color:var(--paper);padding:0 6px}
-.card .cth .who{position:absolute;left:8px;bottom:8px;font-family:var(--f-pix);font-size:7px;line-height:2;background:var(--paper);border:2px solid var(--edge);padding:0 6px}
+.card .cth .dur,.card .cth .who{position:absolute;bottom:8px;font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 6px;border:2px solid var(--edge)}
+.card .cth .dur{right:8px;background:var(--edge);color:var(--ink)}
+.card .cth .who{left:8px;background:var(--ink);color:var(--on-c)}
 .card .ci{padding:12px 14px 14px;display:grid;gap:8px;align-content:start}
-.card .ct{font-family:var(--f-head);font-weight:600;font-size:19px;line-height:1.2}
-.card .cs{font-size:14px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ct{font-weight:600;font-size:20px;line-height:1.2}
+.card .cs{font-size:15px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card .cf{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:2px}
-.st{font-family:var(--f-pix);font-size:7px;line-height:2;padding:0 7px;border:2px solid var(--edge);background:var(--todo)}
-.st[data-s="izlendi"]{background:var(--mid)}.st[data-s="uygulaniyor"]{background:var(--ok)}
-.go{font-family:var(--f-pix);font-size:8px;line-height:2}
+.st{font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 7px;border:2px solid var(--edge);background:var(--paper);color:var(--ink)}
+.st[data-s="izlendi"]{background:var(--mid);color:var(--on-c)}.st[data-s="uygulaniyor"]{background:var(--ok);color:var(--on-c)}
+.go{font-weight:600;font-size:14px;color:var(--c)}
 .soon{display:grid;gap:10px}
-.soon h3{margin:0;font-family:var(--f-pix);font-weight:400;font-size:8px;line-height:2;color:var(--muted)}
+.soon h3{margin:0;color:var(--muted)}
 .soonl{display:flex;gap:10px;flex-wrap:wrap}
-.soonl span{border:2px dashed var(--soft);padding:5px 10px;font-size:14px;color:var(--muted);background:var(--paper-2)}
+.soonl span{border:2px dashed var(--soft);padding:4px 10px;font-size:15px;color:var(--muted)}
+.empty{border:var(--bw) dashed var(--line);padding:12px 14px;color:var(--muted);max-width:560px;font-size:16px}
 
 /* NOT SAYFASI */
-.back{justify-self:start;font-family:var(--f-pix);font-size:8px;line-height:2;padding:4px 10px;background:var(--paper)}
+.back{justify-self:start;padding:4px 12px;background:var(--paper-2)}
 .nhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:20px;align-items:start}
 .nhead > *{min-width:0}
 .screen{background:var(--screen);border:var(--bw) solid var(--edge);box-shadow:var(--sh);aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;display:grid;place-items:center}
-.screen canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.55}
-.screen .play{position:relative;display:flex;align-items:center;gap:10px;background:var(--c);border:var(--bw) solid var(--edge);box-shadow:var(--sh);padding:9px 14px;font-family:var(--f-pix);font-size:9px;line-height:2;color:var(--ink)}
-.screen .demo{position:absolute;left:10px;top:10px;font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--screen-ink);background:rgba(0,0,0,.35);padding:0 6px}
+.screen canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.6}
+.screen .play{position:relative;background:var(--c);color:var(--on-c);border:var(--bw) solid var(--edge);box-shadow:var(--sh);padding:8px 14px;font-weight:600;font-size:15px;letter-spacing:.05em}
+.screen .demo{position:absolute;left:10px;top:10px;color:var(--muted);background:rgba(0,0,0,.4);padding:0 6px}
 .meta{display:grid;gap:10px;align-content:start}
 .mrow{display:grid;gap:4px;padding:10px 12px;border:2px solid var(--edge);background:var(--paper-2)}
-.mrow .k{font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--muted)}
-.mrow .v{font-size:14.5px;line-height:1.4}
+.mrow .k{color:var(--soft)}
+.mrow .v{font-size:15.5px;line-height:1.4;overflow-wrap:anywhere}
 .seg{display:flex;gap:6px;flex-wrap:wrap}
-.seg button{font-family:var(--f-pix);font-size:7px;line-height:2;padding:3px 8px;border:2px solid var(--edge);background:var(--paper);cursor:pointer;box-shadow:0 2px 0 var(--edge)}
-.seg button[aria-pressed="true"]{background:var(--c)}
-.warnline{font-size:13px;color:var(--muted);border-left:4px solid var(--line);padding-left:10px}
+.seg button{font-weight:600;font-size:12px;letter-spacing:.05em;padding:2px 8px;border:2px solid var(--edge);background:var(--paper);cursor:pointer;box-shadow:0 2px 0 var(--edge)}
+.seg button[aria-pressed="true"]{background:var(--c);color:var(--on-c)}
+.warnline{margin:0;font-size:14.5px;color:var(--muted);border-left:4px solid var(--line);padding-left:10px}
 
 .secs{display:grid;gap:18px;max-width:780px}
-.sec{border:var(--bw) solid var(--edge);background:var(--paper);box-shadow:var(--sh)}
-.sec > h3{margin:0;display:flex;align-items:center;gap:10px;padding:7px 12px;border-bottom:var(--bw) solid var(--edge);background:var(--paper-2);font-family:var(--f-pix);font-weight:400;font-size:9px;line-height:2}
-.sec > h3 i{font-style:normal;background:var(--edge);color:var(--paper);padding:0 6px;font-size:8px}
+.sec{border:var(--bw) solid var(--edge);background:var(--paper-2);box-shadow:var(--sh)}
+.sec > h3{margin:0;display:flex;align-items:center;gap:10px;padding:6px 12px;border-bottom:var(--bw) solid var(--edge);background:var(--paper)}
+.sec > h3 i{font-style:normal;background:var(--c);color:var(--on-c);padding:0 7px}
 .sec .sb{padding:14px 16px 16px}
-.sec .sb p{margin:0;font-size:16.5px;line-height:1.65}
+.sec .sb p{margin:0;font-size:17.5px;line-height:1.6}
 .terms{margin:0;display:grid;gap:10px}
 .term{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:4px 14px;padding-bottom:10px;border-bottom:2px dotted var(--line)}
 .term:last-child{border-bottom:0;padding-bottom:0}
-.term dt{font-family:var(--f-head);font-weight:600;font-size:16.5px;line-height:1.3}
-.term dd{margin:0;font-size:15px;color:var(--muted);line-height:1.5}
+.term dt{font-weight:600;font-size:17.5px;line-height:1.3;color:var(--c)}
+.term dd{margin:0;font-size:16px;color:var(--muted);line-height:1.5}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;cursor:pointer;padding:8px 10px;border:2px solid var(--line);background:var(--paper)}
-.step input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;border:var(--bw) solid var(--edge);background:var(--paper);display:grid;place-items:center;cursor:pointer}
+.step input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;border:var(--bw) solid var(--edge);background:var(--paper-2);display:grid;place-items:center;cursor:pointer}
 .step input:checked{background:var(--c-zihin)}
-.step input:checked::after{content:"";width:10px;height:10px;background:var(--edge)}
-.step span{font-size:15.5px;line-height:1.5}
-.step:has(input:checked){border-color:var(--edge);background:var(--paper-2)}
-.step:has(input:checked) span{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.step input:checked::after{content:"";width:10px;height:10px;background:var(--on-c)}
+.step span{font-size:16.5px;line-height:1.45}
+.step:has(input:checked){border-color:var(--edge)}
+.step:has(input:checked) span{color:var(--soft);text-decoration:line-through;text-decoration-thickness:1px}
 .evid{display:grid;gap:8px}
-.ev{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:15px}
-.ev .lv{font-family:var(--f-pix);font-size:7px;line-height:2;padding:0 6px;border:2px solid var(--edge);white-space:nowrap}
+.ev{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:16px}
+.ev .lv{font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 6px;border:2px solid var(--edge);white-space:nowrap;color:var(--on-c)}
 .lv.y{background:var(--ok)}.lv.m{background:var(--mid)}.lv.n{background:var(--warn)}
-
-/* REELS */
-.rlist{display:grid;gap:10px;max-width:860px}
-.rr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;background:var(--paper)}
-.rr .rc{width:34px;height:44px;border:2px solid var(--edge);background:var(--c);display:grid;place-items:center;font-family:var(--f-pix);font-size:8px}
-.rr .rt{display:grid;gap:2px;min-width:0}
-.rr .rt b{font-weight:600;font-size:15.5px;line-height:1.3;overflow-wrap:anywhere}
-.rr .rt small{font-family:var(--f-pix);font-size:7px;line-height:2;color:var(--muted)}
-.rs{font-family:var(--f-pix);font-size:7px;line-height:2;padding:0 6px;border:2px solid var(--edge);background:var(--paper)}
-.rs.ok{background:var(--ok)}.rs.wait{background:var(--mid)}.rs.skip{background:var(--paper-2);color:var(--muted)}
 
 @media (max-width:860px){
   .stage{grid-template-columns:minmax(0,1fr);gap:14px}
   .side{position:static;flex-direction:row;overflow-x:auto;gap:9px;padding:2px 2px 8px;margin:0 -2px;scrollbar-width:none;scroll-snap-type:x proximity}
   .side::-webkit-scrollbar{display:none}
   .side > *{flex:none;scroll-snap-align:start}
-  .side .lbl,.tip{display:none}
+  .side .lab{display:none}
   .nav{padding:7px 10px}
-  .nav .nn{font-size:15px}
+  .nav .nn{font-size:16px}
   .nav[aria-current="page"]::after{content:none}
   .nhead{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
   .app{gap:12px;padding-block:12px 32px}
   .top{flex-wrap:wrap}
-  .week{order:3;flex-basis:100%;height:40px}
-  .streak{margin-left:auto}
-  .logo{padding:6px 10px}
+  .logo{flex:1 1 100%;justify-content:flex-start}
+  .quote{flex:1 1 100%;min-height:58px}
   .body{padding:16px 14px 22px;gap:18px}
   .grid{grid-template-columns:minmax(0,1fr);gap:14px}
   .term{grid-template-columns:minmax(0,1fr)}
   .crumb{display:none}
   .sec .sb{padding:12px 12px 14px}
-  .sec .sb p{font-size:16px}
-  .rr{grid-template-columns:auto minmax(0,1fr)}
-  .rr .rs{grid-column:2;justify-self:start}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -182,14 +156,10 @@ button.blk:active,.press:active{transform:translateY(3px);box-shadow:0 1px 0 var
 <div class="app">
   <header class="top">
     <div class="logo blk"><span class="m" aria-hidden="true">U</span><h1>UDAIO</h1></div>
-    <div class="week blk" aria-label="Haftalık ilerleme">
-      <span class="fill" id="wfill"></span>
-      <span class="wt"><span>BU HAFTA UYGULANAN</span><b id="wnum">0/6</b></span>
-    </div>
-    <div class="streak blk" title="Arka arkaya çalışılan gün (demo verisi)">
-      <span class="fl" aria-hidden="true"><svg width="14" height="16" viewBox="0 0 7 8" shape-rendering="crispEdges"><path fill="#2B251D" d="M3 0h1v1h1v2h1v1h1v3H6v1H1V7H0V4h1V3h1V1h1z"/><path fill="#FFFAEF" d="M3 4h1v1h1v2H2V5h1z"/></svg></span>
-      <span><b>4 GÜN</b><small>SERİ</small></span>
-    </div>
+    <button class="quote blk" id="quote" type="button" aria-label="Sonraki motivasyon sözü">
+      <span class="fill" id="qfill"></span>
+      <span class="qt"><span class="q" id="qtext"></span><b id="qnum" title="Uygulanan not sayısı">0/0</b></span>
+    </button>
   </header>
 
   <div class="stage">
@@ -199,34 +169,36 @@ button.blk:active,.press:active{transform:translateY(3px);box-shadow:0 1px 0 var
 </div>
 
 <script>
+const QUOTES = [
+ "Karşındaki insan senin gibi hazırlansaydı, ondan korkar mıydın?",
+ "Rakibin şu an çalışıyor. Sen ne yapıyorsun?",
+ "Kimse izlemiyorken yaptığın iş, herkesin göreceği sonucu belirler.",
+ "Motivasyon gelir gider. Disiplin her sabah kapıda bekler.",
+ "Bir yıl sonra bugüne bakıp başladığın için kendine teşekkür edeceksin.",
+ "Herkes kazanmak ister. Hazırlanmaya razı olan azdır.",
+ "Zor olanı bugün yap ki yarın kolay gelsin.",
+ "Seni senin kadar ileri itebilecek kimse yok."
+];
+
 const S = [
- {id:"ai",ico:"AI",name:"AI · LLM",c:"--c-ai",
-  title:"AI'ı tam potansiyelle kullanmak",
+ {id:"ai",ico:"AI",name:"AI · LLM",c:"--c-ai",title:"AI'ı tam potansiyelle kullanmak",
   desc:"LLM'lerin nasıl çalıştığını kodsuz anla, prompt yazmayı öğren, istediğini yaptır.",
   soon:["Deep Dive into LLMs","Prompting 101","Claude'a oyun yaptırmak"]},
- {id:"zihin",ico:"Zi",name:"Zihin & Beyin",c:"--c-zihin",
-  title:"Beynini şekillendirmek",
-  desc:"Nöroplastisite, odak, hafıza ve öğrenme protokolleri.",
-  soon:["Odak kilidi protokolü","Dopamin ve sıkılma","Pattern recognition","Theater of Mind"]},
- {id:"time",ico:"Tb",name:"Timeboxing",c:"--c-time",
-  title:"Zamanı kutulara bölmek",
-  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek.",
-  soon:["Timeboxing nedir?","Günü takvimde planlamak","Parkinson yasası","Pomodoro ile farkı"]},
- {id:"founder",ico:"Fo",name:"Founder",c:"--c-founder",
-  title:"Kurucu gibi düşünmek",
+ {id:"zihin",ico:"Zi",name:"Zihin & Beyin",c:"--c-zihin",title:"Beynini şekillendirmek",
+  desc:"Nöroplastisite, odak, hafıza, dopamin ve zihinsel imgeleme.",
+  soon:["Pattern recognition"]},
+ {id:"founder",ico:"Fo",name:"Founder",c:"--c-founder",title:"Kurucu gibi düşünmek",
   desc:"Founder hikayeleri, alınacak dersler, strateji ve motivasyon.",
   soon:["Obsession","Non-linear careers","Founder hikayeleri","Motivasyon sözleri"]},
- {id:"psiko",ico:"Ps",name:"Psikoloji",c:"--c-psiko",
-  title:"Tanı ve korun",
+ {id:"psiko",ico:"Ps",name:"Psikoloji",c:"--c-psiko",title:"Tanı ve korun",
   desc:"Manipülasyonu fark etmek, ikna psikolojisi ve konuşma becerileri.",
   soon:["Manipülasyon taktikleri","CIA sorgu teknikleri","MK-Ultra"]},
- {id:"meta",ico:"Me",name:"Metafizik & CIA",c:"--c-meta",
-  title:"Gizliliği kaldırılmış belgeler",
+ {id:"meta",ico:"Me",name:"Metafizik & CIA",c:"--c-meta",title:"Gizliliği kaldırılmış belgeler",
   desc:"Gateway, Stargate ve bilinç üzerine kavramlar; her notta kanıt durumu.",
   soon:["Stargate / uzaktan görme","Holografik evren"]},
- {id:"reels",ico:"Re",name:"Reels Kutusu",c:"--c-reels",
-  title:"Kaydedilen Reels'ler",
-  desc:"Instagram'da kaydettiklerin: hangisi bir nota dönüştü, hangisi bekliyor."}
+ {id:"time",ico:"Tb",name:"Timeboxing",c:"--c-time",title:"Zamanı kutulara bölmek",
+  desc:"Her işe takvimde sabit bir süre ayırmak; yapılacaklar listesini plana çevirmek.",
+  soon:["Timeboxing nedir?","Günü takvimde planlamak","Parkinson yasası","Pomodoro ile farkı"]}
 ];
 
 const N = [
@@ -242,6 +214,23 @@ const N = [
   sum:"Hafıza şampiyonları dahi değil; 2.500 yıllık bir teknik kullanıyorlar. Beynimiz soyut bilgiyi değil, mekânları ve canlı görüntüleri çok iyi hatırlar. Joshua Foer bir yıl çalışıp ABD Hafıza Şampiyonası'nı kazandı.",
   terms:[["Hafıza sarayı","Bilgiyi iyi bildiğin bir mekâna zihninde yerleştirmek."],["Canlı görüntü","Ne kadar tuhaf ve hareketliyse o kadar akılda kalır."],["OK platosu","“Yeterince iyi” olunca gelişmenin durması."],["Fotoğrafik hafıza","Yetişkinde kanıtlanmış örnek yok; geliştirilmiş hafıza gerçek."]],
   steps:["Evinde 10 duraklı bir rota belirle.","Her bilgiyi abartılı bir görüntüye çevir.","Görüntüyü durağa yerleştir.","Ertesi gün ve bir hafta sonra rotayı tekrar yürü."]},
+ {id:"lockin",s:"zihin",t:"Odak kilidi: derin çalışma",who:"CAL NEWPORT",dur:"2 SA 53 DK",reel:"How to systematically lock in",
+  sum:"Cal Newport, Huberman Lab'de odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.",
+  terms:[["Derin çalışma","Dikkat dağıtıcısız, zihni sınırına kadar zorlayan odaklı iş."],["Sığ çalışma","E-posta, mesaj gibi kolay ama az değer üreten işler."],["Dikkat kalıntısı","Bir işten ötekine geçince aklın bir kısmının eskide kalması."],["Zaman bloklama","Günün her saatine önceden bir iş atamak."],["Kapanış ritüeli","Günün sonunda işi bilinçli olarak kapatıp zihni boşaltmak."]],
+  steps:["Yarının planını bugünden saat saat blokla.","Derin çalışma bloğunda telefonu başka odaya koy.","Mesajlara günde 2-3 sabit saatte bak.","İlk hafta 60 dk ile başla, her hafta biraz uzat.","Gün sonunda yarın için 3 maddelik not yaz ve bilgisayarı kapat."]},
+ {id:"dopamin",s:"zihin",t:"Dopamin, haz ve acı dengesi",who:"HUBERMAN · LEMBKE",dur:"~2 SA",reel:"Boring my brain for 10 min so studying feels fun",
+  sum:"Psikiyatrist Anna Lembke'ye göre beyindeki haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
+  terms:[["Haz-acı terazisi","Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar."],["Tolerans","Aynı hazzı almak için gittikçe daha fazlasına ihtiyaç duymak."],["Dopamin orucu","Bir süre yoğun haz kaynağından uzak durup dengenin dönmesini beklemek."],["Kendini bağlama","Kendine engeller koymak: uygulamayı silmek, telefonu kilitlemek."],["Sıkılma","Kaçılacak bir şey değil; beynin sıfırlandığı an."]],
+  steps:["Çalışmadan önce 10 dakika uyaransız otur: telefon yok, müzik yok.","Seni en çok çeken bir hızlı hazzı seç ve bir hafta ondan uzak dur.","Telefonu çalışırken başka odaya koy ya da uygulamaları kilitle.","Ödülü işin sonuna koy, başına değil.","Bir hafta sonra ders çalışmanın nasıl geldiğini not et."]},
+ {id:"theater",s:"zihin",t:"Zihnin tiyatrosu: imgeleme",who:"MAXWELL MALTZ",dur:"KİTAP",reel:"Theater of Mind",noVideo:true,
+  sum:"Plastik cerrah Maxwell Maltz, 1960 tarihli Psycho-Cybernetics kitabında “zihnin tiyatrosu” tekniğini anlatıyor: olmak istediğin kişiyi ve yapmak istediğin şeyi her gün zihninde bir film gibi, bütün ayrıntılarıyla oynatmak. Ona göre davranışlarımızı “kendilik imajımız” belirler ve bu imaj tekrarlanan zihinsel provalarla değişebilir.",
+  terms:[["Kendilik imajı","Kendin hakkında inandığın resim; davranışlarının sınırını çizer."],["Zihinsel film","Bir sahneyi gözlerin kapalı, sesleriyle ve hisleriyle ayrıntılı canlandırmak."],["Zihinsel prova","Gerçekte yapmadan önce bir hareketi ya da konuşmayı zihinde tekrar etmek."],["Başarı mekanizması","Maltz'a göre zihin, hedef verilince ona doğru kendiliğinden yön bulur."]],
+  steps:["Her gün 10-15 dakika sessiz bir yerde gözlerini kapat.","Yarın yapacağın zor bir şeyi (sunum, antrenman) baştan sona canlandır.","Sesleri, ortamı ve hissi de ekle; sadece sonucu değil süreci izle.","Bir hata yapıp toparlandığın sahneyi de prova et.","Gerçek denemeden sonra filmi gerçeğe göre güncelle."],
+  ev:[["y","DESTEKLİ","Zihinsel prova, beden hareketlerinde performansı bir miktar artırabiliyor."],["n","İDDİA","“Beyin hayal ile gerçeği ayırt edemez” sözü abartılı."]]},
+ {id:"disiplin",s:"zihin",t:"Öz disiplin",who:"VİDEO SEÇİLMEDİ",dur:"—",reel:"6 Practices to become Dangerously Powerful",noVideo:true,
+  sum:"Öz disiplin, o an istediğin şey yerine uzun vadede istediğin şeyi seçebilmektir. Araştırmalara göre disiplinli görünen insanlar daha çok irade kullanmıyor; ortamlarını, alışkanlıklarını ve kimliklerini buna göre kuruyorlar. Disiplin bir karakter özelliğinden çok tasarlanan bir sistemdir.",
+  terms:[["Öz kontrol","Anlık dürtüye rağmen hedefe uygun davranmak."],["Ortam tasarımı","Doğru davranışı kolay, yanlışı zor hale getirmek."],["Kimlik temelli alışkanlık","“Spor yapmalıyım” yerine “ben spor yapan biriyim” demek."],["Uygulama niyeti","“Saat 7'de, masada, 30 dk okuyacağım” gibi net plan."],["Kendine verilen söz","Küçük sözleri tutmak kendine güveni büyütür."]],
+  steps:["Her gün tutabileceğin çok küçük bir söz ver ve tut.","Dikkat dağıtan şeyleri gözün görmediği yere kaldır.","Yeni bir alışkanlığı saat ve yerle birlikte yaz.","Kaçırdığın bir günden sonra iki gün üst üste kaçırma.","Her akşam “bugün kim olduğumu kanıtladım mı?” diye sor."]},
  {id:"oyun",s:"founder",t:"Oyun teorisi: Mahkum İkilemi",who:"VERITASIUM",dur:"27 DK",reel:"Dear men… study Game theory",
   sum:"Tek seferlik oyunda ihanet cazip görünür ama ikisi de ihanet edince ikisi de kaybeder. Axelrod'un turnuvalarında en basit strateji kazandı: önce iyi ol, sonra karşının yaptığını yap. Tekrarlanan oyunda işbirliği kazanır.",
   terms:[["Mahkum İkilemi","Tek başına mantıklı olan, birlikte kötü sonuç verir."],["Tit for Tat","Önce işbirliği yap, sonra karşının önceki hamlesini tekrarla."],["4 özellik","İyi, affedici, misilleme yapan, açık."],["Sıfır toplamlı değil","Pastayı büyütmek mümkündür."]],
@@ -257,18 +246,6 @@ const N = [
   ev:[["y","GERÇEK","Belge CIA'nın resmi arşivinde."],["m","KARIŞIK","Binaural seslerin rahatlama etkisi tutarsız."],["n","İDDİA","Beden dışı deneyim, zamanı aşmak."]]}
 ];
 
-const R = [
- ["3 Ways To Develop a Photographic Memory","zihin","ok","Hafıza sarayı"],
- ["Dear men, please STUDY: Neuroplasticity…","zihin","ok","Nöroplastisite · Oyun teorisi"],
- ["How to systematically lock in","zihin","wait","Odak kilidi"],
- ["Boring my brain for 10 min","zihin","wait","Dopamin ve sıkılma"],
- ["Theater of Mind","zihin","wait","Zihinsel imgeleme"],
- ["6 Practices to become Dangerously Powerful","zihin","wait","Öz disiplin"],
- ["Because it finally makes AI good at teaching","ai","wait","AI ile öğrenme"],
- ["Build full games inside Claude","ai","wait","Claude'a oyun yaptırmak"],
- ["5 Claude skills for editing videos","ai","skip","Atlandı"]
-];
-
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
 const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("udaio-demo")||"{}")}catch(e){}
   return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("udaio-demo",JSON.stringify(d))}catch(e){}}}})();
@@ -276,99 +253,85 @@ const status = id => store.get("s:"+id,"izlenecek");
 const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sec = id => S.find(x=>x.id===id);
 let cur = {sec:store.get("sec","ai"),note:null};
+if(!sec(cur.sec))cur.sec="ai";
 
-/* Piksel küçük resimler: her kart için bölüm rengine göre basit desen */
 function pix(cv,seed,color,dark){
   const w=48,h=21; cv.width=w; cv.height=h; const x=cv.getContext("2d");
   let r=seed*9301+49297; const rnd=()=>((r=(r*9301+49297)%233280)/233280);
   x.fillStyle=color; x.fillRect(0,0,w,h);
-  x.fillStyle="rgba(43,37,29,.14)"; for(let i=0;i<70;i++){x.fillRect(Math.floor(rnd()*w),Math.floor(rnd()*h),1,1)}
-  x.fillStyle=dark?"rgba(237,227,203,.5)":"rgba(255,250,239,.75)";
+  x.fillStyle="rgba(8,17,12,.16)"; for(let i=0;i<70;i++){x.fillRect(Math.floor(rnd()*w),Math.floor(rnd()*h),1,1)}
+  x.fillStyle=dark?"rgba(233,238,223,.28)":"rgba(233,238,223,.55)";
   for(let i=0;i<5;i++){const bx=Math.floor(rnd()*(w-8)),by=Math.floor(rnd()*(h-6));x.fillRect(bx,by,Math.floor(3+rnd()*6),Math.floor(2+rnd()*3))}
-  x.fillStyle="#2B251D"; const k=Math.floor(rnd()*3);
+  x.fillStyle=dark?"#1F3A2D":"#10201A"; const k=Math.floor(rnd()*3);
   if(k===0){for(let i=0;i<w;i+=4)x.fillRect(i,h-3-Math.floor(rnd()*5),3,6)}
   else if(k===1){x.fillRect(4,h-4,w-8,1);for(let i=0;i<6;i++)x.fillRect(6+i*7,h-6-Math.floor(rnd()*8),4,1)}
   else{for(let i=0;i<4;i++){const cx=8+i*11,cy=6+Math.floor(rnd()*8);x.fillRect(cx,cy,3,3)}x.fillRect(9,h-5,w-18,1)}
 }
 const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 
+let qi=Math.floor(Math.random()*QUOTES.length), qtimer;
+function showQuote(){const el=document.getElementById("qtext");el.textContent=QUOTES[qi];el.classList.remove("in");void el.offsetWidth;el.classList.add("in")}
+function nextQuote(){qi=(qi+1)%QUOTES.length;showQuote();clearInterval(qtimer);qtimer=setInterval(nextQuote,9000)}
+
 function renderSide(){
-  const side=document.getElementById("side");
-  side.innerHTML='<span class="lbl">BÖLÜMLER</span>'+S.map(s=>{
-    const n=s.id==="reels"?R.length+" REEL":N.filter(x=>x.s===s.id).length+" NOT · "+(s.soon||[]).length+" SIRADA";
-    return `<button class="nav blk" type="button" data-sec="${s.id}" style="--c:var(${s.c})" ${cur.sec===s.id?'aria-current="page"':""}>
-      <span class="ico" aria-hidden="true">${s.ico}</span><span class="nt"><span class="nn">${esc(s.name)}</span><span class="nc">${n}</span></span></button>`}).join("")
-    +'<div class="tip"><b>DEMO</b>Videolar ve gerçek notlar bir sonraki adımda bağlanacak.</div>';
+  document.getElementById("side").innerHTML='<span class="lab">Bölümler</span>'+S.map(s=>
+    `<button class="nav blk" type="button" data-sec="${s.id}" style="--c:var(${s.c})" ${cur.sec===s.id?'aria-current="page"':""}>
+      <span class="ico" aria-hidden="true">${s.ico}</span><span class="nn">${esc(s.name)}</span></button>`).join("");
 }
-
-function renderWeek(){
+function renderProgress(){
   const done=N.filter(n=>status(n.id)==="uygulaniyor").length;
-  document.getElementById("wnum").textContent=done+"/"+N.length;
-  document.getElementById("wfill").style.width=(done/N.length*100)+"%";
+  document.getElementById("qnum").textContent=done+"/"+N.length;
+  document.getElementById("qfill").style.width=(done/N.length*100)+"%";
 }
-
 function renderSection(){
   const s=sec(cur.sec), p=document.getElementById("panel");
   p.style.setProperty("--c",`var(${s.c})`);
-  if(s.id==="reels"){
-    p.innerHTML=`<div class="bar"><span class="tab">REELS</span><span class="crumb">UDAIO / REELS KUTUSU</span></div>
-    <div class="body"><div class="hero"><span class="eyebrow">INSTAGRAM KAYDEDİLENLER</span><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
-    <div class="rlist">${R.map((r,i)=>{const rs=sec(r[1]);const lab={ok:"NOTA DÖNÜŞTÜ",wait:"BEKLİYOR",skip:"ATLANDI"}[r[2]];
-      return `<div class="rr blk" style="--c:var(${rs.c})"><span class="rc" aria-hidden="true">${rs.ico}</span>
-      <span class="rt"><b>${esc(r[0])}</b><small>${esc(rs.name.toUpperCase())} · ${esc(r[3].toUpperCase())}</small></span><span class="rs ${r[2]}">${lab}</span></div>`}).join("")}</div></div>`;
-    return;
-  }
   const notes=N.filter(n=>n.s===s.id);
-  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">UDAIO / ${esc(s.name.toUpperCase())}</span></div>
+  p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)}</span></div>
   <div class="body">
-    <div class="hero"><span class="eyebrow">${notes.length} NOT HAZIR</span><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
-    ${notes.length?"":`<div class="tip" style="display:block;max-width:560px"><b>HENÜZ NOT YOK</b>Bu bölümün ilk notu, aşağıdaki konulardan biri için video seçilince eklenecek.</div>`}
+    <div class="hero"><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
+    ${notes.length?"":`<div class="empty">Bu bölümün ilk notu, aşağıdaki konulardan biri için video seçilince eklenecek.</div>`}
     <div class="grid">${notes.map((n,i)=>`<button class="card blk" type="button" data-note="${n.id}">
       <span class="cth"><canvas data-seed="${i+3+n.id.length}" aria-hidden="true"></canvas><span class="who">${esc(n.who)}</span><span class="dur">${esc(n.dur)}</span></span>
       <span class="ci"><span class="ct">${esc(n.t)}</span><span class="cs">${esc(n.sum)}</span>
       <span class="cf"><span class="st" data-s="${status(n.id)}">${STATES.find(x=>x[0]===status(n.id))[1]}</span><span class="go">AÇ ►</span></span></span></button>`).join("")}</div>
-    ${s.soon&&s.soon.length?`<div class="soon"><h3>SIRADAKİ KONULAR</h3><div class="soonl">${s.soon.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div>`:""}
+    ${s.soon&&s.soon.length?`<div class="soon"><h3 class="lab">Sıradaki konular</h3><div class="soonl">${s.soon.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div>`:""}
   </div>`;
   const col=cssv(s.c);
   p.querySelectorAll("canvas").forEach(c=>pix(c,+c.dataset.seed,col,false));
 }
-
 function renderNote(){
   const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel");
   p.style.setProperty("--c",`var(${s.c})`);
   const done=store.get("c:"+n.id,[]);
-  p.innerHTML=`<div class="bar"><span class="tab">${esc(s.name.toUpperCase())}</span><span class="crumb">UDAIO / ${esc(s.name.toUpperCase())} / NOT</span></div>
+  p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)} / Not</span></div>
   <div class="body">
-    <button class="back blk" type="button" data-back>◄ GERİ</button>
-    <div class="hero"><span class="eyebrow">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
+    <button class="back blk lab" type="button" data-back>◄ Geri</button>
+    <div class="hero"><span class="eyebrow lab">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
     <div class="nhead">
-      <div class="screen"><canvas id="scr" aria-hidden="true"></canvas><span class="demo">DEMO</span><span class="play">► VİDEO BURADA OYNAYACAK</span></div>
+      <div class="screen"><canvas id="scr" aria-hidden="true"></canvas><span class="demo lab">Demo</span><span class="play">${n.noVideo?"VİDEO HENÜZ SEÇİLMEDİ":"► VİDEO BURADA OYNAYACAK"}</span></div>
       <div class="meta">
-        <div class="mrow"><span class="k">KAYNAK REEL</span><span class="v">${esc(n.reel)}</span></div>
-        <div class="mrow"><span class="k">DURUM</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
+        <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
+        <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
         <p class="warnline">Not, transkriptten henüz doğrulanmadı.</p>
       </div>
     </div>
     <div class="secs">
-      <section class="sec"><h3><i>1</i>KISA ÖZET</h3><div class="sb"><p>${esc(n.sum)}</p></div></section>
-      <section class="sec"><h3><i>2</i>ANA KAVRAMLAR</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
-      <section class="sec"><h3><i>3</i>NASIL UYGULANIR</h3><div class="sb"><ul class="steps">${n.steps.map((t,i)=>`<li><label class="step"><input type="checkbox" id="st-${n.id}-${i}" data-i="${i}" ${done.includes(i)?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul></div></section>
-      ${n.ev?`<section class="sec"><h3><i>!</i>KANIT DURUMU</h3><div class="sb"><div class="evid">${n.ev.map(e=>`<div class="ev"><span class="lv ${e[0]}">${e[1]}</span><span>${esc(e[2])}</span></div>`).join("")}</div></div></section>`:""}
+      <section class="sec"><h3 class="lab"><i>1</i>Kısa özet</h3><div class="sb"><p>${esc(n.sum)}</p></div></section>
+      <section class="sec"><h3 class="lab"><i>2</i>Ana kavramlar</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
+      <section class="sec"><h3 class="lab"><i>3</i>Nasıl uygulanır</h3><div class="sb"><ul class="steps">${n.steps.map((t,i)=>`<li><label class="step"><input type="checkbox" id="st-${n.id}-${i}" data-i="${i}" ${done.includes(i)?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul></div></section>
+      ${n.ev?`<section class="sec"><h3 class="lab"><i>!</i>Kanıt durumu</h3><div class="sb"><div class="evid">${n.ev.map(e=>`<div class="ev"><span class="lv ${e[0]}">${e[1]}</span><span>${esc(e[2])}</span></div>`).join("")}</div></div></section>`:""}
     </div>
   </div>`;
-  const c=document.getElementById("scr"); pix(c,n.id.length*7,cssv("--screen"),true);
+  pix(document.getElementById("scr"),n.id.length*7,cssv("--screen"),true);
 }
+function render(){renderSide();renderProgress();cur.note?renderNote():renderSection()}
 
-function render(){
-  renderSide(); renderWeek();
-  cur.note?renderNote():renderSection();
-}
-
+document.getElementById("quote").addEventListener("click",nextQuote);
 document.addEventListener("click",e=>{
   const nav=e.target.closest("[data-sec]");
   if(nav){cur={sec:nav.dataset.sec,note:null};store.set("sec",cur.sec);render();
-    if(matchMedia("(max-width:860px)").matches)document.getElementById("panel").scrollIntoView({block:"start",behavior:"smooth"});
-    nav.scrollIntoView({inline:"nearest",block:"nearest"});return}
+    const b=document.querySelector(`[data-sec="${cur.sec}"]`); b&&b.scrollIntoView({inline:"nearest",block:"nearest"});return}
   const card=e.target.closest("[data-note]");
   if(card){cur.note=card.dataset.note;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
   if(e.target.closest("[data-back]")){cur.note=null;render();return}
@@ -382,6 +345,6 @@ document.addEventListener("change",e=>{
   const n=N.find(x=>x.id===cur.note);
   if(d.length===n.steps.length&&status(n.id)!=="uygulaniyor"){store.set("s:"+n.id,"uygulaniyor");render()}
 });
-if(!sec(cur.sec))cur.sec="ai";
+showQuote(); qtimer=setInterval(nextQuote,9000);
 render();
 </script>
