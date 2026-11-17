@@ -90,6 +90,8 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
 .screen{background:var(--screen);border:var(--bw) solid var(--edge);box-shadow:var(--sh);aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;display:grid;place-items:center;align-content:center;gap:10px;padding:12px;text-align:center}
 .screen canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.6}
 .screen .play{position:relative;display:inline-block;background:var(--c);color:var(--on-c);padding:8px 14px;font-weight:600;font-size:15px;letter-spacing:.05em;text-decoration:none}
+.screen.embed{padding:0}
+.screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
 .screen small{position:relative;color:var(--muted);font-size:14px;max-width:34ch}
 .meta{display:grid;gap:10px;align-content:start}
 .mrow{display:grid;gap:4px;padding:10px 12px;border:2px solid var(--edge);background:var(--paper-2)}
@@ -211,20 +213,20 @@ const N = [
   terms:[["Artifact","Claude'un sohbette çalıştırdığı sayfa, oyun ya da uygulama."],["En basit oynanabilir hal","Önce sadece hareket ve tek kural; süs sonra."],["Küçük adımlar","Her mesajda tek bir değişiklik istemek."],["Hata bildirimi","Ne beklediğini ve ne olduğunu açıkça yazmak."]],
   steps:["“Ok tuşlarıyla hareket eden bir kare ve toplanan altınlar” gibi basit bir oyun iste.","Çalışınca tek bir özellik ekle: skor, zamanlayıcı ya da düşman.","Bir şey bozulursa ne beklediğini ve ne olduğunu yaz.","Claude'dan kodun bir bölümünü sana açıklamasını iste."]},
  /* ---------- ZİHİN ---------- */
- {id:"noro",s:"zihin",t:"Beynini değiştirmek için odaklan",who:"ANDREW HUBERMAN",dur:"1 SA 28 DK",v:"LG53Vxum0as",reel:"Dear men… study Neuroplasticity",
-  sum:"Yetişkin beyni sadece maruz kalarak değişmez; değişimi yoğun odak ve uyanıklık başlatır, uyku ve derin dinlenme kalıcı hale getirir. Zorlanmak ve hata yapmak, beynin değişmeye başladığının işaretidir.",
-  terms:[["Nöroplastisite","Bağlantıların deneyime göre güçlenmesi ya da zayıflaması."],["Epinefrin","Uyanıklık; öğrenme sinyalinin açık düğmesi."],["Asetilkolin","Odağın kimyasalı; neyin değişeceğini işaretler."],["Görsel odak","Gözü bir noktaya sabitlemek zihni de odaklar."],["NSDR","Uykusuz derin dinlenme; öğrenileni sağlamlaştırır."]],
-  steps:["Başlamadan 30-60 sn bir noktaya bak.","En fazla 90 dakikalık bloklar halinde çalış.","Zorlanınca bırakma; bu iyi işaret.","Oturumdan sonra 10-20 dk NSDR yap.","O gece iyi uyu."]},
+ {id:"noro",s:"zihin",t:"Beynin her gün değişiyor: nöroplastisite",who:"LARA BOYD · TEDX",dur:"14 DK",v:"LNHBMFCzznE",reel:"Dear men… study Neuroplasticity",
+  sum:"Beyin araştırmacısı Dr. Lara Boyd, öğrendiğin her şeyin beynini fiziksel olarak değiştirdiğini anlatıyor. Değişim üç yolla olur: kimyasal (kısa süreli), yapısal ve işlevsel (kalıcı). Kalıcı değişimin tek sürücüsü davranıştır: pratik. Herkesin beyni farklı öğrenir; zorlanmak ve yavaş ilerlemek, değişimin gerçekten olduğunun işaretidir.",
+  terms:[["Nöroplastisite","Beynin deneyimle kendini yeniden yapılandırması."],["Kimyasal değişim","Hücreler arası sinyal artar; kısa süreli hafızayı destekler."],["Yapısal değişim","Bağlantılar fiziksel olarak değişir; uzun süreli öğrenme."],["İşlevsel değişim","Bir beceri için kullanılan beyin bölgesi daha kolay çalışır hale gelir."],["Bireysel öğrenme","Herkese uyan tek bir öğrenme yolu yok."]],
+  steps:["Öğrenmek istediğin bir beceriyi seç ve her gün kısa da olsa pratik yap.","Zorlandığında bırakma; zorluk yapısal değişimin habercisi.","Hangi çalışma biçiminin sana yaradığını bir hafta not et.","İlerlemeyi haftalık ölç; günlük dalgalanmaya takılma."]},
  {id:"hafiza",s:"zihin",t:"Hafıza sarayı",who:"JOSHUA FOER · TED",dur:"20 DK",v:"U6PoUg7jXsA",reel:"3 Ways To Develop a Photographic Memory",
   sum:"Hafıza şampiyonları dahi değil; 2.500 yıllık bir teknik kullanıyorlar. Beynimiz soyut bilgiyi değil, mekânları ve canlı görüntüleri çok iyi hatırlar. Joshua Foer bir yıl çalışıp ABD Hafıza Şampiyonası'nı kazandı.",
   terms:[["Hafıza sarayı","Bilgiyi iyi bildiğin bir mekâna zihninde yerleştirmek."],["Canlı görüntü","Ne kadar tuhaf ve hareketliyse o kadar akılda kalır."],["OK platosu","“Yeterince iyi” olunca gelişmenin durması."],["Fotoğrafik hafıza","Yetişkinde kanıtlanmış örnek yok; geliştirilmiş hafıza gerçek."]],
   steps:["Evinde 10 duraklı bir rota belirle.","Her bilgiyi abartılı bir görüntüye çevir.","Görüntüyü durağa yerleştir.","Ertesi gün ve bir hafta sonra rotayı tekrar yürü."]},
- {id:"lockin",s:"zihin",t:"Odak kilidi: derin çalışma",who:"CAL NEWPORT · HUBERMAN",dur:"2 SA 53 DK",v:"p4ZfkezDTXQ",reel:"How to systematically lock in",
-  sum:"Cal Newport, odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.",
+ {id:"lockin",s:"zihin",t:"Odak kilidi: derin çalışma",who:"PRODUCTIVITY GAME",dur:"ANİMASYON",q:"Productivity Game Success in a distracted world DEEP WORK by Cal Newport",reel:"How to systematically lock in",
+  sum:"Cal Newport'un Deep Work kitabının animasyonlu özeti. Newport, odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.",
   terms:[["Derin çalışma","Dikkat dağıtıcısız, zihni sınırına kadar zorlayan odaklı iş."],["Sığ çalışma","E-posta, mesaj gibi kolay ama az değer üreten işler."],["Dikkat kalıntısı","Bir işten ötekine geçince aklın bir kısmının eskide kalması."],["Zaman bloklama","Günün her saatine önceden bir iş atamak."],["Kapanış ritüeli","Günün sonunda işi bilinçli olarak kapatıp zihni boşaltmak."]],
   steps:["Yarının planını bugünden saat saat blokla.","Derin çalışma bloğunda telefonu başka odaya koy.","Mesajlara günde 2-3 sabit saatte bak.","İlk hafta 60 dk ile başla, her hafta biraz uzat.","Gün sonunda yarın için 3 maddelik not yaz ve bilgisayarı kapat."]},
- {id:"dopamin",s:"zihin",t:"Dopamin, haz ve acı dengesi",who:"ANNA LEMBKE · HUBERMAN",dur:"~2 SA",v:"p3JLaF_4Tz8",reel:"Boring my brain for 10 min so studying feels fun",
-  sum:"Psikiyatrist Anna Lembke'ye göre beyindeki haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
+ {id:"dopamin",s:"zihin",t:"Dopamin: zor işi sevdirmek",who:"KURGULU VİDEO",dur:"YOUTUBE",v:"H9G9h1kJXa4",reel:"Boring my brain for 10 min so studying feels fun",
+  sum:"“How to Make Hard Work ADDICTIVE” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve çalışmayı nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
   terms:[["Haz-acı terazisi","Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar."],["Tolerans","Aynı hazzı almak için gittikçe daha fazlasına ihtiyaç duymak."],["Dopamin orucu","Bir süre yoğun haz kaynağından uzak durup dengenin dönmesini beklemek."],["Kendini bağlama","Kendine engeller koymak: uygulamayı silmek, telefonu kilitlemek."],["Sıkılma","Kaçılacak bir şey değil; beynin sıfırlandığı an."]],
   steps:["Çalışmadan önce 10 dakika uyaransız otur: telefon yok, müzik yok.","Seni en çok çeken bir hızlı hazzı seç ve bir hafta ondan uzak dur.","Telefonu çalışırken başka odaya koy ya da uygulamaları kilitle.","Ödülü işin sonuna koy, başına değil.","Bir hafta sonra ders çalışmanın nasıl geldiğini not et."]},
  {id:"theater",s:"zihin",t:"Zihnin tiyatrosu: imgeleme",who:"MAXWELL MALTZ",dur:"YOUTUBE",q:"Psycho-Cybernetics theater of the mind Maxwell Maltz",reel:"Theater of Mind",
@@ -253,7 +255,7 @@ const N = [
   sum:"Y Combinator'ın kurucusu Paul Graham'a göre büyük işler üç şeyden doğar: yetenek, sıkı çalışma ve bir konuya duyulan takıntılı ilgi. Çocukların otobüs bileti biriktirmesi gibi, bu ilgi çoğu zaman “işe yaramaz” görünür ve para ya da ün için değil, konunun kendisi için duyulur. En büyük keşifler bu çıkarsız merakla gelir.",
   terms:[["Otobüs bileti teorisi","Değersiz görünen bir şeye duyulan derin, çıkarsız ilgi."],["Çıkarsız takıntı","Ödül için değil, konunun kendisi için kazmak."],["Sıkı çalışma","Takıntı, yorulmadan çok çalışmayı mümkün kılar."],["Erken işaret","Kimsenin önemsemediği bir şeye uzun süre ilgi duymak."]],
   steps:["Kimse sormasa da üzerine saatlerce konuşabileceğin bir konu yaz.","Bu hafta o konuya ödülsüz 3 saat ayır.","İlginin seni nereye götürdüğünü not et.","Başkalarının “gereksiz” dediği bir merakı hemen bırakma."]},
- {id:"range",s:"founder",t:"Doğrusal olmayan kariyer: Range",who:"DAVID EPSTEIN",dur:"YOUTUBE",q:"David Epstein Range why generalists triumph talk",reel:"Dear men… study Non-linear careers",
+ {id:"range",s:"founder",t:"Doğrusal olmayan kariyer: Range",who:"DAVID EPSTEIN · TED",dur:"TED",q:"David Epstein Why specializing early doesn't always mean career success TED",reel:"Dear men… study Non-linear careers",
   sum:"David Epstein, Range kitabında erken uzmanlaşmanın her alanda en iyi yol olmadığını gösteriyor. Tiger Woods küçük yaşta tek bir sporda başladı; Roger Federer ise çocukken birçok spor denedi ve tenise geç odaklandı. Kuralları net alanlarda erken uzmanlaşma işe yarar; ama belirsiz, değişken alanlarda farklı deneyimler toplayan genelciler daha başarılı olur.",
   terms:[["Örnekleme dönemi","Odaklanmadan önce birçok alanı denemek."],["Uyum kalitesi","Kişinin yaptığı işle gerçekten uyuşması."],["Dost ortam","Kuralları ve geri bildirimi net alan; satranç, golf."],["Zorlu ortam","Kuralları belirsiz, değişken alan; iş dünyası, yenilik."],["Analojik düşünme","Bir alandan öğrendiğini başka bir alana taşımak."]],
   steps:["Şu an ilgilendiğin farklı alanları yaz ve aralarındaki bağlantıları ara.","Bu ay tamamen yeni bir alanda küçük bir deneme yap.","Bir problemde başka bir alandan bir çözüm ödünç al.","“Geç kaldım” düşüncesini bırak; geç odaklanmak da bir yol."]},
@@ -274,7 +276,7 @@ const N = [
   sum:"İstihbaratçılar bilgiyi çoğu zaman doğrudan sormaz. “Elicitation” denen yöntemle, karşıdakinin kendiliğinden anlatmasını sağlarlar: yanlış bir şey söyleyip düzeltilmeyi beklemek, yaklaşık bir sayı verip karşının onu düzeltmesini sağlamak, ya da iltifatla konuşturmak. İnsanların düzeltme, yardım etme ve takdir edilme isteğine dayanır.",
   terms:[["Elicitation","Soru sormadan, cümlelerle bilgi aldırmak."],["Bilerek yanlış söylemek","Karşının düzeltme isteğini tetiklemek."],["Aralık verme","“Sanırım 10 ile 20 arası” deyip net sayıyı aldırmak."],["Karşılıklılık","Önce küçük bir sır verip karşılığında bilgi beklemek."],["Şaşırmış gibi yapmak","“Yok artık, olamaz” diyerek ayrıntı anlattırmak."]],
   steps:["Biri yanlış bir şey söylediğinde her zaman düzeltmek zorunda olmadığını hatırla.","Yeni tanıştığın biri iş ya da para ayrıntısına çok ilgi gösteriyorsa yavaşla.","Bir sohbetten sonra kendine sor: ne anlattım, ne öğrendim?","Bu teknikleri etik sınırlar içinde, iyi dinleyici olmak için kullan."]},
- {id:"mkultra",s:"psiko",t:"MK-Ultra: CIA'nın zihin kontrolü denemesi",who:"JOHN LISLE · C. WILLIAMSON",dur:"~1 SA 16 DK",q:"Investigating The True History Of MKUltra John Lisle Chris Williamson",reel:"MK-Ultra",
+ {id:"mkultra",s:"psiko",t:"MK-Ultra: CIA'nın zihin kontrolü denemesi",who:"BBC REEL",dur:"KISA",q:"BBC Reel MK-Ultra The shocking Cold War experiments hidden by the CIA",reel:"MK-Ultra",
   sum:"MK-Ultra, CIA'nın 1953'te başlattığı gizli bir programdı. Soğuk Savaş korkusuyla sorgu ve zihin kontrolü yöntemleri aranıyordu: LSD gibi uyuşturucular, bazen deneklerin haberi olmadan denendi. 1973'te kayıtların çoğu imha edildi; program 1975'teki Senato soruşturmalarıyla ortaya çıktı. Tarihçilere göre program istediği zihin kontrolünü hiçbir zaman başaramadı.",
   terms:[["Sidney Gottlieb","Programı yöneten CIA kimyageri."],["Bilgisiz denekler","İnsanlara haberleri olmadan madde verilmesi; büyük etik ihlal."],["Kayıt imhası","1973'te belgelerin çoğunun yok edilmesi."],["Church Komitesi","Programı 1975'te kamuya açan Senato soruşturması."]],
   steps:["Bir “gizli program” iddiası duyduğunda belgeye dayalı mı diye sor.","Programın gerçek yanını (deneyler) efsanesinden (başarılı zihin kontrolü) ayır.","Etik sınırların neden önemli olduğunu bu örnek üzerinden not et."],
@@ -285,7 +287,7 @@ const N = [
   terms:[["Hemi-Sync","İki kulağa farklı frekans; beyin farkı ritim olarak duyar."],["Focus 10","Zihin uyanık, beden uyuyor."],["Holografik evren","Evren ve beynin hologram gibi çalıştığı fikri."],["Eksik sayfa 25","CIA kopyasında yok; sonradan ortaya çıktı."]],
   steps:["Belgeyi birincil kaynaktan oku.","Binaural sesi sadece rahatlama için dene.","Deneyim günlüğü tut.","Her iddiaya sor: deney mi, değerlendirme mi?"],
   ev:[["y","GERÇEK","Belge CIA'nın resmi arşivinde."],["m","KARIŞIK","Binaural seslerin rahatlama etkisi tutarsız."],["n","İDDİA","Beden dışı deneyim, zamanı aşmak."]]},
- {id:"stargate",s:"meta",t:"Stargate: uzaktan görme programı",who:"THIRD EYE SPIES",dur:"BELGESEL",q:"Third Eye Spies documentary remote viewing",reel:"CIA'nın mistik konseptleri",
+ {id:"stargate",s:"meta",t:"Stargate: uzaktan görme programı",who:"AÇIKLAYICI",dur:"YOUTUBE",q:"Project Stargate CIA remote viewing explained",reel:"CIA'nın mistik konseptleri",
   sum:"Stargate, ABD hükümetinin “uzaktan görme” üzerine yaptığı gizli araştırmaların son adıydı. 1970'lerde Stanford Araştırma Enstitüsü'nde başlayan çalışmalarda, eğitilmiş kişilerin uzak bir yeri zihinleriyle tarif edebileceği iddia edildi. Program 1995'te bağımsız bir değerlendirmeden sonra, istihbarat açısından işe yarar sonuç vermediği gerekçesiyle kapatıldı.",
   terms:[["Uzaktan görme","Görmeden, zihinle uzak bir hedefi tarif etme iddiası."],["SRI","Araştırmaların başladığı Stanford Araştırma Enstitüsü."],["Ingo Swann","Programın en bilinen uzaktan görücülerinden."],["1995 değerlendirmesi","Programın kapanmasına yol açan bağımsız inceleme."]],
   steps:["Belgeseli izlerken iddiaları ve belgeleri ayrı not et.","CIA okuma odasındaki Stargate belgelerinden birini aç ve oku.","Bir “isabet” örneğinde tesadüf ihtimalini düşün."],
@@ -323,6 +325,8 @@ const sec = id => S.find(x=>x.id===id);
 let cur = {sec:store.get("sec","ai"),note:null};
 if(!sec(cur.sec))cur.sec="ai";
 
+/* Claude yapıtı iframe'e izin vermez; videolar yalnızca GitHub Pages'te sayfanın içinde oynar. */
+const EMBED = /\.github\.io$/.test(location.hostname);
 function link(n){
   if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"► YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
   if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"► YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
@@ -382,8 +386,8 @@ function renderNote(){
     <button class="back blk lab" type="button" data-back>◄ Geri</button>
     <div class="hero"><span class="eyebrow lab">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
     <div class="nhead">
-      <div class="screen"><canvas id="scr" aria-hidden="true"></canvas>
-        ${L?`<a class="play blk" href="${esc(L.href)}" target="_blank" rel="noopener">${esc(L.label)}</a><small>${esc(L.hint)}</small>`:`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu not bir video değil; sözler aşağıda.</small>`}
+      <div class="screen${EMBED&&n.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>
+        ${EMBED&&n.v?`<iframe src="https://www.youtube-nocookie.com/embed/${esc(n.v)}?rel=0" title="${esc(n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`:L?`<a class="play blk" href="${esc(L.href)}" target="_blank" rel="noopener">${esc(L.label)}</a><small>${esc(L.hint)}</small>`:`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu not bir video değil; sözler aşağıda.</small>`}
       </div>
       <div class="meta">
         <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>

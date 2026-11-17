@@ -1,9 +1,9 @@
 ---
 baslik: "Stargate: uzaktan görme programı"
 bolum: metafizik-cia
-kaynak: "THIRD EYE SPIES"
-sure: "BELGESEL"
-video: "https://www.youtube.com/results?search_query=Third%20Eye%20Spies%20documentary%20remote%20viewing"
+kaynak: "AÇIKLAYICI"
+sure: "YOUTUBE"
+video: "https://www.youtube.com/results?search_query=Project%20Stargate%20CIA%20remote%20viewing%20explained"
 video_dogrulandi: false
 kaynak_reel: "CIA'nın mistik konseptleri"
 dogrulama: "Transkriptten doğrulanmadı."

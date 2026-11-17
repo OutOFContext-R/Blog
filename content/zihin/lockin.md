@@ -1,10 +1,10 @@
 ---
 baslik: "Odak kilidi: derin çalışma"
 bolum: zihin
-kaynak: "CAL NEWPORT · HUBERMAN"
-sure: "2 SA 53 DK"
-video: "https://www.youtube.com/watch?v=p4ZfkezDTXQ"
-video_dogrulandi: true
+kaynak: "PRODUCTIVITY GAME"
+sure: "ANİMASYON"
+video: "https://www.youtube.com/results?search_query=Productivity%20Game%20Success%20in%20a%20distracted%20world%20DEEP%20WORK%20by%20Cal%20Newport"
+video_dogrulandi: false
 kaynak_reel: "How to systematically lock in"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Odak kilidi: derin çalışma
 
 ## 1. Kısa özet
-Cal Newport, odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.
+Cal Newport'un Deep Work kitabının animasyonlu özeti. Newport, odaklanmanın bir yetenek değil, antrenmanla gelişen bir beceri olduğunu anlatıyor. Değerli işler “derin çalışma” ister: dikkat dağılmadan, uzun süre tek bir zor işe odaklanmak. Bunun için günü önceden bloklara bölmek ve işler arası geçişi azaltmak gerekir.
 
 ## 2. Ana kavramlar
 - **Derin çalışma:** Dikkat dağıtıcısız, zihni sınırına kadar zorlayan odaklı iş.

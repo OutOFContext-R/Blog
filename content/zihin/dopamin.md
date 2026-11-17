@@ -1,18 +1,18 @@
 ---
-baslik: "Dopamin, haz ve acı dengesi"
+baslik: "Dopamin: zor işi sevdirmek"
 bolum: zihin
-kaynak: "ANNA LEMBKE · HUBERMAN"
-sure: "~2 SA"
-video: "https://www.youtube.com/watch?v=p3JLaF_4Tz8"
-video_dogrulandi: true
+kaynak: "KURGULU VİDEO"
+sure: "YOUTUBE"
+video: "https://www.youtube.com/watch?v=H9G9h1kJXa4"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Boring my brain for 10 min so studying feels fun"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 
-# Dopamin, haz ve acı dengesi
+# Dopamin: zor işi sevdirmek
 
 ## 1. Kısa özet
-Psikiyatrist Anna Lembke'ye göre beyindeki haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.
+“How to Make Hard Work ADDICTIVE” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve çalışmayı nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.
 
 ## 2. Ana kavramlar
 - **Haz-acı terazisi:** Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar.

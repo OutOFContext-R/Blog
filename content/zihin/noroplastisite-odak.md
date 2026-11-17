@@ -1,38 +1,28 @@
 ---
-baslik: "Beynini Değiştirmek İçin Odaklan: Nöroplastisite (Andrew Huberman)"
+baslik: "Beynin her gün değişiyor: nöroplastisite"
 bolum: zihin
-etiketler: [noroplastisite, odak, ogrenme, uyku, dopamin]
-video: https://www.youtube.com/watch?v=LG53Vxum0as
-sure: "~1 sa 28 dk"
-kaynak_reel: "Dear men, I beg you. Please STUDY: Neuroplasticity…"
-durum: izlenecek
-dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden yazıldı. Video linki tek bir aynalama sitesinden doğrulandı, YouTube'da kontrol edilmeli."
+kaynak: "LARA BOYD · TEDX"
+sure: "14 DK"
+video: "https://www.youtube.com/watch?v=LNHBMFCzznE"
+video_dogrulandi: "arama sonucundan"
+kaynak_reel: "Dear men… study Neuroplasticity"
+dogrulama: "Transkriptten doğrulanmadı."
 ---
 
-# Beynini Değiştirmek İçin Odaklan: Nöroplastisite (Andrew Huberman)
+# Beynin her gün değişiyor: nöroplastisite
 
 ## 1. Kısa özet
-Stanford'da nörobilimci olan Andrew Huberman, nöroplastisiteyi anlatıyor: beynin deneyimle kendini yeniden yapılandırma yeteneği. Çocuklukta (yaklaşık 25 yaşına kadar) beyin pasif şekilde, sadece maruz kalarak değişir. Yetişkinlikte ise değişim ancak **yoğun odak ve uyanıklık** ile başlar ve asıl kalıcı hâle geldiği yer **uyku ve derin dinlenmedir**. Kısacası odak beyne "bunu değiştir" sinyalini verir, değişikliği uyku yapar.
+Beyin araştırmacısı Dr. Lara Boyd, öğrendiğin her şeyin beynini fiziksel olarak değiştirdiğini anlatıyor. Değişim üç yolla olur: kimyasal (kısa süreli), yapısal ve işlevsel (kalıcı). Kalıcı değişimin tek sürücüsü davranıştır: pratik. Herkesin beyni farklı öğrenir; zorlanmak ve yavaş ilerlemek, değişimin gerçekten olduğunun işaretidir.
 
 ## 2. Ana kavramlar
-- **Nöroplastisite:** Sinir hücreleri arasındaki bağlantıların deneyime göre güçlenmesi veya zayıflaması.
-- **Çocuk ve yetişkin plastisitesi:** Çocukta değişim pasif ve kolaydır. Yetişkinde aktif çaba ve odak gerekir.
-- **Epinefrin (adrenalin):** Uyanıklık ve gerginlik sağlar. Öğrenme sinyalinin "açık" düğmesidir.
-- **Asetilkolin:** Odağın kimyasalıdır. Beyne hangi bağlantıların değişeceğini işaretler.
-- **Dopamin:** Motivasyon ve "doğru yoldayım" hissi verir, öğrenmeyi sürdürmeye yardım eder.
-- **Görsel odak = zihinsel odak:** Gözünü bir noktaya sabitlemek zihni de odaklar.
-- **Hata ve sıkıntı hissi:** Zorlanmak ve hata yapmak, plastisitenin başladığının işaretidir.
-- **Ultradian döngü:** Beynin yaklaşık 90 dakikalık odak döngüleri.
-- **NSDR (uykusuz derin dinlenme) ve uyku:** Öğrenilenin beyinde kalıcı hâle geldiği zaman.
+- **Nöroplastisite:** Beynin deneyimle kendini yeniden yapılandırması.
+- **Kimyasal değişim:** Hücreler arası sinyal artar; kısa süreli hafızayı destekler.
+- **Yapısal değişim:** Bağlantılar fiziksel olarak değişir; uzun süreli öğrenme.
+- **İşlevsel değişim:** Bir beceri için kullanılan beyin bölgesi daha kolay çalışır hale gelir.
+- **Bireysel öğrenme:** Herkese uyan tek bir öğrenme yolu yok.
 
 ## 3. Nasıl uygulanır
-1. **Odaklanmadan önce görsel odak ısınması:** 30-60 saniye bir noktaya (ekrandaki bir işarete) gözünü kırpmamaya çalışarak bak.
-2. **90 dakikalık bloklar:** Öğrenme oturumunu en fazla yaklaşık 90 dakika tut. İlk 5-10 dakikanın dağınık geçmesi normaldir.
-3. **Zorlanmayı iyi işaret say:** Sinir bozulması ve hata "beynim değişmeye başlıyor" demek. Bırakma, devam et.
-4. **Bildirimleri ve telefonu kaldır:** Asetilkolin sinyali dağınık dikkatle oluşmaz.
-5. **Oturumdan sonra 10-20 dakika NSDR yap** (YouTube'da "NSDR" ya da "yoga nidra" diye aratabilirsin) veya kısa bir şekerleme.
-6. **O gece iyi uyu:** Asıl yeniden yapılanma uykuda olur. Uykusuz öğrenme yarım kalır.
-
-## Bağlantılı konular
-- Hafıza sarayı (zihin/hafiza-sarayi.md)
-- Obsession / derin odak: eklenecek.
+1. Öğrenmek istediğin bir beceriyi seç ve her gün kısa da olsa pratik yap.
+2. Zorlandığında bırakma; zorluk yapısal değişimin habercisi.
+3. Hangi çalışma biçiminin sana yaradığını bir hafta not et.
+4. İlerlemeyi haftalık ölç; günlük dalgalanmaya takılma.

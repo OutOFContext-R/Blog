@@ -1,9 +1,9 @@
 ---
 baslik: "MK-Ultra: CIA'nın zihin kontrolü denemesi"
 bolum: psikoloji
-kaynak: "JOHN LISLE · C. WILLIAMSON"
-sure: "~1 SA 16 DK"
-video: "https://www.youtube.com/results?search_query=Investigating%20The%20True%20History%20Of%20MKUltra%20John%20Lisle%20Chris%20Williamson"
+kaynak: "BBC REEL"
+sure: "KISA"
+video: "https://www.youtube.com/results?search_query=BBC%20Reel%20MK-Ultra%20The%20shocking%20Cold%20War%20experiments%20hidden%20by%20the%20CIA"
 video_dogrulandi: false
 kaynak_reel: "MK-Ultra"
 dogrulama: "Transkriptten doğrulanmadı."

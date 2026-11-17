@@ -1,9 +1,9 @@
 ---
 baslik: "Doğrusal olmayan kariyer: Range"
 bolum: founder
-kaynak: "DAVID EPSTEIN"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=David%20Epstein%20Range%20why%20generalists%20triumph%20talk"
+kaynak: "DAVID EPSTEIN · TED"
+sure: "TED"
+video: "https://www.youtube.com/results?search_query=David%20Epstein%20Why%20specializing%20early%20doesn't%20always%20mean%20career%20success%20TED"
 video_dogrulandi: false
 kaynak_reel: "Dear men… study Non-linear careers"
 dogrulama: "Transkriptten doğrulanmadı."
