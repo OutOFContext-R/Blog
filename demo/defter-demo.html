@@ -154,7 +154,7 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
   .nhead{grid-template-columns:minmax(0,1fr)}
 }
 .music{flex:none;display:flex;align-items:stretch;gap:8px}
-.music .mb{min-width:46px;padding:0 10px!important;font-weight:600;font-size:13px;letter-spacing:.05em;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:0}
+.music .mb{width:46px;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:0}
 .music .mb[aria-pressed="false"]{color:var(--soft)}
 .mname{display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.06em;white-space:nowrap;min-width:150px}
 .mname[aria-pressed="true"]{background:var(--logo);color:var(--logo-deep)}
@@ -186,8 +186,9 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
       <button type="button" class="mb blk" id="sfx" aria-pressed="true" aria-label="Ses efektleri" title="Ses efektlerini aç/kapat">
         <svg width="20" height="20" viewBox="0 0 22 22" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 8h4l5-4v14l-5-4H2z"/><path id="sfxWave" fill="currentColor" d="M14 7h2v8h-2zM18 5h2v12h-2z"/><path id="sfxX" fill="currentColor" hidden d="M14 7h2v2h-2zM18 7h2v2h-2zM16 9h2v4h-2zM14 13h2v2h-2zM18 13h2v2h-2z"/></svg>
       </button>
+      <button type="button" class="mb blk" id="mprev" aria-label="Önceki parça" title="Önceki parça"><svg width="14" height="14" viewBox="0 0 7 7" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h1v7H5V6H4V5H3V4H2V3h1V2h1V1h1z"/></svg></button>
       <button type="button" class="mname blk" id="mplay" aria-pressed="false"><span id="mtitle">MÜZİK</span></button>
-      <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça">SONRAKİ</button>
+      <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça"><svg width="14" height="14" viewBox="0 0 7 7" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 0h1v1h1v1h1v1h1v1H4v1H3v1H2v1H1z"/></svg></button>
     </div>
   </header>
 
@@ -636,11 +637,12 @@ function playCheck(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.005; 
 function playDone(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.01; [523,659,784,1047].forEach((f,i)=>tone(master,f,t+i*.08,.2,"square",.05)); }
 document.getElementById("mplay").addEventListener("click",()=>{ playing?stopMusic():startMusic(); });
 document.getElementById("mnext").addEventListener("click",()=>{ track=(track+1)%TRACKS.length; store.set("track",track); startMusic(); });
+document.getElementById("mprev").addEventListener("click",()=>{ track=(track-1+TRACKS.length)%TRACKS.length; store.set("track",track); startMusic(); });
 document.getElementById("sfx").addEventListener("click",()=>{ sfxOn=!sfxOn; store.set("sfx",sfxOn); if(!sfxOn&&playing) stopMusic(); paintMusic(); });
 /* Düğme sesleri: sekme geçişinde yumuşak iki nota, diğer düğmelerde kısa piksel tık */
 document.addEventListener("click",e=>{
   const b=e.target.closest&&e.target.closest("button,a.play"); if(!b) return;
-  if(b.id==="mplay"||b.id==="mnext"||b.id==="sfx") return;
+  if(b.id==="mplay"||b.id==="mnext"||b.id==="mprev"||b.id==="sfx") return;
   if(b.dataset.tab) playTab(); else playClick();
 },true);
 paintMusic();
