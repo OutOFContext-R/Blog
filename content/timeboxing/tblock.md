@@ -1,10 +1,10 @@
 ---
 baslik: "Günü takvimde planlamak"
 bolum: timeboxing
-kaynak: "CAL NEWPORT"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Cal%20Newport%20time%20blocking"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=1BohaaiLIBM"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

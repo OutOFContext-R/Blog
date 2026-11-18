@@ -1,10 +1,10 @@
 ---
 baslik: "CIA bilgi sızdırma teknikleri"
 bolum: psikoloji
-kaynak: "ESKİ CIA SUBAYLARI"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Elicitation%20CIA's%20technique%20to%20make%20people%20talk"
-video_dogrulandi: false
+kaynak: "CHASE HUGHES"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=l0i_56iSV3g"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "CIA sorgu ve etki teknikleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

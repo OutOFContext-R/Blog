@@ -1,10 +1,10 @@
 ---
 baslik: "Parkinson yasası"
 bolum: timeboxing
-kaynak: "C. N. PARKINSON"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Parkinson's%20law%20explained"
-video_dogrulandi: false
+kaynak: "TEAMGANTT"
+sure: "~2 DK"
+video: "https://www.youtube.com/watch?v=EcDjixqQZhU"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

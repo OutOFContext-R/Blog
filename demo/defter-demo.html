@@ -104,6 +104,12 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
 .tabs button{font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:8px 22px;border:0;background:var(--paper-2);color:var(--muted);cursor:pointer}
 .tabs button+button{border-left:var(--bw) solid var(--edge)}
 .tabs button[aria-selected="true"]{background:var(--c);color:var(--on-c)}
+.vchips{display:flex;gap:8px;flex-wrap:wrap}
+.vchips button{display:flex;align-items:center;gap:8px;padding:6px 10px;border:2px solid var(--edge);background:var(--paper-2);color:var(--ink);cursor:pointer;box-shadow:0 3px 0 var(--edge);font-size:14px;font-weight:600;letter-spacing:.04em;max-width:100%}
+.vchips button b{background:var(--edge);color:var(--c);padding:0 6px}
+.vchips button[aria-pressed="true"]{background:var(--c);color:var(--on-c)}
+.vchips button[aria-pressed="true"] b{color:var(--c)}
+.vtitle{margin:0;color:var(--muted);font-size:15px}
 .gonotes{background:var(--c);color:var(--on-c);padding:8px 12px;text-align:center}
 .ytl{position:relative;color:var(--muted);font-size:13px;text-decoration:underline}
 .exs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
@@ -254,7 +260,7 @@ const N = [
   terms:[["Derin çalışma","Dikkat dağıtıcısız, zihni sınırına kadar zorlayan odaklı iş."],["Sığ çalışma","E-posta, mesaj gibi kolay ama az değer üreten işler."],["Dikkat kalıntısı","Bir işten ötekine geçince aklın bir kısmının eskide kalması."],["Zaman bloklama","Günün her saatine önceden bir iş atamak."],["Kapanış ritüeli","Günün sonunda işi bilinçli olarak kapatıp zihni boşaltmak."]],
   steps:["Yarının planını bugünden saat saat blokla.","Derin çalışma bloğunda telefonu başka odaya koy.","Mesajlara günde 2-3 sabit saatte bak.","İlk hafta 60 dk ile başla, her hafta biraz uzat.","Gün sonunda yarın için 3 maddelik not yaz ve bilgisayarı kapat."]},
  {id:"dopamin",s:"zihin",t:"Dopamin: zor işi sevdirmek",who:"KURGULU VİDEO",dur:"YOUTUBE",v:"H9G9h1kJXa4",reel:"Boring my brain for 10 min so studying feels fun",
-  sum:"“How to Make Hard Work ADDICTIVE” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve çalışmayı nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
+  sum:"Better Than Yesterday'in “How I Tricked My Brain To Like Doing Hard Things” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve zor işleri nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.",
   terms:[["Haz-acı terazisi","Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar."],["Tolerans","Aynı hazzı almak için gittikçe daha fazlasına ihtiyaç duymak."],["Dopamin orucu","Bir süre yoğun haz kaynağından uzak durup dengenin dönmesini beklemek."],["Kendini bağlama","Kendine engeller koymak: uygulamayı silmek, telefonu kilitlemek."],["Sıkılma","Kaçılacak bir şey değil; beynin sıfırlandığı an."]],
   steps:["Çalışmadan önce 10 dakika uyaransız otur: telefon yok, müzik yok.","Seni en çok çeken bir hızlı hazzı seç ve bir hafta ondan uzak dur.","Telefonu çalışırken başka odaya koy ya da uygulamaları kilitle.","Ödülü işin sonuna koy, başına değil.","Bir hafta sonra ders çalışmanın nasıl geldiğini not et."]},
  {id:"theater",s:"zihin",t:"Zihnin tiyatrosu: imgeleme",who:"MAXWELL MALTZ",dur:"YOUTUBE",q:"Psycho-Cybernetics theater of the mind Maxwell Maltz",reel:"Theater of Mind",
@@ -344,7 +350,7 @@ const N = [
   steps:["Bugün bir işi 4 pomodoro ile yap.","Aralarda ekrandan uzaklaş.","Bir başka işi 90 dakikalık tek kutu olarak yap.","Hangisinin sana uyduğunu karşılaştır."]},
  /* ---------- METACOGNITION ---------- */
  {id:"metacognition",s:"meta2",t:"Metacognition: öğrenmeni yönetmek",who:"VISUALIZE LEARNING",dur:"YOUTUBE",q:"What is metacognition Exploring the Metacognition Cycle",reel:"Kullanıcı isteği: Metacognition",
-  sum:"Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bildiğini, neyi bilmediğini ve nasıl daha iyi öğreneceğini fark etmek. Araştırmalar, iyi öğrenenlerin daha zeki olmaktan çok kendi öğrenmelerini daha iyi yönettiğini gösteriyor. Bunu üç adımlı bir döngüyle yaparlar: önce plan, sırasında izleme, sonunda değerlendirme. En büyük tuzak, notları tekrar okuyunca konuyu bildiğini sanmaktır.",
+  sum:"İki video var: Justin Sung, bazı insanların neden daha “yetenekli” göründüğünü ve bunun eğitilebilir bir beceri olduğunu anlatıyor; Power IQ ise kendi düşünceni gözlemleyip ona göre uyum sağlamayı adım adım açıklıyor. Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bildiğini, neyi bilmediğini ve nasıl daha iyi öğreneceğini fark etmek. Araştırmalar, iyi öğrenenlerin daha zeki olmaktan çok kendi öğrenmelerini daha iyi yönettiğini gösteriyor. Bunu üç adımlı bir döngüyle yaparlar: önce plan, sırasında izleme, sonunda değerlendirme. En büyük tuzak, notları tekrar okuyunca konuyu bildiğini sanmaktır.",
   terms:[["Bilişüstü","Kendi düşünme ve öğrenme sürecini fark edip yönetmek."],["Planla · izle · değerlendir","Öğrenmeden önce hedef koy, sırasında takip et, sonunda ne işe yaradığını sor."],["Yeterlilik yanılsaması","Tekrar okuyunca tanıdık gelen bilgiyi bildiğini sanmak."],["Kalibrasyon","Ne kadar bildiğini doğru tahmin edebilmek."],["Geri çağırma pratiği","Bakmadan hatırlamaya çalışmak; tekrar okumaktan çok daha etkili."]],
   steps:["Çalışmaya başlamadan önce “bu oturumun sonunda neyi bilmem lazım?” diye yaz.","Çalışırken her 20 dakikada bir kitabı kapat ve kendini test et.","Bitince konuyu bakmadan 3 cümleyle özetle.","Bir hata günlüğü tut: neyi yanlış yaptın, neden?","Konuyu bir çocuğa anlatıyormuş gibi sesli açıkla; takıldığın yer, bilmediğin yerdir."]}
 ];
@@ -381,6 +387,21 @@ const EX = {
  metacognition:[["Sınav hazırlığı","Notları üçüncü kez okumak yerine kapatıp bildiklerini boş kâğıda yazarsın; boş kalan yer, çalışman gereken yerdir."],["Hata günlüğü","Deneme sınavında yanlış yaptığın soruların nedenini yazarsın: dikkat mi, bilgi mi?"],["Kalibrasyon","Sınavdan önce kaç alacağını tahmin eder, sonra gerçek notla karşılaştırırsın."]]
 };
 
+/* Seçilmiş videolar: kurgulu, net, kısa. v = YouTube video kimliği (arama sonuçlarından). Bir konuda birden çok video olabilir. */
+const VID = {
+ metacognition:{who:"JUSTIN SUNG · POWER IQ",dur:"2 VİDEO",vids:[
+   {v:"k9SI2cLS73M",t:"Watch This For 18 Minutes, and You'll Outlearn 99.9% Of People",who:"JUSTIN SUNG",dur:"17:53"},
+   {v:"wvgvTcC8GGg",t:"The FULL Guide to Improving METACOGNITION",who:"POWER IQ",dur:"17:21"}]},
+ dopamin:{v:"TFYCDu4v5_E",who:"BETTER THAN YESTERDAY",dur:"KISA"},
+ manip:{v:"aBculw1TL2U",who:"AÇIKLAYICI VİDEO",dur:"8 DK"},
+ elicit:{v:"l0i_56iSV3g",who:"CHASE HUGHES",dur:"KISA"},
+ mkultra:{v:"4XXGSOfwMeo",who:"AÇIKLAYICI VİDEO",dur:"KISA"},
+ holo:{v:"klpDHn8viX8",who:"PBS SPACE TIME",dur:"14:39"},
+ tblock:{v:"1BohaaiLIBM",who:"AÇIKLAYICI VİDEO",dur:"KISA"},
+ parkinson:{v:"EcDjixqQZhU",who:"TEAMGANTT",dur:"~2 DK"},
+ voss:{v:"OaEw7ZFs5sU",who:"ANİMASYONLU ÖZET",dur:"KISA"}
+};
+
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
 const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("udaio-demo")||"{}")}catch(e){}
   return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("udaio-demo",JSON.stringify(d))}catch(e){}}}})();
@@ -393,7 +414,11 @@ if(!sec(cur.sec))cur.sec="ai";
 /* Claude yapıtı iframe'e izin vermez; videolar yalnızca GitHub Pages'te sayfanın içinde oynar. */
 const EMBED = /\.github\.io$/.test(location.hostname);
 const SITE = "https://outofcontext-r.github.io/Blog/";
-N.forEach(n=>{ if(EX[n.id]) n.ex=EX[n.id]; });
+N.forEach(n=>{
+  if(EX[n.id]) n.ex=EX[n.id];
+  const P=VID[n.id]; if(P){ Object.assign(n,P); if(P.v||P.vids){ delete n.q; } }
+  n.list = n.vids || ((n.v||n.q||n.url) ? [{v:n.v,q:n.q,url:n.url,urlLabel:n.urlLabel,t:n.t,who:n.who,dur:n.dur}] : []);
+});
 function link(n){
   if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"► YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
   if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"► YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
@@ -444,18 +469,21 @@ function renderSection(){
   p.querySelectorAll("canvas").forEach(c=>pix(c,+c.dataset.seed,col,false));
 }
 function renderNote(){
-  const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel"), L=link(n);
+  const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel"); let L;
   p.style.setProperty("--c",`var(${s.c})`);
   const done=store.get("c:"+n.id,[]);
   const tab=cur.tab||"video";
-  const hasVideo=!n.noVideo;
+  const hasVideo=!n.noVideo&&n.list.length>0;
+  const vi=Math.min(cur.vi||0,Math.max(0,n.list.length-1)), V=n.list[vi]||{};
+  L=link(V);
+  const chips=n.list.length>1?`<div class="vchips" role="group" aria-label="Videolar">${n.list.map((x,i)=>`<button type="button" data-vi="${i}" aria-pressed="${i===vi}"><b>${i+1}</b><span>${esc(x.who)} · ${esc(x.dur)}</span></button>`).join("")}</div>`:"";
   let screen;
   if(!hasVideo) screen=`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu konunun videosu yok; sözler Notlar sekmesinde.</small>`;
-  else if(EMBED&&n.v) screen=`<iframe src="https://www.youtube-nocookie.com/embed/${esc(n.v)}?rel=0&playsinline=1" title="${esc(n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  else if(EMBED&&V.v) screen=`<iframe src="https://www.youtube-nocookie.com/embed/${esc(V.v)}?rel=0&playsinline=1" title="${esc(V.t||n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
   else if(EMBED) screen=`<span class="play blk">VİDEO LİNKİ BEKLENİYOR</span><small>Bu konunun videosu henüz eklenmedi. Linki gelince burada oynayacak.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da ara</a>`:""}`;
   else screen=`<a class="play blk" href="${SITE}#${esc(n.id)}" target="_blank" rel="noopener">► SİTEDE İZLE</a><small>Claude yapıtı içinde video oynatılamıyor. Videolar Udaio sitesinde, sayfanın içinde oynar.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da aç</a>`:""}`;
-  const videoTab=`<div class="nhead">
-      <div class="screen${EMBED&&n.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>${screen}</div>
+  const videoTab=`${chips}${n.list.length>1&&V.t?`<p class="vtitle">${esc(V.t)}</p>`:""}<div class="nhead">
+      <div class="screen${EMBED&&V.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>${screen}</div>
       <div class="meta">
         <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
         <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
@@ -490,9 +518,11 @@ document.addEventListener("click",e=>{
   if(nav){cur={sec:nav.dataset.sec,note:null};store.set("sec",cur.sec);render();
     const b=document.querySelector(`[data-sec="${cur.sec}"]`); b&&b.scrollIntoView({inline:"nearest",block:"nearest"});return}
   const card=e.target.closest("[data-note]");
+  const vb=e.target.closest("[data-vi]");
+  if(vb){cur.vi=+vb.dataset.vi;render();return}
   const tb=e.target.closest("[data-tab]");
   if(tb){cur.tab=tb.dataset.tab;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
-  if(card){cur.note=card.dataset.note;cur.tab="video";render();document.getElementById("panel").scrollIntoView({block:"start"});return}
+  if(card){cur.note=card.dataset.note;cur.tab="video";cur.vi=0;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
   if(e.target.closest("[data-back]")){cur.note=null;render();return}
   const st=e.target.closest("[data-st]");
   if(st){store.set("s:"+cur.note,st.dataset.st);if(st.dataset.st==="uygulaniyor")playDone();render();return}

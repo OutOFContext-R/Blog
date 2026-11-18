@@ -1,10 +1,10 @@
 ---
 baslik: "Manipülasyon taktiklerini tanımak"
 bolum: psikoloji
-kaynak: "DR. RAMANI"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Dr.%20Ramani%20what%20is%20gaslighting"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "8 DK"
+video: "https://www.youtube.com/watch?v=aBculw1TL2U"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Manipülasyon (tanıma ve korunma)"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

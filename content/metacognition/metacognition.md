@@ -1,10 +1,10 @@
 ---
 baslik: "Metacognition: öğrenmeni yönetmek"
 bolum: metacognition
-kaynak: "VISUALIZE LEARNING"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=What%20is%20metacognition%20Exploring%20the%20Metacognition%20Cycle"
-video_dogrulandi: false
+kaynak: "JUSTIN SUNG · POWER IQ"
+sure: "2 VİDEO"
+video: "https://www.youtube.com/watch?v=k9SI2cLS73M , https://www.youtube.com/watch?v=wvgvTcC8GGg"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Kullanıcı isteği: Metacognition"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Metacognition: öğrenmeni yönetmek
 
 ## 1. Kısa özet
-Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bildiğini, neyi bilmediğini ve nasıl daha iyi öğreneceğini fark etmek. Araştırmalar, iyi öğrenenlerin daha zeki olmaktan çok kendi öğrenmelerini daha iyi yönettiğini gösteriyor. Bunu üç adımlı bir döngüyle yaparlar: önce plan, sırasında izleme, sonunda değerlendirme. En büyük tuzak, notları tekrar okuyunca konuyu bildiğini sanmaktır.
+İki video var: Justin Sung, bazı insanların neden daha “yetenekli” göründüğünü ve bunun eğitilebilir bir beceri olduğunu anlatıyor; Power IQ ise kendi düşünceni gözlemleyip ona göre uyum sağlamayı adım adım açıklıyor. Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bildiğini, neyi bilmediğini ve nasıl daha iyi öğreneceğini fark etmek. Araştırmalar, iyi öğrenenlerin daha zeki olmaktan çok kendi öğrenmelerini daha iyi yönettiğini gösteriyor. Bunu üç adımlı bir döngüyle yaparlar: önce plan, sırasında izleme, sonunda değerlendirme. En büyük tuzak, notları tekrar okuyunca konuyu bildiğini sanmaktır.
 
 ## 2. Ana kavramlar
 - **Bilişüstü:** Kendi düşünme ve öğrenme sürecini fark edip yönetmek.

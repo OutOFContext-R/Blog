@@ -1,10 +1,10 @@
 ---
 baslik: "MK-Ultra: CIA'nın zihin kontrolü denemesi"
 bolum: psikoloji
-kaynak: "BBC REEL"
+kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
-video: "https://www.youtube.com/results?search_query=BBC%20Reel%20MK-Ultra%20The%20shocking%20Cold%20War%20experiments%20hidden%20by%20the%20CIA"
-video_dogrulandi: false
+video: "https://www.youtube.com/watch?v=4XXGSOfwMeo"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "MK-Ultra"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

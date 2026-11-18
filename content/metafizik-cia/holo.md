@@ -2,9 +2,9 @@
 baslik: "Holografik evren"
 bolum: metafizik-cia
 kaynak: "PBS SPACE TIME"
-sure: "~14 DK"
-video: "https://www.youtube.com/results?search_query=PBS%20Space%20Time%20The%20Holographic%20Universe%20Explained"
-video_dogrulandi: false
+sure: "14:39"
+video: "https://www.youtube.com/watch?v=klpDHn8viX8"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Metafizik kavramlar"
 dogrulama: "Transkriptten doğrulanmadı."
 ---

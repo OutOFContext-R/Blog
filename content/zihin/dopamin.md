@@ -1,9 +1,9 @@
 ---
 baslik: "Dopamin: zor işi sevdirmek"
 bolum: zihin
-kaynak: "KURGULU VİDEO"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/watch?v=H9G9h1kJXa4"
+kaynak: "BETTER THAN YESTERDAY"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=TFYCDu4v5_E"
 video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Boring my brain for 10 min so studying feels fun"
 dogrulama: "Transkriptten doğrulanmadı."
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Dopamin: zor işi sevdirmek
 
 ## 1. Kısa özet
-“How to Make Hard Work ADDICTIVE” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve çalışmayı nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.
+Better Than Yesterday'in “How I Tricked My Brain To Like Doing Hard Things” videosu, beynin neden kolay ve hızlı ödüllü işlere çekildiğini ve zor işleri nasıl daha çekici hale getirebileceğini anlatıyor. Psikiyatrist Anna Lembke'nin modeline göre haz ve acı bir terazinin iki kefesi gibi çalışır. Telefon, şeker, kısa videolar gibi hızlı hazlar teraziyi bir yöne iter; beyin dengeyi korumak için öbür tarafa acı ekler. Sonuç: ders çalışmak gibi yavaş ödüller sıkıcı gelir. Sıkılmaya izin vermek terazinin yeniden dengelenmesine yardım eder.
 
 ## 2. Ana kavramlar
 - **Haz-acı terazisi:** Her hazdan sonra beyin dengeyi geri getirmek için acı tarafına ağırlık koyar.
