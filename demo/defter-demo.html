@@ -158,8 +158,6 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
 .music .mb[aria-pressed="false"]{color:var(--soft)}
 .mname{display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.06em;white-space:nowrap;min-width:150px}
 .mname[aria-pressed="true"]{background:var(--logo);color:var(--logo-deep)}
-#mico{font-weight:700;color:var(--c-zihin)}
-.mname[aria-pressed="true"] #mico{color:var(--logo-deep)}
 @keyframes bob{50%{transform:translateY(-3px)}}
 @media (max-width:860px){ .top{flex-wrap:wrap} .quote{flex:1 1 300px} .music{flex:1 1 100%} .mname{flex:1;min-width:0} }
 @media (max-width:560px){
@@ -188,7 +186,7 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
       <button type="button" class="mb blk" id="sfx" aria-pressed="true" aria-label="Ses efektleri" title="Ses efektlerini aç/kapat">
         <svg width="20" height="20" viewBox="0 0 22 22" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 8h4l5-4v14l-5-4H2z"/><path id="sfxWave" fill="currentColor" d="M14 7h2v8h-2zM18 5h2v12h-2z"/><path id="sfxX" fill="currentColor" hidden d="M14 7h2v2h-2zM18 7h2v2h-2zM16 9h2v4h-2zM14 13h2v2h-2zM18 13h2v2h-2z"/></svg>
       </button>
-      <button type="button" class="mname blk" id="mplay" aria-pressed="false"><b id="mico" aria-hidden="true">ÇAL</b><span id="mtitle">MÜZİK</span></button>
+      <button type="button" class="mname blk" id="mplay" aria-pressed="false"><span id="mtitle">MÜZİK</span></button>
       <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça">SONRAKİ</button>
     </div>
   </header>
@@ -628,7 +626,6 @@ function paintMusic(){
   document.getElementById("mtitle").textContent=t.name;
   const mp=document.getElementById("mplay");
   mp.setAttribute("aria-pressed",String(playing)); mp.title=(playing?"Durdur: ":"Çal: ")+t.name;
-  document.getElementById("mico").textContent=playing?"DURDUR":"ÇAL";
   document.getElementById("sfx").setAttribute("aria-pressed",String(sfxOn));
   document.getElementById("sfxWave").toggleAttribute("hidden",!sfxOn);
   document.getElementById("sfxX").toggleAttribute("hidden",sfxOn);
