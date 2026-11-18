@@ -105,6 +105,23 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
 .tabs button{font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:8px 22px;border:0;background:var(--paper-2);color:var(--muted);cursor:pointer}
 .tabs button+button{border-left:var(--bw) solid var(--edge)}
 .tabs button[aria-selected="true"]{background:var(--c);color:var(--on-c)}
+.vlist-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;color:var(--muted)}
+.vcount{font-size:14px;color:var(--soft)}
+.vlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.vcard{display:grid;grid-template-rows:auto 1fr;background:var(--paper-2);min-width:0}
+.vthumb{position:relative;display:block;width:100%;aspect-ratio:16/9;max-width:100%;padding:0;border:0;border-bottom:var(--bw) solid var(--edge);background:var(--c);cursor:pointer;overflow:hidden}
+.vthumb canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+.vplay{position:absolute;left:50%;top:50%;width:56px;height:44px;margin:-22px 0 0 -28px;display:grid;place-items:center;background:var(--edge);color:var(--c);border:var(--bw) solid var(--edge);box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .1s}
+.vthumb:hover .vplay,.vthumb:focus-visible .vplay{transform:scale(1.08)}
+.vthumb .dur{position:absolute;right:8px;bottom:8px;font-weight:600;font-size:12px;letter-spacing:.05em;padding:0 6px;background:var(--edge);color:var(--ink)}
+.vinfo{padding:12px 14px 14px;display:grid;gap:6px;align-content:start;min-width:0}
+.vtopic{color:var(--c);font-size:12px}
+.vname{margin:0;font-weight:600;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.vwho{font-size:14px;color:var(--muted)}
+.vacts{display:flex;gap:8px;padding-top:6px}
+.va{flex:1;padding:7px 10px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+.va-w{background:var(--c);color:var(--on-c)}
+@media (max-width:560px){.vlist{grid-template-columns:minmax(0,1fr);gap:16px}}
 .vchips{display:flex;gap:8px;flex-wrap:wrap}
 .vchips button{display:flex;align-items:center;gap:8px;padding:6px 10px;border:2px solid var(--edge);background:var(--paper-2);color:var(--ink);cursor:pointer;box-shadow:0 3px 0 var(--edge);font-size:14px;font-weight:600;letter-spacing:.04em;max-width:100%}
 .vchips button b{background:var(--edge);color:var(--c);padding:0 6px}
@@ -412,6 +429,21 @@ const VID = {
  oyunyap:{v:"4amTXOdSyb0",who:"AÇIKLAYICI VİDEO",dur:"KISA",pre:"Video: “How to Create Games with Claude AI (No Coding Required)”, tek bir prompt'la çalışan bir oyun yapıp Claude'da önizlemeyi gösteriyor."}
 };
 
+/* Videoların YouTube'daki başlıkları (arama sonuçlarından) */
+const VT = {
+ llm:"How I use LLMs", deepdive:"Deep Dive into LLMs like ChatGPT", prompt101:"Prompting 101 | Code w/ Claude",
+ oyunyap:"How to Create Games with Claude AI (No Coding Required)", noro:"After watching this, your brain will not be the same",
+ hafiza:"Feats of memory anyone can do", lockin:"How To Improve Your Focus Permanently", dopamin:"How I Tricked My Brain To Like Doing Hard Things",
+ theater:"Psycho-Cybernetics Book Summary", disiplin:"The REAL Secret To Self Discipline", pattern:"The Expert Myth",
+ jobs:"Steve Jobs' 2005 Stanford Commencement Address", oyun:"What Game Theory Reveals About Life, The Universe, and Everything",
+ obsession:"Why Obsession Beats Talent Every Time", range:"Why Generalists Can Be More Successful Than Specialists",
+ voss:"Never Split The Difference: Animated Summary", manip:"Every Manipulation Tactic Explained in 8 Minutes",
+ elicit:"How To Get The Truth Without Asking Questions", mkultra:"CIA MKUltra: Mind control experiments, LSD and secret assassination plots",
+ gateway:"The CIA Gateway Process Document Explained", stargate:"Inside Operation Stargate: The CIA's Psychic Spy Experiment",
+ holo:"The Holographic Universe Explained", tbox:"What is Timeboxing?", tblock:"Cal Newport's Time Blocking Method",
+ parkinson:"Parkinson's Law Explained", pomodoro:"Pomodoro Technique Explained"
+};
+
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
 const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("udaio-demo")||"{}")}catch(e){}
   return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("udaio-demo",JSON.stringify(d))}catch(e){}}}})();
@@ -427,7 +459,7 @@ const SITE = "https://outofcontext-r.github.io/Blog/";
 N.forEach(n=>{
   if(EX[n.id]) n.ex=EX[n.id];
   const P=VID[n.id]; if(P){ const {pre,...rest}=P; Object.assign(n,rest); if(P.v||P.vids){ delete n.q; } if(pre) n.sum=pre+" "+n.sum; }
-  n.list = n.vids || ((n.v||n.q||n.url) ? [{v:n.v,q:n.q,url:n.url,urlLabel:n.urlLabel,t:n.t,who:n.who,dur:n.dur}] : []);
+  n.list = n.vids || ((n.v||n.q||n.url) ? [{v:n.v,q:n.q,url:n.url,urlLabel:n.urlLabel,t:VT[n.id]||n.t,who:n.who,dur:n.dur}] : []);
 });
 function link(n){
   if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
@@ -467,13 +499,27 @@ function renderSection(){
   const s=sec(cur.sec), p=document.getElementById("panel");
   p.style.setProperty("--c",`var(${s.c})`);
   const notes=N.filter(n=>n.s===s.id);
+  const items=notes.flatMap(n=>n.list.length?n.list.map((x,i)=>({n,x,i})):[{n,x:{t:n.t,who:n.who,dur:n.dur},i:0}]);
   p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)}</span></div>
   <div class="body">
     <div class="hero"><h2>${esc(s.title)}</h2><p>${esc(s.desc)}</p></div>
-    <div class="grid">${notes.map((n,i)=>`<button class="card blk" type="button" data-note="${n.id}">
-      <span class="cth"><canvas data-seed="${i+3+n.id.length}" aria-hidden="true"></canvas><span class="who">${esc(n.who)}</span><span class="dur">${esc(n.dur)}</span></span>
-      <span class="ci"><span class="ct">${esc(n.t)}</span><span class="cs">${esc(n.sum)}</span>
-      <span class="cf"><span class="go">AÇ</span></span></span></button>`).join("")}</div>
+    <div class="vlist-h"><span class="lab">Videolar</span><span class="vcount">${items.length} video · ${notes.length} konu</span></div>
+    <div class="vlist">${items.map((it,k)=>{const x=it.x,n=it.n;return `<article class="vcard blk">
+      <button class="vthumb" type="button" data-note="${n.id}" data-vi="${it.i}" aria-label="${esc(x.t||n.t)} videosunu aç">
+        <canvas data-seed="${k+3+n.id.length}" aria-hidden="true"></canvas>
+        <span class="vplay" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="currentColor" d="M1 0h1v1h1v1h1v1h1v1H4v1H3v1H2v1H1z"/></svg></span>
+        <span class="dur">${esc(x.dur||n.dur)}</span>
+      </button>
+      <div class="vinfo">
+        <span class="vtopic lab">${esc(n.t)}</span>
+        <h3 class="vname">${esc(x.t||n.t)}</h3>
+        <span class="vwho">${esc(x.who||n.who)}</span>
+        <div class="vacts">
+          <button class="blk va va-w" type="button" data-note="${n.id}" data-vi="${it.i}">İzle</button>
+          <button class="blk va" type="button" data-note="${n.id}" data-open="notes">Notlar</button>
+        </div>
+      </div>
+    </article>`}).join("")}</div>
   </div>`;
   const col=cssv(s.c);
   p.querySelectorAll("canvas").forEach(c=>pix(c,+c.dataset.seed,col,false));
@@ -528,11 +574,11 @@ document.addEventListener("click",e=>{
   if(nav){cur={sec:nav.dataset.sec,note:null};store.set("sec",cur.sec);render();
     const b=document.querySelector(`[data-sec="${cur.sec}"]`); b&&b.scrollIntoView({inline:"nearest",block:"nearest"});return}
   const card=e.target.closest("[data-note]");
-  const vb=e.target.closest("[data-vi]");
+  const vb=e.target.closest(".vchips [data-vi]");
   if(vb){cur.vi=+vb.dataset.vi;render();return}
   const tb=e.target.closest("[data-tab]");
   if(tb){cur.tab=tb.dataset.tab;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
-  if(card){cur.note=card.dataset.note;cur.tab="video";cur.vi=0;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
+  if(card){cur.note=card.dataset.note;cur.tab=card.dataset.open==="notes"?"notes":"video";cur.vi=+(card.dataset.vi||0);render();document.getElementById("panel").scrollIntoView({block:"start"});return}
   if(e.target.closest("[data-back]")){cur.note=null;render();return}
   const st=e.target.closest("[data-st]");
   if(st){store.set("s:"+cur.note,st.dataset.st);if(st.dataset.st==="uygulaniyor")playDone();render();return}
