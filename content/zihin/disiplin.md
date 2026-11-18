@@ -27,3 +27,8 @@ dogrulama: "Transkriptten doğrulanmadı."
 3. Yeni bir alışkanlığı saat ve yerle birlikte yaz.
 4. Kaçırdığın bir günden sonra iki gün üst üste kaçırma.
 5. Her akşam “bugün kim olduğumu kanıtladım mı?” diye sor.
+
+## Örnekler
+- **Küçük söz:** “Her gün 10 şınav” der, ne olursa olsun yaparsın; söz tutmak alışkanlık olur.
+- **Ortam:** Oyun konsolunun kablosunu başka odaya koyarsın; oynamak zorlaşır.
+- **Kaçırılan gün:** Bir gün spor kaçırırsın ama ertesi gün mutlaka yaparsın: iki gün üst üste yok.

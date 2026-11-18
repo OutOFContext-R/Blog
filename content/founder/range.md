@@ -26,3 +26,8 @@ David Epstein, Range kitabında erken uzmanlaşmanın her alanda en iyi yol olma
 2. Bu ay tamamen yeni bir alanda küçük bir deneme yap.
 3. Bir problemde başka bir alandan bir çözüm ödünç al.
 4. “Geç kaldım” düşüncesini bırak; geç odaklanmak da bir yol.
+
+## Örnekler
+- **Federer yolu:** Önce futbol, basketbol, yüzme denersin; sonra en çok uyan spora odaklanırsın.
+- **Analoji:** Oyun tasarımında öğrendiğin “ödül döngüsü” fikrini ders çalışma planına taşırsın.
+- **Geç başlamak:** 25 yaşında kodlamaya başlayan biri, önceki iş deneyimini avantaja çevirir.

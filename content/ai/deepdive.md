@@ -4,7 +4,7 @@ bolum: ai
 kaynak: "ANDREJ KARPATHY"
 sure: "3 SA 31 DK"
 video: "https://www.youtube.com/watch?v=7xTGNNLPyMI"
-video_dogrulandi: true
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "AI bölümü, LLM mekanikleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -27,3 +27,8 @@ Karpathy, ChatGPT gibi bir modelin sıfırdan nasıl yapıldığını kodsuz anl
 2. Modelin emin olduğu bir bilgiyi kaynağıyla doğrulat.
 3. Saymak, harf işlemek gibi işleri koda yaptır.
 4. Bir cevabı beğenmezsen aynı soruyu yeni sohbette tekrar sor.
+
+## Örnekler
+- **Harf sayma hatası:** Model “strawberry” kelimesindeki r'leri yanlış sayar; çünkü kelimeyi harf harf değil token token görür.
+- **Uydurma kaynak:** Modelden makale kaynağı istediğinde gerçek olmayan bir başlık verebilir; bu halüsinasyondur, kontrol edersin.
+- **Zor matematik:** “Adım adım düşün” dediğinde model hesabı token'lara yayar ve daha doğru sonuç verir.

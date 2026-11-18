@@ -4,7 +4,7 @@ bolum: zihin
 kaynak: "VERITASIUM"
 sure: "YOUTUBE"
 video: "https://www.youtube.com/watch?v=5eW6Eagr9XA"
-video_dogrulandi: true
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Dear men… study Pattern recognition"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -26,3 +26,8 @@ Veritasium'un “The Expert Myth” videosu, uzmanlığın doğuştan zekâdan d
 2. Aynı tür problemi kısa sürede çok sayıda çöz.
 3. Yanlışlarını bir deftere yaz ve tekrar et.
 4. Rastgeleliği yüksek alanlarda (borsa gibi) “uzman” sözlerine temkinli yaklaş.
+
+## Örnekler
+- **Satranç:** Aynı açılış tuzağına üç kez düşünce dördüncüde hemen fark edersin.
+- **Matematik:** Çok soru çözdükçe soru tipini ilk satırda tanırsın.
+- **Uyarı:** Borsada “uzman” tahminleri sık yanılır; çünkü orada geri bildirim gürültülü, örüntü oturmaz.

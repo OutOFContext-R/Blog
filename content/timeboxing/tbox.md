@@ -25,3 +25,8 @@ Timeboxing, yapılacaklar listesindeki işleri takvime taşımaktır: her işe n
 2. Her birine takvimde başlangıç ve bitiş saati ver.
 3. Kutunun içinde başka işe geçme.
 4. Gün sonunda hangi kutuların tuttuğunu işaretle.
+
+## Örnekler
+- **Yarın:** Listeden “matematik ödevi” işini alıp takvime 16:00-17:00 yazarsın.
+- **Tek iş:** O saatte sadece ödev; mesaj gelse bile kutu bitene kadar bakmazsın.
+- **Kutu kapanışı:** 17:00'de bitmediyse bırakırsın, kalanı yeni bir kutuya yazarsın.

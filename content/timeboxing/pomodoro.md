@@ -25,3 +25,8 @@ Pomodoro tekniğini Francesco Cirillo 1980'lerin sonunda, domates şeklindeki bi
 2. Aralarda ekrandan uzaklaş.
 3. Bir başka işi 90 dakikalık tek kutu olarak yap.
 4. Hangisinin sana uyduğunu karşılaştır.
+
+## Örnekler
+- **Ders:** 25 dakika fizik, 5 dakika ayağa kalkıp su içme; dört turdan sonra 20 dakika mola.
+- **Yaratıcı iş:** Çizim yaparken 25 dakika seni bölüyorsa 90 dakikalık tek kutu kullanırsın.
+- **Karma:** 2 saatlik “proje” kutusunu dört pomodoroya bölersin.

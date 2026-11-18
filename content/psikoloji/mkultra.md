@@ -25,6 +25,11 @@ MK-Ultra, CIA'nın 1953'te başlattığı gizli bir programdı. Soğuk Savaş ko
 2. Programın gerçek yanını (deneyler) efsanesinden (başarılı zihin kontrolü) ayır.
 3. Etik sınırların neden önemli olduğunu bu örnek üzerinden not et.
 
+## Örnekler
+- **İddia ayırma:** “CIA zihin kontrolünü başardı” videosunu görünce belgelerin aslında başarısızlık anlattığını hatırlarsın.
+- **Etik:** Bilimsel deneylerde onam neden zorunlu, bu örnekten anlarsın.
+- **Kaynak sorgusu:** Bir “gizli program” iddiasında Senato raporu gibi birincil kaynak ararsın.
+
 ## Kanıt durumu
 - **GERÇEK:** Program vardı; Senato belgeleriyle kanıtlı.
 - **İDDİA:** Başarılı zihin kontrolü sağlandığı ve bugün sürdüğü.

@@ -27,3 +27,8 @@ Cal Newport'un Deep Work kitabının animasyonlu özeti. Newport, odaklanmanın 
 3. Mesajlara günde 2-3 sabit saatte bak.
 4. İlk hafta 60 dk ile başla, her hafta biraz uzat.
 5. Gün sonunda yarın için 3 maddelik not yaz ve bilgisayarı kapat.
+
+## Örnekler
+- **Sınav haftası:** Sabah 9-11 telefon başka odada, tek bir konu; 11'de mesajlara bakarsın.
+- **Proje:** Bir sitenin tasarımına 90 dakikalık blok ayırır, arada e-postaya bakmazsın.
+- **Kapanış:** Akşam yarının 3 işini yazıp bilgisayarı kapatırsın; kafan yarına kalmaz.

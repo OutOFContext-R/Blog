@@ -25,6 +25,11 @@ Holografik ilke, fizikteki gerçek bir fikirdir: bir bölgedeki bütün bilgi, o
 2. Gateway belgesindeki “holografik evren” kullanımıyla karşılaştır.
 3. Bir iddianın bilimden mi yoruma mı ait olduğunu ayırmayı dene.
 
+## Örnekler
+- **Tek cümle:** Arkadaşına “bir odanın bilgisi duvarlarına sığabilir” diye anlatırsın.
+- **Ayırt etmek:** “Evren hologram, o yüzden düşüncelerin gerçeği yaratır” sözünün fizikten değil yorumdan geldiğini görürsün.
+- **Bağlantı:** Gateway belgesindeki holografik evren kullanımını bilimsel ilkeyle karşılaştırırsın.
+
 ## Kanıt durumu
 - **BİLİMSEL:** Holografik ilke ciddi bir fizik fikri.
 - **AÇIK SORU:** Bizim evrenimiz için geçerli olduğu kanıtlanmadı.

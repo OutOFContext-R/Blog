@@ -27,3 +27,8 @@ Metacognition, yani bilişüstü, düşünmen hakkında düşünmektir: neyi bil
 3. Bitince konuyu bakmadan 3 cümleyle özetle.
 4. Bir hata günlüğü tut: neyi yanlış yaptın, neden?
 5. Konuyu bir çocuğa anlatıyormuş gibi sesli açıkla; takıldığın yer, bilmediğin yerdir.
+
+## Örnekler
+- **Sınav hazırlığı:** Notları üçüncü kez okumak yerine kapatıp bildiklerini boş kâğıda yazarsın; boş kalan yer, çalışman gereken yerdir.
+- **Hata günlüğü:** Deneme sınavında yanlış yaptığın soruların nedenini yazarsın: dikkat mi, bilgi mi?
+- **Kalibrasyon:** Sınavdan önce kaç alacağını tahmin eder, sonra gerçek notla karşılaştırırsın.

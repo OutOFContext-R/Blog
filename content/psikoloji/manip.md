@@ -26,3 +26,8 @@ Klinik psikolog Dr. Ramani Durvasula, manipülatif ilişkilerde en sık görüle
 2. “Bunu gerçekten ben mi yanlış hatırlıyorum?” sorusu sık geliyorsa dur ve fark et.
 3. Güvendiğin birine durumu anlat; dışarıdan bakış iste.
 4. Tartışmayı uzatmak yerine kısa, sakin ve sıkıcı cevaplar ver.
+
+## Örnekler
+- **Gaslighting:** Biri “Ben öyle bir şey demedim, sen hep abartıyorsun” der; mesaj geçmişine bakıp gerçeği doğrularsın.
+- **Love bombing:** Yeni tanıştığın biri ilk haftada aşırı hediye ve övgü yağdırıyorsa yavaşlarsın.
+- **Suçu çevirme:** “Sen beni kızdırdın” cümlesini duyunca, davranışın sorumlusunun kim olduğunu ayırırsın.

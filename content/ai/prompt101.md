@@ -4,7 +4,7 @@ bolum: ai
 kaynak: "ANTHROPIC"
 sure: "~24 DK"
 video: "https://www.youtube.com/watch?v=ysPbXH0LpIE"
-video_dogrulandi: "tek kaynaktan"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Prompt yazmayı öğrenmek"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -27,3 +27,8 @@ Anthropic'in uygulamalı yapay zeka ekibi, gerçek bir örnek üzerinden iyi bir
 3. Uzun belgeleri etiketlerle ayır.
 4. “Emin değilsen söyle” cümlesini ekle.
 5. Her denemeden sonra prompt'u bir adım düzelt.
+
+## Örnekler
+- **Kötü prompt:** “Bu yazıyı düzelt” yerine: “Sen bir editörsün. Bu blog yazısını 16 yaşındaki okuyucular için sadeleştir, 300 kelimeyi geçme.”
+- **Örnek vermek:** İstediğin tarzda bir paragraf ekleyip “bu tonda yaz” dersin.
+- **Etiket kullanmak:** Uzun metni <metin> … </metin> arasına koyup talimatı ayrı yazarsın.

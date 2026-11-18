@@ -25,3 +25,8 @@ Cal Newport her iş gününün her dakikasına önceden bir görev verir. Plan b
 2. Küçük işleri tek bir bloğa topla.
 3. Günde en az bir tampon blok bırak.
 4. Plan bozulunca kızma; kalan günü yeniden blokla.
+
+## Örnekler
+- **Sabah planı:** Kahvaltıda 5 dakika günü 9-10, 10-11 diye kâğıda bloklarsın.
+- **Toplu işler:** Bütün mesajlara 13:00 ve 18:00'de toplu bakarsın.
+- **Bozulan plan:** Öğleden sonra beklenmedik bir iş çıkınca kalan saatleri yeniden bloklarsın.

@@ -25,3 +25,8 @@ Tarihçi Cyril Northcote Parkinson 1955'te The Economist'te şunu yazdı: “İ�
 2. Süre bitince işi “yeterince iyi” haliyle teslim et.
 3. Sonucu not et: kalite gerçekten düştü mü?
 4. Büyük işlere ara son tarihler koy.
+
+## Örnekler
+- **Kısa süre:** Bir sunuma bir hafta yerine iki gün ayırırsın; gereksiz rötuşlar azalır.
+- **Ara son tarih:** Bir aylık projeye her hafta bir mini teslim koyarsın.
+- **Okul örneği:** Ödevin teslimine bir hafta varken son güne kalmasının nedeni budur.

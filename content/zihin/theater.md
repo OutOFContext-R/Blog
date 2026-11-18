@@ -27,6 +27,11 @@ Plastik cerrah Maxwell Maltz, 1960 tarihli Psycho-Cybernetics kitabında “zihn
 4. Bir hata yapıp toparlandığın sahneyi de prova et.
 5. Gerçek denemeden sonra filmi gerçeğe göre güncelle.
 
+## Örnekler
+- **Sunum:** Sunumdan önceki akşam gözlerini kapatıp salona girişini, ilk cümleni ve soruları cevaplamanı canlandırırsın.
+- **Spor:** Serbest atıştan önce topun elinden çıkışını ve fileye girişini zihninde izlersin.
+- **Hata provası:** Sınavda bir soruda takılıp sakinleşerek devam ettiğin sahneyi de prova edersin.
+
 ## Kanıt durumu
 - **DESTEKLİ:** Zihinsel prova, beden hareketlerinde performansı bir miktar artırabiliyor.
 - **İDDİA:** “Beyin hayal ile gerçeği ayırt edemez” sözü abartılı.

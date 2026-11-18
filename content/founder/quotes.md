@@ -26,3 +26,8 @@ Kurucuların ve yatırımcıların, zor anlarda tekrar edilen sözleri. Her biri
 2. Her sabah o sözü bugünkü bir işe bağla.
 3. Hafta sonunda sözün sana ne yaptırdığını yaz.
 4. Kendi sözünü yaz: senin çalışma ilken ne?
+
+## Örnekler
+- **Kilit ekranı:** Bu hafta “Make something people want” sözünü kilit ekranı yaparsın.
+- **Sabah bağlantısı:** Sözü o günkü işe bağlarsın: “Bugün kullanıcıya bir soru soracağım.”
+- **Kendi sözün:** Hafta sonu kendi çalışma ilkeni bir cümleyle yazarsın.

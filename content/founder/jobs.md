@@ -4,7 +4,7 @@ bolum: founder
 kaynak: "STEVE JOBS"
 sure: "15 DK"
 video: "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
-video_dogrulandi: true
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Founder hikayeleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -25,3 +25,8 @@ Steve Jobs, 2005'teki Stanford mezuniyet konuşmasında hayatından üç hikaye 
 2. Şu an sadece merak ettiğin için öğrendiğin bir şeyi seç ve devam et.
 3. Bir başarısızlığını yaz ve sana ne kazandırdığını not et.
 4. Kendine sor: bugün son günüm olsa bunu yapar mıydım?
+
+## Örnekler
+- **Noktalar:** Merakla öğrendiğin video kurgusu, yıllar sonra kendi markanı tanıtırken işine yarar.
+- **Kovulmak:** Bir takımdan çıkarılmak seni kendi projeni kurmaya iter.
+- **Son gün sorusu:** Sabah aynaya bakıp “bugün son günüm olsa bunu yapar mıydım?” diye sorarsın.

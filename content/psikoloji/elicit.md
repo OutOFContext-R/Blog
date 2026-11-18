@@ -26,3 +26,8 @@ dogrulama: "Transkriptten doğrulanmadı."
 2. Yeni tanıştığın biri iş ya da para ayrıntısına çok ilgi gösteriyorsa yavaşla.
 3. Bir sohbetten sonra kendine sor: ne anlattım, ne öğrendim?
 4. Bu teknikleri etik sınırlar içinde, iyi dinleyici olmak için kullan.
+
+## Örnekler
+- **Bilerek yanlış:** Biri “Senin okulda herkes 90 alıyormuş” der; düzeltme isteğiyle notlarını anlatırsın. Fark edip durursun.
+- **Aralık:** “Sanırım ayda 10-20 bin kazanıyorsundur” sorusuna net sayı vermek zorunda değilsin.
+- **İltifat:** “Bu işi en iyi sen bilirsin, anlat bakalım” diye başlayan sohbete dikkat edersin.

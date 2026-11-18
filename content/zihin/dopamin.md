@@ -27,3 +27,8 @@ dogrulama: "Transkriptten doğrulanmadı."
 3. Telefonu çalışırken başka odaya koy ya da uygulamaları kilitle.
 4. Ödülü işin sonuna koy, başına değil.
 5. Bir hafta sonra ders çalışmanın nasıl geldiğini not et.
+
+## Örnekler
+- **Çalışma öncesi:** 10 dakika telefonsuz, müziksiz oturursun; sonra kitap daha az sıkıcı gelir.
+- **Bir haftalık deneme:** Kısa video uygulamasını bir hafta silersin ve ders çalışma isteğindeki farkı not edersin.
+- **Ödül sırası:** Önce 1 saat çalışma, sonra dizi; tersi değil.

@@ -100,6 +100,16 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
 .seg{display:flex;gap:6px;flex-wrap:wrap}
 .seg button{font-weight:600;font-size:12px;letter-spacing:.05em;padding:2px 8px;border:2px solid var(--edge);background:var(--paper);cursor:pointer;box-shadow:0 2px 0 var(--edge)}
 .seg button[aria-pressed="true"]{background:var(--c);color:var(--on-c)}
+.tabs{display:flex;gap:0;border:var(--bw) solid var(--edge);box-shadow:var(--sh);justify-self:start;max-width:100%}
+.tabs button{font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:8px 22px;border:0;background:var(--paper-2);color:var(--muted);cursor:pointer}
+.tabs button+button{border-left:var(--bw) solid var(--edge)}
+.tabs button[aria-selected="true"]{background:var(--c);color:var(--on-c)}
+.gonotes{background:var(--c);color:var(--on-c);padding:8px 12px;text-align:center}
+.ytl{position:relative;color:var(--muted);font-size:13px;text-decoration:underline}
+.exs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.exs li{display:grid;gap:3px;padding:10px 12px;border-left:4px solid var(--c);background:var(--paper)}
+.exs b{font-weight:600;font-size:16px;color:var(--c)}
+.exs span{font-size:16px;line-height:1.5;color:var(--ink)}
 .warnline{margin:0;font-size:14.5px;color:var(--muted);border-left:4px solid var(--line);padding-left:10px}
 
 .secs{display:grid;gap:18px;max-width:780px}
@@ -323,6 +333,38 @@ const N = [
   steps:["Çalışmaya başlamadan önce “bu oturumun sonunda neyi bilmem lazım?” diye yaz.","Çalışırken her 20 dakikada bir kitabı kapat ve kendini test et.","Bitince konuyu bakmadan 3 cümleyle özetle.","Bir hata günlüğü tut: neyi yanlış yaptın, neden?","Konuyu bir çocuğa anlatıyormuş gibi sesli açıkla; takıldığın yer, bilmediğin yerdir."]}
 ];
 
+/* Her konu için gerçek hayattan örnekler (Notlar sekmesi) */
+const EX = {
+ llm:[["Ödev araştırması","Konu değişince yeni sohbet açıp, güncel kaynak gerektiren soruda aramayı açarsın."],["Bütçe hesabı","“Bu harcamaları Python ile topla ve tabloya dök” dersin; model kafadan hesap yapmaz."],["Büyük karar","Aynı “hangi bölümü seçmeliyim” sorusunu ChatGPT, Claude ve Gemini'ye sorup cevapları karşılaştırırsın."]],
+ deepdive:[["Harf sayma hatası","Model “strawberry” kelimesindeki r'leri yanlış sayar; çünkü kelimeyi harf harf değil token token görür."],["Uydurma kaynak","Modelden makale kaynağı istediğinde gerçek olmayan bir başlık verebilir; bu halüsinasyondur, kontrol edersin."],["Zor matematik","“Adım adım düşün” dediğinde model hesabı token'lara yayar ve daha doğru sonuç verir."]],
+ prompt101:[["Kötü prompt","“Bu yazıyı düzelt” yerine: “Sen bir editörsün. Bu blog yazısını 16 yaşındaki okuyucular için sadeleştir, 300 kelimeyi geçme.”"],["Örnek vermek","İstediğin tarzda bir paragraf ekleyip “bu tonda yaz” dersin."],["Etiket kullanmak","Uzun metni <metin> … </metin> arasına koyup talimatı ayrı yazarsın."]],
+ oyunyap:[["İlk mesaj","“Ok tuşlarıyla hareket eden bir kare ve ekranda rastgele çıkan altınlar olan basit bir oyun yap.”"],["İkinci mesaj","“Şimdi sadece bir skor sayacı ekle, başka hiçbir şeyi değiştirme.”"],["Hata bildirmek","“Kare ekranın dışına çıkıyor; kenarda durmasını istiyorum.”"]],
+ noro:[["Yeni dil","Her gün 15 dakika İngilizce konuşma pratiği yaparsın; ilk haftalar zorlanırsın, bu yapısal değişimin işaretidir."],["Spor becerisi","Basketbolda şut her gün tekrarlandıkça bilinçli düşünmeden yapılır hale gelir."],["Kendi yolunu bulmak","Biri sesli okuyarak, biri yazarak daha iyi öğrenir; bir hafta deneyip seninkini bulursun."]],
+ hafiza:[["Alışveriş listesi","Kapıya dev bir süt şişesi, koltuğa ekmekten bir yastık yerleştirirsin; markette evini zihninde yürürsün."],["Sınav kavramları","Biyoloji terimlerini odandaki 10 eşyaya bağlarsın."],["Konuşma","Sunumun ana başlıklarını okul yolundaki duraklara yerleştirip notsuz konuşursun."]],
+ lockin:[["Sınav haftası","Sabah 9-11 telefon başka odada, tek bir konu; 11'de mesajlara bakarsın."],["Proje","Bir sitenin tasarımına 90 dakikalık blok ayırır, arada e-postaya bakmazsın."],["Kapanış","Akşam yarının 3 işini yazıp bilgisayarı kapatırsın; kafan yarına kalmaz."]],
+ dopamin:[["Çalışma öncesi","10 dakika telefonsuz, müziksiz oturursun; sonra kitap daha az sıkıcı gelir."],["Bir haftalık deneme","Kısa video uygulamasını bir hafta silersin ve ders çalışma isteğindeki farkı not edersin."],["Ödül sırası","Önce 1 saat çalışma, sonra dizi; tersi değil."]],
+ theater:[["Sunum","Sunumdan önceki akşam gözlerini kapatıp salona girişini, ilk cümleni ve soruları cevaplamanı canlandırırsın."],["Spor","Serbest atıştan önce topun elinden çıkışını ve fileye girişini zihninde izlersin."],["Hata provası","Sınavda bir soruda takılıp sakinleşerek devam ettiğin sahneyi de prova edersin."]],
+ disiplin:[["Küçük söz","“Her gün 10 şınav” der, ne olursa olsun yaparsın; söz tutmak alışkanlık olur."],["Ortam","Oyun konsolunun kablosunu başka odaya koyarsın; oynamak zorlaşır."],["Kaçırılan gün","Bir gün spor kaçırırsın ama ertesi gün mutlaka yaparsın: iki gün üst üste yok."]],
+ pattern:[["Satranç","Aynı açılış tuzağına üç kez düşünce dördüncüde hemen fark edersin."],["Matematik","Çok soru çözdükçe soru tipini ilk satırda tanırsın."],["Uyarı","Borsada “uzman” tahminleri sık yanılır; çünkü orada geri bildirim gürültülü, örüntü oturmaz."]],
+ jobs:[["Noktalar","Merakla öğrendiğin video kurgusu, yıllar sonra kendi markanı tanıtırken işine yarar."],["Kovulmak","Bir takımdan çıkarılmak seni kendi projeni kurmaya iter."],["Son gün sorusu","Sabah aynaya bakıp “bugün son günüm olsa bunu yapar mıydım?” diye sorarsın."]],
+ oyun:[["Sınıf projesi","Grupta herkes işi başkasına bırakırsa proje batar; ilk adımı sen atarsın ama yük taşımayanlara sınır koyarsın."],["İş ortaklığı","Tedarikçiyle tek seferlik değil uzun vadeli düşünür, küçük kazanç için güveni bozmazsın."],["Yanlış anlama","Arkadaşın mesajına cevap vermedi diye hemen küsmez, bir şans daha verirsin."]],
+ obsession:[["Merak","Kimsenin sormadığı halde saatlerce oyun mekaniklerini incelersin; bu ileride oyun tasarımcısı yapabilir."],["Çıkarsız ilgi","Para kazanmak için değil, nasıl çalıştığını merak ettiğin için eski radyoları sökersin."],["Sabır","Bir konuyu yıllarca takip edersin; derinlik başkalarının göremediğini görmeni sağlar."]],
+ range:[["Federer yolu","Önce futbol, basketbol, yüzme denersin; sonra en çok uyan spora odaklanırsın."],["Analoji","Oyun tasarımında öğrendiğin “ödül döngüsü” fikrini ders çalışma planına taşırsın."],["Geç başlamak","25 yaşında kodlamaya başlayan biri, önceki iş deneyimini avantaja çevirir."]],
+ quotes:[["Kilit ekranı","Bu hafta “Make something people want” sözünü kilit ekranı yaparsın."],["Sabah bağlantısı","Sözü o günkü işe bağlarsın: “Bugün kullanıcıya bir soru soracağım.”"],["Kendi sözün","Hafta sonu kendi çalışma ilkeni bir cümleyle yazarsın."]],
+ voss:[["Aynalama","Arkadaşın “Bu hafta çok yoruldum” der; sen “Çok mu yoruldun?” dersin ve o anlatmaya devam eder."],["Etiketleme","Annen kızgın görünüyor: “Bugün seni bir şey üzmüş gibi.” dersin ve gerginlik düşer."],["Kalibre soru","Öğretmen ödevi reddedince “Bunu nasıl daha iyi yapabilirim?” diye sorarsın."]],
+ manip:[["Gaslighting","Biri “Ben öyle bir şey demedim, sen hep abartıyorsun” der; mesaj geçmişine bakıp gerçeği doğrularsın."],["Love bombing","Yeni tanıştığın biri ilk haftada aşırı hediye ve övgü yağdırıyorsa yavaşlarsın."],["Suçu çevirme","“Sen beni kızdırdın” cümlesini duyunca, davranışın sorumlusunun kim olduğunu ayırırsın."]],
+ elicit:[["Bilerek yanlış","Biri “Senin okulda herkes 90 alıyormuş” der; düzeltme isteğiyle notlarını anlatırsın. Fark edip durursun."],["Aralık","“Sanırım ayda 10-20 bin kazanıyorsundur” sorusuna net sayı vermek zorunda değilsin."],["İltifat","“Bu işi en iyi sen bilirsin, anlat bakalım” diye başlayan sohbete dikkat edersin."]],
+ mkultra:[["İddia ayırma","“CIA zihin kontrolünü başardı” videosunu görünce belgelerin aslında başarısızlık anlattığını hatırlarsın."],["Etik","Bilimsel deneylerde onam neden zorunlu, bu örnekten anlarsın."],["Kaynak sorgusu","Bir “gizli program” iddiasında Senato raporu gibi birincil kaynak ararsın."]],
+ gateway:[["Rahatlama","Kulaklıkla 15 dakika binaural ses dinleyip sadece gevşemeye odaklanırsın."],["Günlük","Deneyimden sonra ne hissettiğini yazarsın; beklentinin etkisini de not edersin."],["Kaynak","TikTok'taki “CIA gerçekliği kanıtladı” iddiasını belgenin kendisiyle karşılaştırırsın."]],
+ stargate:[["Tesadüf","Bir uzaktan görücünün “isabetli” tarifinde genel ifadelerin (su, bina) çoğu yere uyduğunu fark edersin."],["Belge okuma","CIA arşivinden bir Stargate oturum kaydını açıp okursun."],["Sonuç","Programın 1995'te neden kapandığını öğrenirsin: işe yarar istihbarat yoktu."]],
+ holo:[["Tek cümle","Arkadaşına “bir odanın bilgisi duvarlarına sığabilir” diye anlatırsın."],["Ayırt etmek","“Evren hologram, o yüzden düşüncelerin gerçeği yaratır” sözünün fizikten değil yorumdan geldiğini görürsün."],["Bağlantı","Gateway belgesindeki holografik evren kullanımını bilimsel ilkeyle karşılaştırırsın."]],
+ tbox:[["Yarın","Listeden “matematik ödevi” işini alıp takvime 16:00-17:00 yazarsın."],["Tek iş","O saatte sadece ödev; mesaj gelse bile kutu bitene kadar bakmazsın."],["Kutu kapanışı","17:00'de bitmediyse bırakırsın, kalanı yeni bir kutuya yazarsın."]],
+ tblock:[["Sabah planı","Kahvaltıda 5 dakika günü 9-10, 10-11 diye kâğıda bloklarsın."],["Toplu işler","Bütün mesajlara 13:00 ve 18:00'de toplu bakarsın."],["Bozulan plan","Öğleden sonra beklenmedik bir iş çıkınca kalan saatleri yeniden bloklarsın."]],
+ parkinson:[["Kısa süre","Bir sunuma bir hafta yerine iki gün ayırırsın; gereksiz rötuşlar azalır."],["Ara son tarih","Bir aylık projeye her hafta bir mini teslim koyarsın."],["Okul örneği","Ödevin teslimine bir hafta varken son güne kalmasının nedeni budur."]],
+ pomodoro:[["Ders","25 dakika fizik, 5 dakika ayağa kalkıp su içme; dört turdan sonra 20 dakika mola."],["Yaratıcı iş","Çizim yaparken 25 dakika seni bölüyorsa 90 dakikalık tek kutu kullanırsın."],["Karma","2 saatlik “proje” kutusunu dört pomodoroya bölersin."]],
+ metacognition:[["Sınav hazırlığı","Notları üçüncü kez okumak yerine kapatıp bildiklerini boş kâğıda yazarsın; boş kalan yer, çalışman gereken yerdir."],["Hata günlüğü","Deneme sınavında yanlış yaptığın soruların nedenini yazarsın: dikkat mi, bilgi mi?"],["Kalibrasyon","Sınavdan önce kaç alacağını tahmin eder, sonra gerçek notla karşılaştırırsın."]]
+};
+
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
 const store = (()=>{let d={};try{d=JSON.parse(localStorage.getItem("udaio-demo")||"{}")}catch(e){}
   return {get:(k,f)=>k in d?d[k]:f,set:(k,v)=>{d[k]=v;try{localStorage.setItem("udaio-demo",JSON.stringify(d))}catch(e){}}}})();
@@ -334,6 +376,8 @@ if(!sec(cur.sec))cur.sec="ai";
 
 /* Claude yapıtı iframe'e izin vermez; videolar yalnızca GitHub Pages'te sayfanın içinde oynar. */
 const EMBED = /\.github\.io$/.test(location.hostname);
+const SITE = "https://outofcontext-r.github.io/Blog/";
+N.forEach(n=>{ if(EX[n.id]) n.ex=EX[n.id]; });
 function link(n){
   if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"► YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
   if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"► YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
@@ -387,28 +431,40 @@ function renderNote(){
   const n=N.find(x=>x.id===cur.note), s=sec(n.s), p=document.getElementById("panel"), L=link(n);
   p.style.setProperty("--c",`var(${s.c})`);
   const done=store.get("c:"+n.id,[]);
+  const tab=cur.tab||"video";
+  const hasVideo=!n.noVideo;
+  let screen;
+  if(!hasVideo) screen=`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu konunun videosu yok; sözler Notlar sekmesinde.</small>`;
+  else if(EMBED&&n.v) screen=`<iframe src="https://www.youtube-nocookie.com/embed/${esc(n.v)}?rel=0&playsinline=1" title="${esc(n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  else if(EMBED) screen=`<span class="play blk">VİDEO LİNKİ BEKLENİYOR</span><small>Bu konunun videosu henüz eklenmedi. Linki gelince burada oynayacak.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da ara</a>`:""}`;
+  else screen=`<a class="play blk" href="${SITE}#${esc(n.id)}" target="_blank" rel="noopener">► SİTEDE İZLE</a><small>Claude yapıtı içinde video oynatılamıyor. Videolar Udaio sitesinde, sayfanın içinde oynar.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da aç</a>`:""}`;
+  const videoTab=`<div class="nhead">
+      <div class="screen${EMBED&&n.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>${screen}</div>
+      <div class="meta">
+        <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
+        <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
+        <button class="blk gonotes lab" type="button" data-tab="notes">Notları aç ►</button>
+      </div>
+    </div>`;
+  const notesTab=`<div class="secs">
+      <section class="sec"><h3 class="lab"><i>1</i>Açıklama</h3><div class="sb"><p>${esc(n.sum)}</p></div></section>
+      <section class="sec"><h3 class="lab"><i>2</i>Nasıl yapılır</h3><div class="sb"><ul class="steps">${n.steps.map((t,i)=>`<li><label class="step"><input type="checkbox" id="st-${n.id}-${i}" data-i="${i}" ${done.includes(i)?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul></div></section>
+      ${n.ex?`<section class="sec"><h3 class="lab"><i>3</i>Örnekler</h3><div class="sb"><ul class="exs">${n.ex.map(x=>`<li><b>${esc(x[0])}</b><span>${esc(x[1])}</span></li>`).join("")}</ul></div></section>`:""}
+      <section class="sec"><h3 class="lab"><i>4</i>${n.id==="quotes"?"Sözler":"Kavramlar"}</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
+      ${n.ev?`<section class="sec"><h3 class="lab"><i>!</i>Kanıt durumu</h3><div class="sb"><div class="evid">${n.ev.map(e=>`<div class="ev"><span class="lv ${e[0]}">${e[1]}</span><span>${esc(e[2])}</span></div>`).join("")}</div></div></section>`:""}
+      <p class="warnline">Notlar, videonun transkriptinden henüz doğrulanmadı.</p>
+    </div>`;
   p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)} / Not</span></div>
   <div class="body">
     <button class="back blk lab" type="button" data-back>◄ Geri</button>
     <div class="hero"><span class="eyebrow lab">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
-    <div class="nhead">
-      <div class="screen${EMBED&&n.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>
-        ${EMBED&&n.v?`<iframe src="https://www.youtube-nocookie.com/embed/${esc(n.v)}?rel=0" title="${esc(n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`:L?`<a class="play blk" href="${esc(L.href)}" target="_blank" rel="noopener">${esc(L.label)}</a><small>${esc(L.hint)}</small>`:`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu not bir video değil; sözler aşağıda.</small>`}
-      </div>
-      <div class="meta">
-        <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
-        <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
-        <p class="warnline">Not, videonun transkriptinden henüz doğrulanmadı.</p>
-      </div>
+    <div class="tabs" role="tablist" aria-label="Not sekmeleri">
+      <button type="button" role="tab" data-tab="video" aria-selected="${tab==="video"}">Video</button>
+      <button type="button" role="tab" data-tab="notes" aria-selected="${tab==="notes"}">Notlar</button>
     </div>
-    <div class="secs">
-      <section class="sec"><h3 class="lab"><i>1</i>Kısa özet</h3><div class="sb"><p>${esc(n.sum)}</p></div></section>
-      <section class="sec"><h3 class="lab"><i>2</i>${n.id==="quotes"?"Sözler":"Ana kavramlar"}</h3><div class="sb"><dl class="terms">${n.terms.map(t=>`<div class="term"><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></div></section>
-      <section class="sec"><h3 class="lab"><i>3</i>Nasıl uygulanır</h3><div class="sb"><ul class="steps">${n.steps.map((t,i)=>`<li><label class="step"><input type="checkbox" id="st-${n.id}-${i}" data-i="${i}" ${done.includes(i)?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul></div></section>
-      ${n.ev?`<section class="sec"><h3 class="lab"><i>!</i>Kanıt durumu</h3><div class="sb"><div class="evid">${n.ev.map(e=>`<div class="ev"><span class="lv ${e[0]}">${e[1]}</span><span>${esc(e[2])}</span></div>`).join("")}</div></div></section>`:""}
-    </div>
+    ${tab==="video"?videoTab:notesTab}
   </div>`;
-  pix(document.getElementById("scr"),n.id.length*7,cssv("--screen"),true);
+  const sc=document.getElementById("scr"); if(sc) pix(sc,n.id.length*7,cssv("--screen"),true);
 }
 function render(){renderSide();renderProgress();cur.note?renderNote():renderSection()}
 
@@ -418,7 +474,9 @@ document.addEventListener("click",e=>{
   if(nav){cur={sec:nav.dataset.sec,note:null};store.set("sec",cur.sec);render();
     const b=document.querySelector(`[data-sec="${cur.sec}"]`); b&&b.scrollIntoView({inline:"nearest",block:"nearest"});return}
   const card=e.target.closest("[data-note]");
-  if(card){cur.note=card.dataset.note;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
+  const tb=e.target.closest("[data-tab]");
+  if(tb){cur.tab=tb.dataset.tab;render();document.getElementById("panel").scrollIntoView({block:"start"});return}
+  if(card){cur.note=card.dataset.note;cur.tab="video";render();document.getElementById("panel").scrollIntoView({block:"start"});return}
   if(e.target.closest("[data-back]")){cur.note=null;render();return}
   const st=e.target.closest("[data-st]");
   if(st){store.set("s:"+cur.note,st.dataset.st);render();return}
@@ -431,5 +489,6 @@ document.addEventListener("change",e=>{
   if(d.length===n.steps.length&&status(n.id)!=="uygulaniyor"){store.set("s:"+n.id,"uygulaniyor");render()}
 });
 showQuote(); qtimer=setInterval(nextQuote,9000);
+{ const h=decodeURIComponent(location.hash.slice(1)), hn=N.find(n=>n.id===h); if(hn) cur={sec:hn.s,note:hn.id,tab:"video"}; }
 render();
 </script>

@@ -25,3 +25,8 @@ Kod bilmeden Claude'a çalışan bir oyun yaptırabilirsin. Claude oyunu tek bir
 2. Çalışınca tek bir özellik ekle: skor, zamanlayıcı ya da düşman.
 3. Bir şey bozulursa ne beklediğini ve ne olduğunu yaz.
 4. Claude'dan kodun bir bölümünü sana açıklamasını iste.
+
+## Örnekler
+- **İlk mesaj:** “Ok tuşlarıyla hareket eden bir kare ve ekranda rastgele çıkan altınlar olan basit bir oyun yap.”
+- **İkinci mesaj:** “Şimdi sadece bir skor sayacı ekle, başka hiçbir şeyi değiştirme.”
+- **Hata bildirmek:** “Kare ekranın dışına çıkıyor; kenarda durmasını istiyorum.”

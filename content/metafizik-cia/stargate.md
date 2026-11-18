@@ -25,6 +25,11 @@ Stargate, ABD hükümetinin “uzaktan görme” üzerine yaptığı gizli araş
 2. CIA okuma odasındaki Stargate belgelerinden birini aç ve oku.
 3. Bir “isabet” örneğinde tesadüf ihtimalini düşün.
 
+## Örnekler
+- **Tesadüf:** Bir uzaktan görücünün “isabetli” tarifinde genel ifadelerin (su, bina) çoğu yere uyduğunu fark edersin.
+- **Belge okuma:** CIA arşivinden bir Stargate oturum kaydını açıp okursun.
+- **Sonuç:** Programın 1995'te neden kapandığını öğrenirsin: işe yarar istihbarat yoktu.
+
 ## Kanıt durumu
 - **GERÇEK:** Program vardı; belgeleri yayımlandı.
 - **TARTIŞMALI:** Bazı istatistiksel sonuçlar hâlâ tartışılıyor.

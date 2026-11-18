@@ -25,3 +25,8 @@ Y Combinator'ın kurucusu Paul Graham'a göre büyük işler üç şeyden doğar
 2. Bu hafta o konuya ödülsüz 3 saat ayır.
 3. İlginin seni nereye götürdüğünü not et.
 4. Başkalarının “gereksiz” dediği bir merakı hemen bırakma.
+
+## Örnekler
+- **Merak:** Kimsenin sormadığı halde saatlerce oyun mekaniklerini incelersin; bu ileride oyun tasarımcısı yapabilir.
+- **Çıkarsız ilgi:** Para kazanmak için değil, nasıl çalıştığını merak ettiğin için eski radyoları sökersin.
+- **Sabır:** Bir konuyu yıllarca takip edersin; derinlik başkalarının göremediğini görmeni sağlar.
