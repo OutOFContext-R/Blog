@@ -4,8 +4,6 @@ bolum: metafizik-cia
 etiketler: [cia, gateway, monroe-enstitusu, hemi-sync, bilinc, stargate]
 video: "Aday: https://www.youtube.com/watch?v=nLkd_XNl-_0 (kalitesi kontrol edilemedi, onay bekliyor)"
 birincil_kaynak: https://www.cia.gov/readingroom/document/cia-rdp96-00788r001700210016-5
-kaynak_reel: "Kullanıcı isteği: CIA'nın mistik konseptleri"
-durum: izlenecek
 kanit_durumu: "Belge gerçek; içindeki iddialar büyük ölçüde spekülatif"
 dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden yazıldı. Birincil kaynak linkinin biçimi CIA arşivinin belge numarasından türetildi, açılıp kontrol edilmeli."
 ---

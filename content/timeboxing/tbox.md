@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=Z-YhEIEVOFs"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

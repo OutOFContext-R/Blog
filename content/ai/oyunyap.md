@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=4amTXOdSyb0"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Build full games inside Claude"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

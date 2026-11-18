@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=4XXGSOfwMeo"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "MK-Ultra"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

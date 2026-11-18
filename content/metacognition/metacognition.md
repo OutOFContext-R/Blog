@@ -5,7 +5,6 @@ kaynak: "JUSTIN SUNG · POWER IQ"
 sure: "2 VİDEO"
 video: "https://www.youtube.com/watch?v=k9SI2cLS73M , https://www.youtube.com/watch?v=wvgvTcC8GGg"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Kullanıcı isteği: Metacognition"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

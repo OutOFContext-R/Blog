@@ -5,7 +5,6 @@ kaynak: "THE EDUCATION STUDIO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=FgqIjUvPX3w"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

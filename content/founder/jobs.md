@@ -5,7 +5,6 @@ kaynak: "STEVE JOBS"
 sure: "15 DK"
 video: "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Founder hikayeleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

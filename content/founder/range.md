@@ -5,7 +5,6 @@ kaynak: "DAVID EPSTEIN"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=stU79nPoS2I"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Dear men… study Non-linear careers"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=P8VKNewIkms"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Dear men… study Obsession"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

@@ -5,7 +5,6 @@ kaynak: "LARA BOYD · TEDX"
 sure: "14 DK"
 video: "https://www.youtube.com/watch?v=LNHBMFCzznE"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Dear men… study Neuroplasticity"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

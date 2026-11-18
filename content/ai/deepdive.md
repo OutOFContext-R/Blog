@@ -5,7 +5,6 @@ kaynak: "ANDREJ KARPATHY"
 sure: "3 SA 31 DK"
 video: "https://www.youtube.com/watch?v=7xTGNNLPyMI"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "AI bölümü, LLM mekanikleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

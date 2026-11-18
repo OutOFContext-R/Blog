@@ -4,8 +4,6 @@ bolum: zihin
 etiketler: [hafiza, hafiza-sarayi, method-of-loci, ogrenme]
 video: https://www.youtube.com/watch?v=U6PoUg7jXsA
 sure: "~20 dk"
-kaynak_reel: "3 Ways To Develop a Photographic Memory"
-durum: izlenecek
 dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden yazıldı."
 ---
 

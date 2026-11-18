@@ -5,7 +5,6 @@ kaynak: "CHASE HUGHES"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=l0i_56iSV3g"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "CIA sorgu ve etki teknikleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

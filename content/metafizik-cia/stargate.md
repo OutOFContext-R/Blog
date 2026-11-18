@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=oasTnsLw_n8"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "CIA'nın mistik konseptleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

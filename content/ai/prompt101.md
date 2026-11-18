@@ -5,7 +5,6 @@ kaynak: "ANTHROPIC"
 sure: "~24 DK"
 video: "https://www.youtube.com/watch?v=ysPbXH0LpIE"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Prompt yazmayı öğrenmek"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

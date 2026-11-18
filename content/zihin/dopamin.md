@@ -5,7 +5,6 @@ kaynak: "BETTER THAN YESTERDAY"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=TFYCDu4v5_E"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Boring my brain for 10 min so studying feels fun"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

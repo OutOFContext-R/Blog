@@ -4,8 +4,6 @@ bolum: ai
 etiketler: [llm, chatgpt, claude, prompt, araclar]
 video: https://www.youtube.com/watch?v=EWvNQjAaOHw
 sure: "~2 sa 11 dk"
-kaynak_reel: "AI bölümünün temel videosu (kullanıcı seçimi)"
-durum: izlenecek
 dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden yazıldı."
 ---
 

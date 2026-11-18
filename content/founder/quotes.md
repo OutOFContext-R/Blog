@@ -5,7 +5,6 @@ kaynak: "DERLEME"
 sure: "SÖZLER"
 video: ""
 video_dogrulandi: false
-kaynak_reel: "Motivasyon sözleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

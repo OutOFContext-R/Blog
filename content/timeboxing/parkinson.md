@@ -5,7 +5,6 @@ kaynak: "TEAMGANTT"
 sure: "~2 DK"
 video: "https://www.youtube.com/watch?v=EcDjixqQZhU"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

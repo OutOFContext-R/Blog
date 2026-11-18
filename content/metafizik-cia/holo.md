@@ -5,7 +5,6 @@ kaynak: "PBS SPACE TIME"
 sure: "14:39"
 video: "https://www.youtube.com/watch?v=klpDHn8viX8"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Metafizik kavramlar"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

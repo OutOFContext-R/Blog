@@ -4,8 +4,6 @@ bolum: founder
 etiketler: [oyun-teorisi, strateji, isbirligi, karar-verme]
 video: https://www.youtube.com/watch?v=mScpHTIi-kM
 sure: "~27 dk"
-kaynak_reel: "Dear men, I beg you. Please STUDY: … Game theory"
-durum: izlenecek
 dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden yazıldı."
 ---
 

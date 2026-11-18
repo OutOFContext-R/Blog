@@ -5,7 +5,6 @@ kaynak: "ANİMASYONLU ÖZET"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=OaEw7ZFs5sU"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Konuşma becerileri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

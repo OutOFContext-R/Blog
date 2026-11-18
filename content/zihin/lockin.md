@@ -5,7 +5,6 @@ kaynak: "JUSTIN SUNG"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=9ktV_AaHbmY"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "How to systematically lock in"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

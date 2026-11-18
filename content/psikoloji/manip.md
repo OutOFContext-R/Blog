@@ -5,7 +5,6 @@ kaynak: "AÇIKLAYICI VİDEO"
 sure: "8 DK"
 video: "https://www.youtube.com/watch?v=aBculw1TL2U"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Manipülasyon (tanıma ve korunma)"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

@@ -5,7 +5,6 @@ kaynak: "VERITASIUM"
 sure: "YOUTUBE"
 video: "https://www.youtube.com/watch?v=5eW6Eagr9XA"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Dear men… study Pattern recognition"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

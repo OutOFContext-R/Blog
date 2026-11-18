@@ -5,7 +5,6 @@ kaynak: "KİTAP ÖZETİ"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=tz2qWCom6ks"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "Theater of Mind"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 

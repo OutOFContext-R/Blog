@@ -5,7 +5,6 @@ kaynak: "ANİMASYON"
 sure: "KISA"
 video: "https://www.youtube.com/watch?v=9GqBxPwpL7A"
 video_dogrulandi: "arama sonucundan"
-kaynak_reel: "6 Practices to become Dangerously Powerful"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
 
