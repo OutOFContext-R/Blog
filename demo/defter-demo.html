@@ -147,7 +147,16 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
   .nav[aria-current="page"]::after{content:none}
   .nhead{grid-template-columns:minmax(0,1fr)}
 }
+.music{flex:none;display:flex;align-items:stretch;gap:8px}
+.music .mb{width:46px;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:0}
+.music .mb[aria-pressed="false"]{color:var(--soft)}
+.mname{display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.06em;white-space:nowrap;min-width:150px}
+.mname[aria-pressed="true"]{background:var(--logo);color:var(--logo-deep)}
+.mname[aria-pressed="true"] #mico{animation:bob .5s infinite steps(2)}
+@keyframes bob{50%{transform:translateY(-3px)}}
+@media (max-width:860px){ .top{flex-wrap:wrap} .quote{flex:1 1 300px} .music{flex:1 1 100%} .mname{flex:1;min-width:0} }
 @media (max-width:560px){
+  .music{height:44px}
   .app{gap:12px;padding-block:12px 32px}
   .top{flex-wrap:wrap}
   .logo{flex:1 1 100%;justify-content:flex-start}
@@ -168,6 +177,13 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
       <span class="fill" id="qfill"></span>
       <span class="qt"><span class="q" id="qtext"></span></span>
     </button>
+    <div class="music" role="group" aria-label="Ses ve müzik">
+      <button type="button" class="mb blk" id="sfx" aria-pressed="true" aria-label="Ses efektleri" title="Ses efektlerini aç/kapat">
+        <svg width="20" height="20" viewBox="0 0 22 22" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 8h4l5-4v14l-5-4H2z"/><path id="sfxWave" fill="currentColor" d="M14 7h2v8h-2zM18 5h2v12h-2z"/><path id="sfxX" fill="currentColor" hidden d="M14 7h2v2h-2zM18 7h2v2h-2zM16 9h2v4h-2zM14 13h2v2h-2zM18 13h2v2h-2z"/></svg>
+      </button>
+      <button type="button" class="mname blk" id="mplay" aria-pressed="false"><b id="mico" aria-hidden="true">♪</b><span id="mtitle">MÜZİK</span></button>
+      <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça">►</button>
+    </div>
   </header>
 
   <div class="stage">
@@ -479,15 +495,118 @@ document.addEventListener("click",e=>{
   if(card){cur.note=card.dataset.note;cur.tab="video";render();document.getElementById("panel").scrollIntoView({block:"start"});return}
   if(e.target.closest("[data-back]")){cur.note=null;render();return}
   const st=e.target.closest("[data-st]");
-  if(st){store.set("s:"+cur.note,st.dataset.st);render();return}
+  if(st){store.set("s:"+cur.note,st.dataset.st);if(st.dataset.st==="uygulaniyor")playDone();render();return}
 });
 document.addEventListener("change",e=>{
   const cb=e.target.closest(".step input"); if(!cb)return;
   const k="c:"+cur.note; let d=store.get(k,[]); const i=+cb.dataset.i;
   d=cb.checked?[...new Set([...d,i])]:d.filter(x=>x!==i); store.set(k,d);
+  if(cb.checked) playCheck();
   const n=N.find(x=>x.id===cur.note);
-  if(d.length===n.steps.length&&status(n.id)!=="uygulaniyor"){store.set("s:"+n.id,"uygulaniyor");render()}
+  if(d.length===n.steps.length&&status(n.id)!=="uygulaniyor"){store.set("s:"+n.id,"uygulaniyor");playDone();render()}
 });
+
+/* ---------- Ses: tarayıcının kendisinin çaldığı sakin chiptune parçalar ve düğme sesleri (ses dosyası yok) ----------
+   Her parça 4 ölçülük döngü: akor kökleri, 64 adımlık melodi (MIDI numarası, 0 = sus), davul desenleri.
+   Tarayıcılar sesi ancak bir dokunuştan sonra başlatır; müzik ♪ düğmesine basınca çalar. */
+const TRACKS = [
+  { name:"GECE ÇALIŞMASI", bpm:78, arp:false, roots:[[45,"min"],[41,"maj"],[48,"maj"],[43,"maj"]],
+    mel:[76,0,0,0,72,0,74,0, 76,0,0,0,0,0,0,0, 77,0,0,0,76,0,72,0, 69,0,0,0,0,0,0,0,
+         79,0,0,0,76,0,74,0, 72,0,0,0,74,0,0,0, 71,0,0,0,72,0,74,0, 67,0,0,0,0,0,0,0],
+    kick:"x.......x.......", snare:"....x.......x...", hat:"..x...x...x...x." },
+  { name:"ODAK DÖNGÜSÜ", bpm:96, arp:true, roots:[[50,"min"],[46,"maj"],[41,"maj"],[48,"maj"]],
+    mel:[74,0,77,0,81,0,0,0, 79,0,77,0,74,0,0,0, 72,0,74,0,77,0,0,0, 76,0,74,0,72,0,0,0,
+         70,0,74,0,77,0,0,0, 79,0,81,0,77,0,0,0, 76,0,72,0,67,0,0,0, 72,0,74,0,76,0,0,0],
+    kick:"x...x...x...x...", snare:"....x.......x...", hat:"x.x.x.x.x.x.x.x." },
+  { name:"YEŞİL YOL", bpm:112, arp:true, roots:[[43,"maj"],[40,"min"],[48,"maj"],[50,"maj"]],
+    mel:[79,0,0,0,83,0,86,0, 83,0,79,0,0,0,0,0, 76,0,79,0,83,0,0,0, 81,0,0,0,0,0,0,0,
+         84,0,83,0,79,0,76,0, 72,0,76,0,79,0,0,0, 81,0,79,0,78,0,74,0, 79,0,0,0,0,0,0,0],
+    kick:"x...x...x...x.x.", snare:"....x.......x...", hat:"x.x.x.x.x.x.x.x." }
+];
+const ACtx = window.AudioContext || window.webkitAudioContext;
+let ac=null, master=null, musicBus=null, noise=null, playing=false, step=0, nextT=0, mtimer=0;
+let track=Math.min(TRACKS.length-1,Math.max(0,+store.get("track",0)||0));
+let sfxOn=store.get("sfx",true)!==false;
+const mtof=m=>440*Math.pow(2,(m-69)/12);
+function audio(){
+  if(!ACtx) return null;
+  if(!ac){ try{
+    ac=new ACtx(); master=ac.createGain(); master.gain.value=.28; master.connect(ac.destination);
+    musicBus=ac.createGain(); musicBus.gain.value=.7; musicBus.connect(master);
+    noise=ac.createBuffer(1,ac.sampleRate*.3,ac.sampleRate);
+    const d=noise.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+  }catch(e){ ac=null; return null; } }
+  if(ac.state==="suspended") ac.resume().catch(()=>{});
+  return ac;
+}
+function tone(dest,freq,t,dur,type,vol){
+  const o=ac.createOscillator(), g=ac.createGain();
+  o.type=type; o.frequency.setValueAtTime(freq,t);
+  g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  o.connect(g); g.connect(dest); o.start(t); o.stop(t+dur+.03);
+}
+function hit(t,freq,dur,vol){
+  const s=ac.createBufferSource(), fl=ac.createBiquadFilter(), g=ac.createGain();
+  s.buffer=noise; fl.type="highpass"; fl.frequency.value=freq;
+  g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  s.connect(fl); fl.connect(g); g.connect(musicBus); s.start(t); s.stop(t+dur+.02);
+}
+function kick(t){
+  const o=ac.createOscillator(), g=ac.createGain();
+  o.frequency.setValueAtTime(140,t); o.frequency.exponentialRampToValueAtTime(40,t+.12);
+  g.gain.setValueAtTime(.5,t); g.gain.exponentialRampToValueAtTime(.0001,t+.16);
+  o.connect(g); g.connect(musicBus); o.start(t); o.stop(t+.18);
+}
+function scheduleStep(s,t){
+  const tr=TRACKS[track], bar=Math.floor(s/16), i=s%16, sp=60/tr.bpm/4;
+  const [root,q]=tr.roots[bar], chord=q==="min"?[0,3,7]:[0,4,7];
+  if(tr.kick[i]==="x") kick(t);
+  if(tr.snare[i]==="x") hit(t,1800,.12,.16);
+  if(tr.hat[i]==="x") hit(t,7500,.03,.05);
+  if(i%4===0) tone(musicBus,mtof(root),t,sp*3.6,"triangle",.2);
+  if(tr.arp) tone(musicBus,mtof(root+24+chord[i%3]),t,sp*.8,"triangle",.035);
+  else if(i%8===0) chord.forEach(c=>tone(musicBus,mtof(root+12+c),t,sp*7,"sine",.04));
+  const m=tr.mel[s]; if(m) tone(musicBus,mtof(m),t,sp*2.2,"square",.035);
+}
+function tickMusic(){
+  if(!playing||!ac) return;
+  while(nextT<ac.currentTime+.15){ scheduleStep(step,nextT); nextT+=60/TRACKS[track].bpm/4; step=(step+1)%64; }
+}
+function startMusic(){
+  if(!audio()){ document.getElementById("mtitle").textContent="SES YOK"; return; }
+  musicBus.gain.cancelScheduledValues(ac.currentTime); musicBus.gain.setValueAtTime(.7,ac.currentTime);
+  playing=true; step=0; nextT=ac.currentTime+.06;
+  clearInterval(mtimer); mtimer=setInterval(tickMusic,25); tickMusic(); paintMusic();
+}
+function stopMusic(){
+  playing=false; clearInterval(mtimer);
+  if(ac&&musicBus){ musicBus.gain.cancelScheduledValues(ac.currentTime); musicBus.gain.setTargetAtTime(0,ac.currentTime,.015); }
+  paintMusic();
+}
+function paintMusic(){
+  const t=TRACKS[track];
+  document.getElementById("mtitle").textContent=t.name;
+  const mp=document.getElementById("mplay");
+  mp.setAttribute("aria-pressed",String(playing)); mp.title=(playing?"Durdur: ":"Çal: ")+t.name;
+  document.getElementById("mico").textContent=playing?"♫":"♪";
+  document.getElementById("sfx").setAttribute("aria-pressed",String(sfxOn));
+  document.getElementById("sfxWave").toggleAttribute("hidden",!sfxOn);
+  document.getElementById("sfxX").toggleAttribute("hidden",sfxOn);
+}
+function playClick(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.005; tone(master,1100,t,.035,"square",.03); tone(master,1650,t+.025,.03,"square",.02); }
+function playTab(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.005; tone(master,660,t,.06,"triangle",.1); tone(master,880,t+.05,.08,"triangle",.1); }
+function playCheck(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.005; [784,1047].forEach((f,i)=>tone(master,f,t+i*.06,.12,"triangle",.12)); }
+function playDone(){ if(!sfxOn||!audio()) return; const t=ac.currentTime+.01; [523,659,784,1047].forEach((f,i)=>tone(master,f,t+i*.08,.2,"square",.05)); }
+document.getElementById("mplay").addEventListener("click",()=>{ playing?stopMusic():startMusic(); });
+document.getElementById("mnext").addEventListener("click",()=>{ track=(track+1)%TRACKS.length; store.set("track",track); startMusic(); });
+document.getElementById("sfx").addEventListener("click",()=>{ sfxOn=!sfxOn; store.set("sfx",sfxOn); if(!sfxOn&&playing) stopMusic(); paintMusic(); });
+/* Düğme sesleri: sekme geçişinde yumuşak iki nota, diğer düğmelerde kısa piksel tık */
+document.addEventListener("click",e=>{
+  const b=e.target.closest&&e.target.closest("button,a.play"); if(!b) return;
+  if(b.id==="mplay"||b.id==="mnext"||b.id==="sfx") return;
+  if(b.dataset.tab) playTab(); else playClick();
+},true);
+paintMusic();
 showQuote(); qtimer=setInterval(nextQuote,9000);
 { const h=decodeURIComponent(location.hash.slice(1)), hn=N.find(n=>n.id===h); if(hn) cur={sec:hn.s,note:hn.id,tab:"video"}; }
 render();
