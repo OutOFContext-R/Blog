@@ -1,10 +1,10 @@
 ---
 baslik: "Doğrusal olmayan kariyer: Range"
 bolum: founder
-kaynak: "DAVID EPSTEIN · TED"
-sure: "TED"
-video: "https://www.youtube.com/results?search_query=David%20Epstein%20Why%20specializing%20early%20doesn't%20always%20mean%20career%20success%20TED"
-video_dogrulandi: false
+kaynak: "DAVID EPSTEIN"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=stU79nPoS2I"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Dear men… study Non-linear careers"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Doğrusal olmayan kariyer: Range
 
 ## 1. Kısa özet
-David Epstein, Range kitabında erken uzmanlaşmanın her alanda en iyi yol olmadığını gösteriyor. Tiger Woods küçük yaşta tek bir sporda başladı; Roger Federer ise çocukken birçok spor denedi ve tenise geç odaklandı. Kuralları net alanlarda erken uzmanlaşma işe yarar; ama belirsiz, değişken alanlarda farklı deneyimler toplayan genelciler daha başarılı olur.
+Video: David Epstein, genelcilerin neden uzmanlardan daha başarılı olabildiğini ve arkasındaki araştırmayı kendisi anlatıyor. David Epstein, Range kitabında erken uzmanlaşmanın her alanda en iyi yol olmadığını gösteriyor. Tiger Woods küçük yaşta tek bir sporda başladı; Roger Federer ise çocukken birçok spor denedi ve tenise geç odaklandı. Kuralları net alanlarda erken uzmanlaşma işe yarar; ama belirsiz, değişken alanlarda farklı deneyimler toplayan genelciler daha başarılı olur.
 
 ## 2. Ana kavramlar
 - **Örnekleme dönemi:** Odaklanmadan önce birçok alanı denemek.

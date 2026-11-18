@@ -1,10 +1,10 @@
 ---
 baslik: "Claude'a oyun yaptırmak"
 bolum: ai
-kaynak: "CLAUDE ARTIFACTS"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=build%20a%20game%20with%20Claude%20artifacts%20tutorial"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=4amTXOdSyb0"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Build full games inside Claude"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Claude'a oyun yaptırmak
 
 ## 1. Kısa özet
-Kod bilmeden Claude'a çalışan bir oyun yaptırabilirsin. Claude oyunu tek bir sayfa olarak yazar ve sohbetin içinde hemen çalıştırır. İşin sırrı, oyunu tek seferde istemek değil, küçük adımlarla büyütmek: önce oynanabilir en basit hali, sonra tek tek özellik.
+Video: “How to Create Games with Claude AI (No Coding Required)”, tek bir prompt'la çalışan bir oyun yapıp Claude'da önizlemeyi gösteriyor. Kod bilmeden Claude'a çalışan bir oyun yaptırabilirsin. Claude oyunu tek bir sayfa olarak yazar ve sohbetin içinde hemen çalıştırır. İşin sırrı, oyunu tek seferde istemek değil, küçük adımlarla büyütmek: önce oynanabilir en basit hali, sonra tek tek özellik.
 
 ## 2. Ana kavramlar
 - **Artifact:** Claude'un sohbette çalıştırdığı sayfa, oyun ya da uygulama.

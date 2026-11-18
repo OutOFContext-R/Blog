@@ -1,10 +1,10 @@
 ---
 baslik: "Öz disiplin"
 bolum: zihin
-kaynak: "HEALTHYGAMERGG"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=HealthyGamerGG%20Why%20You're%20Struggling%20With%20Discipline"
-video_dogrulandi: false
+kaynak: "ANİMASYON"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=9GqBxPwpL7A"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "6 Practices to become Dangerously Powerful"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Öz disiplin
 
 ## 1. Kısa özet
-Öz disiplin, o an istediğin şey yerine uzun vadede istediğin şeyi seçebilmektir. Disiplinli görünen insanlar daha çok irade kullanmıyor; ortamlarını, alışkanlıklarını ve kimliklerini buna göre kuruyorlar. Beyin anlık ödülü sever; disiplin bu hesabı değiştiren bir sistemdir.
+Video: “The REAL Secret To Self Discipline”, öz disiplinin sırrını animasyonla anlatıyor. Öz disiplin, o an istediğin şey yerine uzun vadede istediğin şeyi seçebilmektir. Disiplinli görünen insanlar daha çok irade kullanmıyor; ortamlarını, alışkanlıklarını ve kimliklerini buna göre kuruyorlar. Beyin anlık ödülü sever; disiplin bu hesabı değiştiren bir sistemdir.
 
 ## 2. Ana kavramlar
 - **Öz kontrol:** Anlık dürtüye rağmen hedefe uygun davranmak.

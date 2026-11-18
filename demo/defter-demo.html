@@ -399,7 +399,13 @@ const VID = {
  holo:{v:"klpDHn8viX8",who:"PBS SPACE TIME",dur:"14:39"},
  tblock:{v:"1BohaaiLIBM",who:"AÇIKLAYICI VİDEO",dur:"KISA"},
  parkinson:{v:"EcDjixqQZhU",who:"TEAMGANTT",dur:"~2 DK"},
- voss:{v:"OaEw7ZFs5sU",who:"ANİMASYONLU ÖZET",dur:"KISA"}
+ voss:{v:"OaEw7ZFs5sU",who:"ANİMASYONLU ÖZET",dur:"KISA"},
+ lockin:{v:"9ktV_AaHbmY",who:"JUSTIN SUNG",dur:"KISA",pre:"Video: “How To Improve Your Focus Permanently”, odağın kalıcı olarak nasıl güçlendirileceğini anlatıyor."},
+ disiplin:{v:"9GqBxPwpL7A",who:"ANİMASYON",dur:"KISA",pre:"Video: “The REAL Secret To Self Discipline”, öz disiplinin sırrını animasyonla anlatıyor."},
+ pomodoro:{v:"FgqIjUvPX3w",who:"THE EDUCATION STUDIO",dur:"KISA",pre:"Video: Pomodoro tekniğinin tarihini, 25 dakika kuralını ve dikkat dağınıklığıyla başa çıkmayı beyaz tahta animasyonuyla anlatıyor."},
+ tbox:{v:"Z-YhEIEVOFs",who:"AÇIKLAYICI VİDEO",dur:"KISA",pre:"Video: “What is Timeboxing?”, yöntemi temelden açıklıyor."},
+ range:{v:"stU79nPoS2I",who:"DAVID EPSTEIN",dur:"KISA",pre:"Video: David Epstein, genelcilerin neden uzmanlardan daha başarılı olabildiğini ve arkasındaki araştırmayı kendisi anlatıyor."},
+ oyunyap:{v:"4amTXOdSyb0",who:"AÇIKLAYICI VİDEO",dur:"KISA",pre:"Video: “How to Create Games with Claude AI (No Coding Required)”, tek bir prompt'la çalışan bir oyun yapıp Claude'da önizlemeyi gösteriyor."}
 };
 
 const STATES = [["izlenecek","İZLENECEK"],["izlendi","İZLENDİ"],["uygulaniyor","UYGULANIYOR"]];
@@ -416,7 +422,7 @@ const EMBED = /\.github\.io$/.test(location.hostname);
 const SITE = "https://outofcontext-r.github.io/Blog/";
 N.forEach(n=>{
   if(EX[n.id]) n.ex=EX[n.id];
-  const P=VID[n.id]; if(P){ Object.assign(n,P); if(P.v||P.vids){ delete n.q; } }
+  const P=VID[n.id]; if(P){ const {pre,...rest}=P; Object.assign(n,rest); if(P.v||P.vids){ delete n.q; } if(pre) n.sum=pre+" "+n.sum; }
   n.list = n.vids || ((n.v||n.q||n.url) ? [{v:n.v,q:n.q,url:n.url,urlLabel:n.urlLabel,t:n.t,who:n.who,dur:n.dur}] : []);
 });
 function link(n){

@@ -1,10 +1,10 @@
 ---
 baslik: "Timeboxing nedir?"
 bolum: timeboxing
-kaynak: "MARC ZAO-SANDERS"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Marc%20Zao-Sanders%20timeboxing"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=Z-YhEIEVOFs"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Timeboxing"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Timeboxing nedir?
 
 ## 1. Kısa özet
-Timeboxing, yapılacaklar listesindeki işleri takvime taşımaktır: her işe ne zaman başlayıp ne zaman bitireceğini önceden yazarsın. Marc Zao-Sanders bunu “bir seferde tek iş yapmanın gücü” olarak anlatıyor. Liste neyi yapacağını söyler; takvimdeki kutu ise ne zaman ve ne kadar süre yapacağını. Böylece kararsızlık ve erteleme azalır.
+Video: “What is Timeboxing?”, yöntemi temelden açıklıyor. Timeboxing, yapılacaklar listesindeki işleri takvime taşımaktır: her işe ne zaman başlayıp ne zaman bitireceğini önceden yazarsın. Marc Zao-Sanders bunu “bir seferde tek iş yapmanın gücü” olarak anlatıyor. Liste neyi yapacağını söyler; takvimdeki kutu ise ne zaman ve ne kadar süre yapacağını. Böylece kararsızlık ve erteleme azalır.
 
 ## 2. Ana kavramlar
 - **Zaman kutusu:** Bir işe takvimde ayrılan, başı ve sonu belli süre.
