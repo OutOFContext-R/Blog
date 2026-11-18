@@ -155,11 +155,12 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
   .nhead{grid-template-columns:minmax(0,1fr)}
 }
 .music{flex:none;display:flex;align-items:stretch;gap:8px}
-.music .mb{width:46px;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:0}
+.music .mb{min-width:46px;padding:0 10px!important;font-weight:600;font-size:13px;letter-spacing:.05em;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:0}
 .music .mb[aria-pressed="false"]{color:var(--soft)}
 .mname{display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.06em;white-space:nowrap;min-width:150px}
 .mname[aria-pressed="true"]{background:var(--logo);color:var(--logo-deep)}
-.mname[aria-pressed="true"] #mico{animation:bob .5s infinite steps(2)}
+#mico{font-weight:700;color:var(--c-zihin)}
+.mname[aria-pressed="true"] #mico{color:var(--logo-deep)}
 @keyframes bob{50%{transform:translateY(-3px)}}
 @media (max-width:860px){ .top{flex-wrap:wrap} .quote{flex:1 1 300px} .music{flex:1 1 100%} .mname{flex:1;min-width:0} }
 @media (max-width:560px){
@@ -188,8 +189,8 @@ button.blk:active,a.blk:active{transform:translateY(3px);box-shadow:0 1px 0 var(
       <button type="button" class="mb blk" id="sfx" aria-pressed="true" aria-label="Ses efektleri" title="Ses efektlerini aç/kapat">
         <svg width="20" height="20" viewBox="0 0 22 22" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 8h4l5-4v14l-5-4H2z"/><path id="sfxWave" fill="currentColor" d="M14 7h2v8h-2zM18 5h2v12h-2z"/><path id="sfxX" fill="currentColor" hidden d="M14 7h2v2h-2zM18 7h2v2h-2zM16 9h2v4h-2zM14 13h2v2h-2zM18 13h2v2h-2z"/></svg>
       </button>
-      <button type="button" class="mname blk" id="mplay" aria-pressed="false"><b id="mico" aria-hidden="true">♪</b><span id="mtitle">MÜZİK</span></button>
-      <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça">►</button>
+      <button type="button" class="mname blk" id="mplay" aria-pressed="false"><b id="mico" aria-hidden="true">ÇAL</b><span id="mtitle">MÜZİK</span></button>
+      <button type="button" class="mb blk" id="mnext" aria-label="Sonraki parça" title="Sonraki parça">SONRAKİ</button>
     </div>
   </header>
 
@@ -430,9 +431,9 @@ N.forEach(n=>{
   n.list = n.vids || ((n.v||n.q||n.url) ? [{v:n.v,q:n.q,url:n.url,urlLabel:n.urlLabel,t:n.t,who:n.who,dur:n.dur}] : []);
 });
 function link(n){
-  if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"► YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
-  if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"► YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
-  if(n.url) return {href:n.url,label:n.urlLabel||"► KAYNAĞI AÇ",hint:"Kaynak yeni sekmede açılır."};
+  if(n.v) return {href:"https://www.youtube.com/watch?v="+n.v,label:"YOUTUBE'DA İZLE",hint:"Video YouTube'da yeni sekmede açılır."};
+  if(n.q) return {href:"https://www.youtube.com/results?search_query="+encodeURIComponent(n.q),label:"YOUTUBE'DA BUL",hint:"Videonun tam başlığıyla YouTube araması açılır."};
+  if(n.url) return {href:n.url,label:n.urlLabel||"KAYNAĞI AÇ",hint:"Kaynak yeni sekmede açılır."};
   return null;
 }
 
@@ -473,7 +474,7 @@ function renderSection(){
     <div class="grid">${notes.map((n,i)=>`<button class="card blk" type="button" data-note="${n.id}">
       <span class="cth"><canvas data-seed="${i+3+n.id.length}" aria-hidden="true"></canvas><span class="who">${esc(n.who)}</span><span class="dur">${esc(n.dur)}</span></span>
       <span class="ci"><span class="ct">${esc(n.t)}</span><span class="cs">${esc(n.sum)}</span>
-      <span class="cf"><span class="go">AÇ ►</span></span></span></button>`).join("")}</div>
+      <span class="cf"><span class="go">AÇ</span></span></span></button>`).join("")}</div>
   </div>`;
   const col=cssv(s.c);
   p.querySelectorAll("canvas").forEach(c=>pix(c,+c.dataset.seed,col,false));
@@ -491,13 +492,13 @@ function renderNote(){
   if(!hasVideo) screen=`<span class="play blk">SÖZ DERLEMESİ</span><small>Bu konunun videosu yok; sözler Notlar sekmesinde.</small>`;
   else if(EMBED&&V.v) screen=`<iframe src="https://www.youtube-nocookie.com/embed/${esc(V.v)}?rel=0&playsinline=1" title="${esc(V.t||n.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
   else if(EMBED) screen=`<span class="play blk">VİDEO LİNKİ BEKLENİYOR</span><small>Bu konunun videosu henüz eklenmedi. Linki gelince burada oynayacak.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da ara</a>`:""}`;
-  else screen=`<a class="play blk" href="${SITE}#${esc(n.id)}" target="_blank" rel="noopener">► SİTEDE İZLE</a><small>Claude yapıtı içinde video oynatılamıyor. Videolar Udaio sitesinde, sayfanın içinde oynar.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da aç</a>`:""}`;
+  else screen=`<a class="play blk" href="${SITE}#${esc(n.id)}" target="_blank" rel="noopener">SİTEDE İZLE</a><small>Claude yapıtı içinde video oynatılamıyor. Videolar Udaio sitesinde, sayfanın içinde oynar.</small>${L?`<a class="ytl" href="${esc(L.href)}" target="_blank" rel="noopener">YouTube'da aç</a>`:""}`;
   const videoTab=`${chips}${n.list.length>1&&V.t?`<p class="vtitle">${esc(V.t)}</p>`:""}<div class="nhead">
       <div class="screen${EMBED&&V.v?" embed":""}"><canvas id="scr" aria-hidden="true"></canvas>${screen}</div>
       <div class="meta">
         <div class="mrow"><span class="k lab">Kaynak Reel</span><span class="v">${esc(n.reel)}</span></div>
         <div class="mrow"><span class="k lab">Durum</span><div class="seg" role="group" aria-label="Durum">${STATES.map(x=>`<button type="button" data-st="${x[0]}" aria-pressed="${status(n.id)===x[0]}">${x[1]}</button>`).join("")}</div></div>
-        <button class="blk gonotes lab" type="button" data-tab="notes">Notları aç ►</button>
+        <button class="blk gonotes lab" type="button" data-tab="notes">Notları aç</button>
       </div>
     </div>`;
   const notesTab=`<div class="secs">
@@ -510,7 +511,7 @@ function renderNote(){
     </div>`;
   p.innerHTML=`<div class="bar"><span class="tab lab">${esc(s.name)}</span><span class="crumb lab">Udaio / ${esc(s.name)} / Not</span></div>
   <div class="body">
-    <button class="back blk lab" type="button" data-back>◄ Geri</button>
+    <button class="back blk lab" type="button" data-back>Geri</button>
     <div class="hero"><span class="eyebrow lab">${esc(n.who)} · ${esc(n.dur)}</span><h2>${esc(n.t)}</h2></div>
     <div class="tabs" role="tablist" aria-label="Not sekmeleri">
       <button type="button" role="tab" data-tab="video" aria-selected="${tab==="video"}">Video</button>
@@ -548,7 +549,7 @@ document.addEventListener("change",e=>{
 
 /* ---------- Ses: tarayıcının kendisinin çaldığı sakin chiptune parçalar ve düğme sesleri (ses dosyası yok) ----------
    Her parça 4 ölçülük döngü: akor kökleri, 64 adımlık melodi (MIDI numarası, 0 = sus), davul desenleri.
-   Tarayıcılar sesi ancak bir dokunuştan sonra başlatır; müzik ♪ düğmesine basınca çalar. */
+   Tarayıcılar sesi ancak bir dokunuştan sonra başlatır; müzik çal düğmesine basınca çalar. */
 const TRACKS = [
   { name:"GECE ÇALIŞMASI", bpm:78, arp:false, roots:[[45,"min"],[41,"maj"],[48,"maj"],[43,"maj"]],
     mel:[76,0,0,0,72,0,74,0, 76,0,0,0,0,0,0,0, 77,0,0,0,76,0,72,0, 69,0,0,0,0,0,0,0,
@@ -628,7 +629,7 @@ function paintMusic(){
   document.getElementById("mtitle").textContent=t.name;
   const mp=document.getElementById("mplay");
   mp.setAttribute("aria-pressed",String(playing)); mp.title=(playing?"Durdur: ":"Çal: ")+t.name;
-  document.getElementById("mico").textContent=playing?"♫":"♪";
+  document.getElementById("mico").textContent=playing?"DURDUR":"ÇAL";
   document.getElementById("sfx").setAttribute("aria-pressed",String(sfxOn));
   document.getElementById("sfxWave").toggleAttribute("hidden",!sfxOn);
   document.getElementById("sfxX").toggleAttribute("hidden",sfxOn);

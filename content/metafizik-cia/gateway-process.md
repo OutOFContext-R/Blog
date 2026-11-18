@@ -35,9 +35,9 @@ dogrulama: "Transkriptten doğrulanmadı: bilinen içerik ve arama özetlerinden
 4. **Bir iddiayı sınamak için kendine sor:** Bu bir değerlendirme mi, yoksa deneyle kanıtlanmış bir sonuç mu?
 
 ## Kanıt durumu
-- **Belgenin varlığı:** ✅ Gerçek. CIA'nın resmi arşivinde yer alıyor.
-- **Binaural ritimlerin rahatlama ve dikkat üzerindeki etkisi:** ⚠️ Karışık. Bazı çalışmalar küçük etkiler buluyor, sonuçlar tutarlı değil.
-- **Beden dışı deneyim, zaman-mekânı aşma, holografik evren:** ❌ Spekülatif ya da iddia. Rapor bir subayın teorik değerlendirmesi, bilimsel bir deney sonucu değil.
+- **Belgenin varlığı:** Gerçek. CIA'nın resmi arşivinde yer alıyor.
+- **Binaural ritimlerin rahatlama ve dikkat üzerindeki etkisi:** Karışık. Bazı çalışmalar küçük etkiler buluyor, sonuçlar tutarlı değil.
+- **Beden dışı deneyim, zaman-mekânı aşma, holografik evren:** Spekülatif ya da iddia. Rapor bir subayın teorik değerlendirmesi, bilimsel bir deney sonucu değil.
 - **Bağlam:** Stargate programı 1995'te, bağımsız bir değerlendirmenin istihbarat açısından işe yarar sonuç bulamamasından sonra kapatıldı.
 
 ## Bağlantılı konular

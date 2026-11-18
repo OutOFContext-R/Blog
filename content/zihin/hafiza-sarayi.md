@@ -26,7 +26,7 @@ Gazeteci Joshua Foer, hafıza yarışmalarını haber yapmaya gittiğinde yarı�
 ## 3. Nasıl uygulanır
 1. **Sarayını seç:** Çok iyi bildiğin bir mekân, örneğin evin. Kapıdan başlayan sabit bir rota belirle (kapı, ayakkabılık, mutfak, masa…).
 2. **10 durak belirle** ve sırasını ezberle.
-3. **Her bilgiyi canlı bir görüntüye çevir:** Örneğin "asetilkolin" → kapıda asit fışkırtan bir kolinyalı köpek.
+3. **Her bilgiyi canlı bir görüntüye çevir:** Örneğin "asetilkolin": kapıda asit fışkırtan bir kolinyalı köpek.
 4. **Görüntüyü durağa yerleştir** ve onu abartılı, komik ya da hareketli hayal et.
 5. **Hatırlamak için zihninde rotayı yürü.**
 6. **İlk deneme:** Bir alışveriş listesi ya da bir videodaki 10 kavram. Sonra Huberman notundaki kavramlarla dene.
