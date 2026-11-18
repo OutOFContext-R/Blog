@@ -1,10 +1,10 @@
 ---
 baslik: "Zihnin tiyatrosu: imgeleme"
 bolum: zihin
-kaynak: "MAXWELL MALTZ"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Psycho-Cybernetics%20theater%20of%20the%20mind%20Maxwell%20Maltz"
-video_dogrulandi: false
+kaynak: "KİTAP ÖZETİ"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=tz2qWCom6ks"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Theater of Mind"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Zihnin tiyatrosu: imgeleme
 
 ## 1. Kısa özet
-Plastik cerrah Maxwell Maltz, 1960 tarihli Psycho-Cybernetics kitabında “zihnin tiyatrosu” tekniğini anlatıyor: olmak istediğin kişiyi ve yapmak istediğin şeyi her gün zihninde bir film gibi, bütün ayrıntılarıyla oynatmak. Ona göre davranışlarımızı “kendilik imajımız” belirler ve bu imaj tekrarlanan zihinsel provalarla değişebilir.
+Video: Psycho-Cybernetics kitabının özeti; kendilik imajının başarıyı nasıl belirlediğini anlatıyor. Plastik cerrah Maxwell Maltz, 1960 tarihli Psycho-Cybernetics kitabında “zihnin tiyatrosu” tekniğini anlatıyor: olmak istediğin kişiyi ve yapmak istediğin şeyi her gün zihninde bir film gibi, bütün ayrıntılarıyla oynatmak. Ona göre davranışlarımızı “kendilik imajımız” belirler ve bu imaj tekrarlanan zihinsel provalarla değişebilir.
 
 ## 2. Ana kavramlar
 - **Kendilik imajı:** Kendin hakkında inandığın resim; davranışlarının sınırını çizer.

@@ -1,10 +1,10 @@
 ---
 baslik: "Takıntı: dahiliğin otobüs bileti teorisi"
 bolum: founder
-kaynak: "PAUL GRAHAM"
-sure: "MAKALE"
-video: "http://paulgraham.com/genius.html"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=P8VKNewIkms"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "Dear men… study Obsession"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Takıntı: dahiliğin otobüs bileti teorisi
 
 ## 1. Kısa özet
-Y Combinator'ın kurucusu Paul Graham'a göre büyük işler üç şeyden doğar: yetenek, sıkı çalışma ve bir konuya duyulan takıntılı ilgi. Çocukların otobüs bileti biriktirmesi gibi, bu ilgi çoğu zaman “işe yaramaz” görünür ve para ya da ün için değil, konunun kendisi için duyulur. En büyük keşifler bu çıkarsız merakla gelir.
+Video: “Why Obsession Beats Talent Every Time”, takıntılı ilginin neden yetenekten üstün olduğunu anlatıyor. Ek kaynak: Paul Graham'ın “The Bus Ticket Theory of Genius” makalesi. Y Combinator'ın kurucusu Paul Graham'a göre büyük işler üç şeyden doğar: yetenek, sıkı çalışma ve bir konuya duyulan takıntılı ilgi. Çocukların otobüs bileti biriktirmesi gibi, bu ilgi çoğu zaman “işe yaramaz” görünür ve para ya da ün için değil, konunun kendisi için duyulur. En büyük keşifler bu çıkarsız merakla gelir.
 
 ## 2. Ana kavramlar
 - **Otobüs bileti teorisi:** Değersiz görünen bir şeye duyulan derin, çıkarsız ilgi.

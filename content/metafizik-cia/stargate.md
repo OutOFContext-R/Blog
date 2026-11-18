@@ -1,10 +1,10 @@
 ---
 baslik: "Stargate: uzaktan görme programı"
 bolum: metafizik-cia
-kaynak: "AÇIKLAYICI"
-sure: "YOUTUBE"
-video: "https://www.youtube.com/results?search_query=Project%20Stargate%20CIA%20remote%20viewing%20explained"
-video_dogrulandi: false
+kaynak: "AÇIKLAYICI VİDEO"
+sure: "KISA"
+video: "https://www.youtube.com/watch?v=oasTnsLw_n8"
+video_dogrulandi: "arama sonucundan"
 kaynak_reel: "CIA'nın mistik konseptleri"
 dogrulama: "Transkriptten doğrulanmadı."
 ---
@@ -12,7 +12,7 @@ dogrulama: "Transkriptten doğrulanmadı."
 # Stargate: uzaktan görme programı
 
 ## 1. Kısa özet
-Stargate, ABD hükümetinin “uzaktan görme” üzerine yaptığı gizli araştırmaların son adıydı. 1970'lerde Stanford Araştırma Enstitüsü'nde başlayan çalışmalarda, eğitilmiş kişilerin uzak bir yeri zihinleriyle tarif edebileceği iddia edildi. Program 1995'te bağımsız bir değerlendirmeden sonra, istihbarat açısından işe yarar sonuç vermediği gerekçesiyle kapatıldı.
+Video: “Inside Operation Stargate”, CIA'nın psişik casusluk deneyini anlatıyor. Stargate, ABD hükümetinin “uzaktan görme” üzerine yaptığı gizli araştırmaların son adıydı. 1970'lerde Stanford Araştırma Enstitüsü'nde başlayan çalışmalarda, eğitilmiş kişilerin uzak bir yeri zihinleriyle tarif edebileceği iddia edildi. Program 1995'te bağımsız bir değerlendirmeden sonra, istihbarat açısından işe yarar sonuç vermediği gerekçesiyle kapatıldı.
 
 ## 2. Ana kavramlar
 - **Uzaktan görme:** Görmeden, zihinle uzak bir hedefi tarif etme iddiası.
